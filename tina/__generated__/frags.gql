@@ -1,0 +1,546 @@
+fragment PageParts on Page {
+  __typename
+  title
+  description
+  hero {
+    __typename
+    headline
+    subheadline
+    ctaText
+    ctaLink
+    heroImage
+  }
+}
+
+fragment BookParts on Book {
+  __typename
+  title
+  author
+  description
+  category
+  coverImage
+  featured
+}
+
+fragment MagazineParts on Magazine {
+  __typename
+  title
+  issue
+  description
+  coverImage
+  publishDate
+}
+
+fragment LessonParts on Lesson {
+  __typename
+  title
+  book
+  chapters
+  description
+  content
+  difficulty
+}
+
+fragment BibleReferenceParts on BibleReference {
+  __typename
+  title
+  scripture
+  category
+  description
+  image
+}
+
+fragment HomeParts on Home {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    headline
+    subheadline
+    ctaText
+    ctaLink
+    secondaryCtaText
+    secondaryCtaLink
+    heroImage
+  }
+  scriptureOfTheDay {
+    __typename
+    verse
+    reference
+  }
+  featuredLessons {
+    __typename
+    sectionTitle
+    lesson1 {
+      __typename
+      category
+      reference
+      author
+      title
+      description
+      readTime
+      image
+    }
+    lesson2 {
+      __typename
+      category
+      reference
+      author
+      title
+      description
+      readTime
+      image
+    }
+  }
+  newsletter {
+    __typename
+    title
+    description
+    buttonText
+  }
+  zoomMeeting {
+    __typename
+    title
+    description
+    date
+    time
+    buttonText
+    buttonLink
+  }
+}
+
+fragment AboutParts on About {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  introTitle
+  introParagraph1
+  introParagraph2
+  mission {
+    __typename
+    title
+    description
+  }
+  vision {
+    __typename
+    title
+    description
+  }
+  statementOfFaith {
+    __typename
+    badge
+    title
+    point1Title
+    point1Text
+    point2Title
+    point2Text
+    point3Title
+    point3Text
+  }
+  quoteWidget {
+    __typename
+    quote
+    author
+  }
+}
+
+fragment ContactParts on Contact {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  emailCard {
+    __typename
+    title
+    description
+    email
+  }
+  phoneCard {
+    __typename
+    title
+    description
+    phone
+  }
+  locationCard {
+    __typename
+    title
+    description
+    address
+  }
+  contactForm {
+    __typename
+    title
+    description
+    submitButtonText
+  }
+  officeHours {
+    __typename
+    title
+    weekdayHours
+    saturdayHours
+    sundayHours
+    note
+  }
+}
+
+fragment NewsletterParts on Newsletter {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredDevotional {
+    __typename
+    badge
+    tag
+    title
+    scripture
+    content
+    date
+  }
+  signupCTA {
+    __typename
+    title
+    description
+    buttonText
+    privacyNote
+  }
+  scriptureQuote {
+    __typename
+    quote
+    reference
+  }
+}
+
+fragment QuickLinksParts on QuickLinks {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredBanner {
+    __typename
+    badge
+    tag
+    title
+    description
+    button1Text
+    button1Link
+    button2Text
+    button2Link
+    button3Text
+    button3Link
+  }
+  categorySectionTitle
+  searchSectionTitle
+  searchPlaceholder
+  shortcutsSectionTitle
+}
+
+fragment ResourcesParts on Resources {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredResource {
+    __typename
+    badge
+    tag
+    title
+    description
+    rating
+    linkText
+    linkUrl
+  }
+  searchPlaceholder
+  popularResourcesTitle
+  recentAdditionsTitle
+  categoryTagsTitle
+}
+
+fragment ZoomInfoParts on ZoomInfo {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredMeeting {
+    __typename
+    badge
+    tag
+    title
+    description
+    date
+    time
+    duration
+    buttonText
+  }
+  speakerCard {
+    __typename
+    title
+    name
+    role
+    bio
+  }
+  meetingAccessCard {
+    __typename
+    title
+    platform
+    meetingId
+    passcode
+  }
+  preparationCard {
+    __typename
+    title
+    subtitle
+    reading1
+    reading2
+    reading3
+  }
+  sessionsTitle
+  relatedScripture {
+    __typename
+    title
+    description
+    scripture1Title
+    scripture1Subtitle
+    scripture2Title
+    scripture2Subtitle
+    scripture3Title
+    scripture3Subtitle
+  }
+}
+
+fragment ArchivesParts on Archives {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  catalogInfo
+  featuredArchive {
+    __typename
+    badge
+    catalogRef
+    title
+    description
+    category
+    linkText
+  }
+  classificationsTitle
+  accessPolicy {
+    __typename
+    title
+    description
+  }
+}
+
+fragment LessonsParts on Lessons {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredLesson {
+    __typename
+    badge
+    title
+    description
+    teacher
+    linkText
+  }
+  progressTitle
+  progressCourse
+  progressPercentage
+  progressDescription
+  progressButtonText
+  seminarTitle
+}
+
+fragment ReferencesParts on References {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredReference {
+    __typename
+    badge
+    tag
+    title
+    description
+    crossReferences
+    linkText
+  }
+  topicsTitle
+  relatedLessonTitle
+  relatedLessonCourse
+  relatedLessonDescription
+  relatedLessonButtonText
+}
+
+fragment ImagesParts on Images {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredImage {
+    __typename
+    badge
+    title
+    description
+    scriptureLabel
+    scriptureQuote
+    scriptureReference
+    downloadButtonText
+    citationButtonText
+  }
+  archiveTitle
+}
+
+fragment VideosParts on Videos {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredVideo {
+    __typename
+    badge
+    title
+    description
+    speaker
+    scripture
+    recorded
+    buttonText
+  }
+  lecturesTitle
+}
+
+fragment LibraryParts on Library {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredResource {
+    __typename
+    badge
+    tag
+    title
+    description
+    details
+    linkText
+  }
+  categoriesTitle
+  popularTitle
+  recentTitle
+}
+
+fragment BooksParts on Books {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredBook {
+    __typename
+    badge
+    title
+    description
+    downloadButtonText
+    abstractButtonText
+  }
+  submissionsTitle
+  submissionsDescription
+  submissionsButtonText
+}
+
+fragment MagazinesParts on Magazines {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredIssue {
+    __typename
+    badge
+    tag
+    title
+    description
+    date
+    details
+    readButtonText
+    downloadButtonText
+  }
+  spotlightTitle
+  archiveTitle
+}
