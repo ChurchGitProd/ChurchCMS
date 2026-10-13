@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_TINA_CLIENT_ID = "8806b500-960f-4f66-b582-b1fe3d6c3111"
+  NEXT_PUBLIC_TINA_BRANCH = "main"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
