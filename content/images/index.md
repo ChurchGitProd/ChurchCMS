@@ -15,4 +15,5 @@ featuredImage:
   scriptureReference: "— Romans 1:16"
   downloadButtonText: "Download High-Res"
   citationButtonText: "View Citation Details"
+  image: "https://uxmagic.blob.core.windows.net/public/agent-images/hero_bible-1782719363350-90sctq9ygv4.png"
 archiveTitle: "Image Archive"

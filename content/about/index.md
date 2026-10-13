@@ -23,6 +23,28 @@ statementOfFaith:
   point2Text: "We believe in one God, eternally existing in three co-equal persons: Father, Son, and Holy Spirit, infinite in power, wisdom, holiness, and love."
   point3Title: "3. Redemption & Grace"
   point3Text: "We confess that salvation is by grace alone, through faith alone, in Christ alone, whose substitutionary death and bodily resurrection reconcile us to God."
+leadershipTitle: "Academic Leadership"
+leadership:
+  - name: "Dr. Charles Vance"
+    role: "Director of Hermeneutics"
+    avatar: "https://randomuser.me/api/portraits/men/12.jpg"
+    bio: "Former Professor of Old Testament Studies at Harvard Divinity School, specializing in ancient covenants."
+  - name: "Dr. Thomas Keller"
+    role: "Chief Archivist"
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+    bio: "Expert in Dead Sea Scrolls and Hellenistic Greek texts, driving our digital manuscript restoration."
+  - name: "Prof. Julian Mercer"
+    role: "Biblical Theology Lead"
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg"
+    bio: "Author of \"The Pauline Paradigm\" and lecturer on New Testament epistolary structures."
+academicOffice:
+  title: "Academic Office"
+  description: "Have questions about our doctrinal statement, research papers, or digital library access? Reach out to our administrative team."
+  address: "100 Scholar's Row, Boston, MA"
+  email: "office@scriptura-library.org"
+  buttonText: "Contact Office"
+  buttonLink: "/contact"
 quoteWidget:
   quote: "The scripture is a deep water, where the lamb may wade, and the elephant may swim."
   author: "Gregory the Great"
+---

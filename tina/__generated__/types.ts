@@ -82,46 +82,60 @@ export type Query = {
   collections: Array<Collection>;
   node: Node;
   document: DocumentNode;
-  page: Page;
-  pageConnection: PageConnection;
   book: Book;
   bookConnection: BookConnection;
-  magazine: Magazine;
-  magazineConnection: MagazineConnection;
   lesson: Lesson;
   lessonConnection: LessonConnection;
+  magazine: Magazine;
+  magazineConnection: MagazineConnection;
+  dailyLetter: DailyLetter;
+  dailyLetterConnection: DailyLetterConnection;
   bibleReference: BibleReference;
   bibleReferenceConnection: BibleReferenceConnection;
+  video: Video;
+  videoConnection: VideoConnection;
+  bibleImage: BibleImage;
+  bibleImageConnection: BibleImageConnection;
+  libraryResource: LibraryResource;
+  libraryResourceConnection: LibraryResourceConnection;
+  archiveDocument: ArchiveDocument;
+  archiveDocumentConnection: ArchiveDocumentConnection;
+  usefulResource: UsefulResource;
+  usefulResourceConnection: UsefulResourceConnection;
+  quickLink: QuickLink;
+  quickLinkConnection: QuickLinkConnection;
   home: Home;
   homeConnection: HomeConnection;
   about: About;
   aboutConnection: AboutConnection;
   contact: Contact;
   contactConnection: ContactConnection;
-  newsletter: Newsletter;
-  newsletterConnection: NewsletterConnection;
-  quickLinks: QuickLinks;
-  quickLinksConnection: QuickLinksConnection;
-  resources: Resources;
-  resourcesConnection: ResourcesConnection;
   zoomInfo: ZoomInfo;
   zoomInfoConnection: ZoomInfoConnection;
-  archives: Archives;
-  archivesConnection: ArchivesConnection;
-  lessons: Lessons;
-  lessonsConnection: LessonsConnection;
-  references: References;
-  referencesConnection: ReferencesConnection;
-  images: Images;
-  imagesConnection: ImagesConnection;
-  videos: Videos;
-  videosConnection: VideosConnection;
-  library: Library;
-  libraryConnection: LibraryConnection;
   books: Books;
   booksConnection: BooksConnection;
+  lessons: Lessons;
+  lessonsConnection: LessonsConnection;
   magazines: Magazines;
   magazinesConnection: MagazinesConnection;
+  newsletter: Newsletter;
+  newsletterConnection: NewsletterConnection;
+  references: References;
+  referencesConnection: ReferencesConnection;
+  videos: Videos;
+  videosConnection: VideosConnection;
+  images: Images;
+  imagesConnection: ImagesConnection;
+  library: Library;
+  libraryConnection: LibraryConnection;
+  archives: Archives;
+  archivesConnection: ArchivesConnection;
+  resources: Resources;
+  resourcesConnection: ResourcesConnection;
+  quickLinks: QuickLinks;
+  quickLinksConnection: QuickLinksConnection;
+  page: Page;
+  pageConnection: PageConnection;
 };
 
 
@@ -146,21 +160,6 @@ export type QueryDocumentArgs = {
 };
 
 
-export type QueryPageArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryPageConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<PageFilter>;
-};
-
-
 export type QueryBookArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -173,21 +172,6 @@ export type QueryBookConnectionArgs = {
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<BookFilter>;
-};
-
-
-export type QueryMagazineArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryMagazineConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<MagazineFilter>;
 };
 
 
@@ -206,6 +190,36 @@ export type QueryLessonConnectionArgs = {
 };
 
 
+export type QueryMagazineArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryMagazineConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<MagazineFilter>;
+};
+
+
+export type QueryDailyLetterArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryDailyLetterConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<DailyLetterFilter>;
+};
+
+
 export type QueryBibleReferenceArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -218,6 +232,96 @@ export type QueryBibleReferenceConnectionArgs = {
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<BibleReferenceFilter>;
+};
+
+
+export type QueryVideoArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryVideoConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<VideoFilter>;
+};
+
+
+export type QueryBibleImageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryBibleImageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<BibleImageFilter>;
+};
+
+
+export type QueryLibraryResourceArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryLibraryResourceConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LibraryResourceFilter>;
+};
+
+
+export type QueryArchiveDocumentArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryArchiveDocumentConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ArchiveDocumentFilter>;
+};
+
+
+export type QueryUsefulResourceArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryUsefulResourceConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<UsefulResourceFilter>;
+};
+
+
+export type QueryQuickLinkArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryQuickLinkConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<QuickLinkFilter>;
 };
 
 
@@ -266,51 +370,6 @@ export type QueryContactConnectionArgs = {
 };
 
 
-export type QueryNewsletterArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryNewsletterConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<NewsletterFilter>;
-};
-
-
-export type QueryQuickLinksArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryQuickLinksConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<QuickLinksFilter>;
-};
-
-
-export type QueryResourcesArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryResourcesConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ResourcesFilter>;
-};
-
-
 export type QueryZoomInfoArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -323,96 +382,6 @@ export type QueryZoomInfoConnectionArgs = {
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
   filter?: InputMaybe<ZoomInfoFilter>;
-};
-
-
-export type QueryArchivesArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryArchivesConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ArchivesFilter>;
-};
-
-
-export type QueryLessonsArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryLessonsConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<LessonsFilter>;
-};
-
-
-export type QueryReferencesArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryReferencesConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ReferencesFilter>;
-};
-
-
-export type QueryImagesArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryImagesConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ImagesFilter>;
-};
-
-
-export type QueryVideosArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryVideosConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<VideosFilter>;
-};
-
-
-export type QueryLibraryArgs = {
-  relativePath?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-export type QueryLibraryConnectionArgs = {
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<LibraryFilter>;
 };
 
 
@@ -431,6 +400,21 @@ export type QueryBooksConnectionArgs = {
 };
 
 
+export type QueryLessonsArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryLessonsConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LessonsFilter>;
+};
+
+
 export type QueryMagazinesArgs = {
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
@@ -445,27 +429,169 @@ export type QueryMagazinesConnectionArgs = {
   filter?: InputMaybe<MagazinesFilter>;
 };
 
+
+export type QueryNewsletterArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryNewsletterConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<NewsletterFilter>;
+};
+
+
+export type QueryReferencesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryReferencesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ReferencesFilter>;
+};
+
+
+export type QueryVideosArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryVideosConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<VideosFilter>;
+};
+
+
+export type QueryImagesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryImagesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ImagesFilter>;
+};
+
+
+export type QueryLibraryArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryLibraryConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LibraryFilter>;
+};
+
+
+export type QueryArchivesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryArchivesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ArchivesFilter>;
+};
+
+
+export type QueryResourcesArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryResourcesConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ResourcesFilter>;
+};
+
+
+export type QueryQuickLinksArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryQuickLinksConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<QuickLinksFilter>;
+};
+
+
+export type QueryPageArgs = {
+  relativePath?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+export type QueryPageConnectionArgs = {
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PageFilter>;
+};
+
 export type DocumentFilter = {
-  page?: InputMaybe<PageFilter>;
   book?: InputMaybe<BookFilter>;
-  magazine?: InputMaybe<MagazineFilter>;
   lesson?: InputMaybe<LessonFilter>;
+  magazine?: InputMaybe<MagazineFilter>;
+  dailyLetter?: InputMaybe<DailyLetterFilter>;
   bibleReference?: InputMaybe<BibleReferenceFilter>;
+  video?: InputMaybe<VideoFilter>;
+  bibleImage?: InputMaybe<BibleImageFilter>;
+  libraryResource?: InputMaybe<LibraryResourceFilter>;
+  archiveDocument?: InputMaybe<ArchiveDocumentFilter>;
+  usefulResource?: InputMaybe<UsefulResourceFilter>;
+  quickLink?: InputMaybe<QuickLinkFilter>;
   home?: InputMaybe<HomeFilter>;
   about?: InputMaybe<AboutFilter>;
   contact?: InputMaybe<ContactFilter>;
-  newsletter?: InputMaybe<NewsletterFilter>;
-  quickLinks?: InputMaybe<QuickLinksFilter>;
-  resources?: InputMaybe<ResourcesFilter>;
   zoomInfo?: InputMaybe<ZoomInfoFilter>;
-  archives?: InputMaybe<ArchivesFilter>;
-  lessons?: InputMaybe<LessonsFilter>;
-  references?: InputMaybe<ReferencesFilter>;
-  images?: InputMaybe<ImagesFilter>;
-  videos?: InputMaybe<VideosFilter>;
-  library?: InputMaybe<LibraryFilter>;
   books?: InputMaybe<BooksFilter>;
+  lessons?: InputMaybe<LessonsFilter>;
   magazines?: InputMaybe<MagazinesFilter>;
+  newsletter?: InputMaybe<NewsletterFilter>;
+  references?: InputMaybe<ReferencesFilter>;
+  videos?: InputMaybe<VideosFilter>;
+  images?: InputMaybe<ImagesFilter>;
+  library?: InputMaybe<LibraryFilter>;
+  archives?: InputMaybe<ArchivesFilter>;
+  resources?: InputMaybe<ResourcesFilter>;
+  quickLinks?: InputMaybe<QuickLinksFilter>;
+  page?: InputMaybe<PageFilter>;
 };
 
 export type DocumentConnectionEdges = {
@@ -505,22 +631,20 @@ export type CollectionDocumentsArgs = {
   folder?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type DocumentNode = Page | Book | Magazine | Lesson | BibleReference | Home | About | Contact | Newsletter | QuickLinks | Resources | ZoomInfo | Archives | Lessons | References | Images | Videos | Library | Books | Magazines | Folder;
+export type DocumentNode = Book | Lesson | Magazine | DailyLetter | BibleReference | Video | BibleImage | LibraryResource | ArchiveDocument | UsefulResource | QuickLink | Home | About | Contact | ZoomInfo | Books | Lessons | Magazines | Newsletter | References | Videos | Images | Library | Archives | Resources | QuickLinks | Page | Folder;
 
-export type PageHero = {
-  __typename?: 'PageHero';
-  headline: Scalars['String']['output'];
-  subheadline?: Maybe<Scalars['String']['output']>;
-  ctaText?: Maybe<Scalars['String']['output']>;
-  ctaLink?: Maybe<Scalars['String']['output']>;
-  heroImage?: Maybe<Scalars['String']['output']>;
-};
-
-export type Page = Node & Document & {
-  __typename?: 'Page';
+export type Book = Node & Document & {
+  __typename?: 'Book';
   title: Scalars['String']['output'];
+  author: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  hero?: Maybe<PageHero>;
+  abstract?: Maybe<Scalars['String']['output']>;
+  format: Scalars['String']['output'];
+  subject: Scalars['String']['output'];
+  coverImage: Scalars['String']['output'];
+  featured?: Maybe<Scalars['String']['output']>;
+  pdfFile?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -540,53 +664,23 @@ export type ImageFilter = {
   in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type PageHeroFilter = {
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-  ctaText?: InputMaybe<StringFilter>;
-  ctaLink?: InputMaybe<StringFilter>;
-  heroImage?: InputMaybe<ImageFilter>;
-};
-
-export type PageFilter = {
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<PageHeroFilter>;
-};
-
-export type PageConnectionEdges = {
-  __typename?: 'PageConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Page>;
-};
-
-export type PageConnection = Connection & {
-  __typename?: 'PageConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
-};
-
-export type Book = Node & Document & {
-  __typename?: 'Book';
-  title: Scalars['String']['output'];
-  author: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  category: Scalars['String']['output'];
-  coverImage?: Maybe<Scalars['String']['output']>;
-  featured: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
+export type RichTextFilter = {
+  startsWith?: InputMaybe<Scalars['String']['input']>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type BookFilter = {
   title?: InputMaybe<StringFilter>;
   author?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  category?: InputMaybe<StringFilter>;
+  abstract?: InputMaybe<StringFilter>;
+  format?: InputMaybe<StringFilter>;
+  subject?: InputMaybe<StringFilter>;
   coverImage?: InputMaybe<ImageFilter>;
   featured?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
+  body?: InputMaybe<RichTextFilter>;
 };
 
 export type BookConnectionEdges = {
@@ -602,47 +696,6 @@ export type BookConnection = Connection & {
   edges?: Maybe<Array<Maybe<BookConnectionEdges>>>;
 };
 
-export type Magazine = Node & Document & {
-  __typename?: 'Magazine';
-  title: Scalars['String']['output'];
-  issue: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  coverImage?: Maybe<Scalars['String']['output']>;
-  publishDate: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type DatetimeFilter = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type MagazineFilter = {
-  title?: InputMaybe<StringFilter>;
-  issue?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  coverImage?: InputMaybe<ImageFilter>;
-  publishDate?: InputMaybe<DatetimeFilter>;
-};
-
-export type MagazineConnectionEdges = {
-  __typename?: 'MagazineConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Magazine>;
-};
-
-export type MagazineConnection = Connection & {
-  __typename?: 'MagazineConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<MagazineConnectionEdges>>>;
-};
-
 export type Lesson = Node & Document & {
   __typename?: 'Lesson';
   title: Scalars['String']['output'];
@@ -650,16 +703,13 @@ export type Lesson = Node & Document & {
   chapters: Scalars['String']['output'];
   description: Scalars['String']['output'];
   content?: Maybe<Scalars['JSON']['output']>;
+  teacher: Scalars['String']['output'];
+  division: Scalars['String']['output'];
   difficulty: Scalars['String']['output'];
+  image?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
-};
-
-export type RichTextFilter = {
-  startsWith?: InputMaybe<Scalars['String']['input']>;
-  eq?: InputMaybe<Scalars['String']['input']>;
-  exists?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type LessonFilter = {
@@ -668,7 +718,10 @@ export type LessonFilter = {
   chapters?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   content?: InputMaybe<RichTextFilter>;
+  teacher?: InputMaybe<StringFilter>;
+  division?: InputMaybe<StringFilter>;
   difficulty?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type LessonConnectionEdges = {
@@ -684,6 +737,102 @@ export type LessonConnection = Connection & {
   edges?: Maybe<Array<Maybe<LessonConnectionEdges>>>;
 };
 
+export type Magazine = Node & Document & {
+  __typename?: 'Magazine';
+  title: Scalars['String']['output'];
+  issue: Scalars['String']['output'];
+  season?: Maybe<Scalars['String']['output']>;
+  year?: Maybe<Scalars['String']['output']>;
+  topic?: Maybe<Scalars['String']['output']>;
+  description: Scalars['String']['output'];
+  coverImage?: Maybe<Scalars['String']['output']>;
+  publishDate?: Maybe<Scalars['String']['output']>;
+  articlesCount?: Maybe<Scalars['Float']['output']>;
+  contributorsCount?: Maybe<Scalars['Float']['output']>;
+  pagesCount?: Maybe<Scalars['Float']['output']>;
+  badge?: Maybe<Scalars['String']['output']>;
+  pdfFile?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type NumberFilter = {
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  eq?: InputMaybe<Scalars['Float']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Float']['input']>>>;
+};
+
+export type MagazineFilter = {
+  title?: InputMaybe<StringFilter>;
+  issue?: InputMaybe<StringFilter>;
+  season?: InputMaybe<StringFilter>;
+  year?: InputMaybe<StringFilter>;
+  topic?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  publishDate?: InputMaybe<StringFilter>;
+  articlesCount?: InputMaybe<NumberFilter>;
+  contributorsCount?: InputMaybe<NumberFilter>;
+  pagesCount?: InputMaybe<NumberFilter>;
+  badge?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type MagazineConnectionEdges = {
+  __typename?: 'MagazineConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Magazine>;
+};
+
+export type MagazineConnection = Connection & {
+  __typename?: 'MagazineConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<MagazineConnectionEdges>>>;
+};
+
+export type DailyLetter = Node & Document & {
+  __typename?: 'DailyLetter';
+  title: Scalars['String']['output'];
+  date: Scalars['String']['output'];
+  scripture: Scalars['String']['output'];
+  author: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type DailyLetterFilter = {
+  title?: InputMaybe<StringFilter>;
+  date?: InputMaybe<StringFilter>;
+  scripture?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type DailyLetterConnectionEdges = {
+  __typename?: 'DailyLetterConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<DailyLetter>;
+};
+
+export type DailyLetterConnection = Connection & {
+  __typename?: 'DailyLetterConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<DailyLetterConnectionEdges>>>;
+};
+
 export type BibleReference = Node & Document & {
   __typename?: 'BibleReference';
   title: Scalars['String']['output'];
@@ -691,6 +840,11 @@ export type BibleReference = Node & Document & {
   category: Scalars['String']['output'];
   description: Scalars['String']['output'];
   image?: Maybe<Scalars['String']['output']>;
+  author: Scalars['String']['output'];
+  testament: Scalars['String']['output'];
+  genre: Scalars['String']['output'];
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -702,6 +856,11 @@ export type BibleReferenceFilter = {
   category?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   image?: InputMaybe<ImageFilter>;
+  author?: InputMaybe<StringFilter>;
+  testament?: InputMaybe<StringFilter>;
+  genre?: InputMaybe<StringFilter>;
+  tags?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
 };
 
 export type BibleReferenceConnectionEdges = {
@@ -715,6 +874,254 @@ export type BibleReferenceConnection = Connection & {
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
   edges?: Maybe<Array<Maybe<BibleReferenceConnectionEdges>>>;
+};
+
+export type Video = Node & Document & {
+  __typename?: 'Video';
+  title: Scalars['String']['output'];
+  series: Scalars['String']['output'];
+  speaker: Scalars['String']['output'];
+  scripture: Scalars['String']['output'];
+  duration: Scalars['String']['output'];
+  recordedDate?: Maybe<Scalars['String']['output']>;
+  description: Scalars['String']['output'];
+  thumbnail?: Maybe<Scalars['String']['output']>;
+  videoUrl?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type VideoFilter = {
+  title?: InputMaybe<StringFilter>;
+  series?: InputMaybe<StringFilter>;
+  speaker?: InputMaybe<StringFilter>;
+  scripture?: InputMaybe<StringFilter>;
+  duration?: InputMaybe<StringFilter>;
+  recordedDate?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  thumbnail?: InputMaybe<ImageFilter>;
+  videoUrl?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type VideoConnectionEdges = {
+  __typename?: 'VideoConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Video>;
+};
+
+export type VideoConnection = Connection & {
+  __typename?: 'VideoConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<VideoConnectionEdges>>>;
+};
+
+export type BibleImage = Node & Document & {
+  __typename?: 'BibleImage';
+  title: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  scripture: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  image: Scalars['String']['output'];
+  date?: Maybe<Scalars['String']['output']>;
+  citation?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type BibleImageFilter = {
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  scripture?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+  date?: InputMaybe<StringFilter>;
+  citation?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type BibleImageConnectionEdges = {
+  __typename?: 'BibleImageConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<BibleImage>;
+};
+
+export type BibleImageConnection = Connection & {
+  __typename?: 'BibleImageConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<BibleImageConnectionEdges>>>;
+};
+
+export type LibraryResource = Node & Document & {
+  __typename?: 'LibraryResource';
+  title: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  era: Scalars['String']['output'];
+  badge: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  author?: Maybe<Scalars['String']['output']>;
+  primaryDetail?: Maybe<Scalars['String']['output']>;
+  detailIcon?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  pdfFile?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type LibraryResourceFilter = {
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  era?: InputMaybe<StringFilter>;
+  badge?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  primaryDetail?: InputMaybe<StringFilter>;
+  detailIcon?: InputMaybe<StringFilter>;
+  tags?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type LibraryResourceConnectionEdges = {
+  __typename?: 'LibraryResourceConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<LibraryResource>;
+};
+
+export type LibraryResourceConnection = Connection & {
+  __typename?: 'LibraryResourceConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<LibraryResourceConnectionEdges>>>;
+};
+
+export type ArchiveDocument = Node & Document & {
+  __typename?: 'ArchiveDocument';
+  title: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  catalogRef: Scalars['String']['output'];
+  dateLabel: Scalars['String']['output'];
+  attributionRole?: Maybe<Scalars['String']['output']>;
+  attributionName?: Maybe<Scalars['String']['output']>;
+  description: Scalars['String']['output'];
+  actionLabel?: Maybe<Scalars['String']['output']>;
+  actionType?: Maybe<Scalars['String']['output']>;
+  pdfFile?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ArchiveDocumentFilter = {
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  catalogRef?: InputMaybe<StringFilter>;
+  dateLabel?: InputMaybe<StringFilter>;
+  attributionRole?: InputMaybe<StringFilter>;
+  attributionName?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  actionLabel?: InputMaybe<StringFilter>;
+  actionType?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type ArchiveDocumentConnectionEdges = {
+  __typename?: 'ArchiveDocumentConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<ArchiveDocument>;
+};
+
+export type ArchiveDocumentConnection = Connection & {
+  __typename?: 'ArchiveDocumentConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ArchiveDocumentConnectionEdges>>>;
+};
+
+export type UsefulResource = Node & Document & {
+  __typename?: 'UsefulResource';
+  title: Scalars['String']['output'];
+  category: Scalars['String']['output'];
+  pricingType: Scalars['String']['output'];
+  rating: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  thumbnail?: Maybe<Scalars['String']['output']>;
+  externalUrl?: Maybe<Scalars['String']['output']>;
+  actionLabel?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type UsefulResourceFilter = {
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  pricingType?: InputMaybe<StringFilter>;
+  rating?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  thumbnail?: InputMaybe<ImageFilter>;
+  externalUrl?: InputMaybe<StringFilter>;
+  actionLabel?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type UsefulResourceConnectionEdges = {
+  __typename?: 'UsefulResourceConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<UsefulResource>;
+};
+
+export type UsefulResourceConnection = Connection & {
+  __typename?: 'UsefulResourceConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<UsefulResourceConnectionEdges>>>;
+};
+
+export type QuickLink = Node & Document & {
+  __typename?: 'QuickLink';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  targetUrl: Scalars['String']['output'];
+  icon: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  body?: Maybe<Scalars['JSON']['output']>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type QuickLinkFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  targetUrl?: InputMaybe<StringFilter>;
+  icon?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  body?: InputMaybe<RichTextFilter>;
+};
+
+export type QuickLinkConnectionEdges = {
+  __typename?: 'QuickLinkConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<QuickLink>;
+};
+
+export type QuickLinkConnection = Connection & {
+  __typename?: 'QuickLinkConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<QuickLinkConnectionEdges>>>;
 };
 
 export type HomeHero = {
@@ -780,6 +1187,110 @@ export type HomeZoomMeeting = {
   buttonLink: Scalars['String']['output'];
 };
 
+export type HomeLatestReferencesItems = {
+  __typename?: 'HomeLatestReferencesItems';
+  reference?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  link?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeLatestReferences = {
+  __typename?: 'HomeLatestReferences';
+  sectionTitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<HomeLatestReferencesItems>>>;
+};
+
+export type HomeFeaturedVideosItems = {
+  __typename?: 'HomeFeaturedVideosItems';
+  series?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  duration?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeFeaturedVideos = {
+  __typename?: 'HomeFeaturedVideos';
+  sectionTitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<HomeFeaturedVideosItems>>>;
+};
+
+export type HomeGalleryPreviewItems = {
+  __typename?: 'HomeGalleryPreviewItems';
+  title?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeGalleryPreview = {
+  __typename?: 'HomeGalleryPreview';
+  sectionTitle?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<HomeGalleryPreviewItems>>>;
+};
+
+export type HomeFeaturedPublicationsBook = {
+  __typename?: 'HomeFeaturedPublicationsBook';
+  badge?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  author?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  coverImage?: Maybe<Scalars['String']['output']>;
+  downloadLink?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeFeaturedPublicationsMagazine = {
+  __typename?: 'HomeFeaturedPublicationsMagazine';
+  badge?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  issue?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  coverImage?: Maybe<Scalars['String']['output']>;
+  readLink?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeFeaturedPublications = {
+  __typename?: 'HomeFeaturedPublications';
+  sectionTitle?: Maybe<Scalars['String']['output']>;
+  book?: Maybe<HomeFeaturedPublicationsBook>;
+  magazine?: Maybe<HomeFeaturedPublicationsMagazine>;
+};
+
+export type HomeAnnouncementsWidgetItems = {
+  __typename?: 'HomeAnnouncementsWidgetItems';
+  date?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeAnnouncementsWidget = {
+  __typename?: 'HomeAnnouncementsWidget';
+  title?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<HomeAnnouncementsWidgetItems>>>;
+};
+
+export type HomeUsefulToolsWidgetTools = {
+  __typename?: 'HomeUsefulToolsWidgetTools';
+  name?: Maybe<Scalars['String']['output']>;
+  link?: Maybe<Scalars['String']['output']>;
+};
+
+export type HomeUsefulToolsWidget = {
+  __typename?: 'HomeUsefulToolsWidget';
+  title?: Maybe<Scalars['String']['output']>;
+  tools?: Maybe<Array<Maybe<HomeUsefulToolsWidgetTools>>>;
+};
+
+export type HomeQuarterlyNewsletter = {
+  __typename?: 'HomeQuarterlyNewsletter';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  buttonText?: Maybe<Scalars['String']['output']>;
+};
+
 export type Home = Node & Document & {
   __typename?: 'Home';
   announcementText: Scalars['String']['output'];
@@ -789,6 +1300,13 @@ export type Home = Node & Document & {
   featuredLessons?: Maybe<HomeFeaturedLessons>;
   newsletter?: Maybe<HomeNewsletter>;
   zoomMeeting?: Maybe<HomeZoomMeeting>;
+  latestReferences?: Maybe<HomeLatestReferences>;
+  featuredVideos?: Maybe<HomeFeaturedVideos>;
+  galleryPreview?: Maybe<HomeGalleryPreview>;
+  featuredPublications?: Maybe<HomeFeaturedPublications>;
+  announcementsWidget?: Maybe<HomeAnnouncementsWidget>;
+  usefulToolsWidget?: Maybe<HomeUsefulToolsWidget>;
+  quarterlyNewsletter?: Maybe<HomeQuarterlyNewsletter>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -850,6 +1368,96 @@ export type HomeZoomMeetingFilter = {
   buttonLink?: InputMaybe<StringFilter>;
 };
 
+export type HomeLatestReferencesItemsFilter = {
+  reference?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  tags?: InputMaybe<StringFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type HomeLatestReferencesFilter = {
+  sectionTitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<HomeLatestReferencesItemsFilter>;
+};
+
+export type HomeFeaturedVideosItemsFilter = {
+  series?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  duration?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type HomeFeaturedVideosFilter = {
+  sectionTitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<HomeFeaturedVideosItemsFilter>;
+};
+
+export type HomeGalleryPreviewItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+};
+
+export type HomeGalleryPreviewFilter = {
+  sectionTitle?: InputMaybe<StringFilter>;
+  items?: InputMaybe<HomeGalleryPreviewItemsFilter>;
+};
+
+export type HomeFeaturedPublicationsBookFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  author?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  downloadLink?: InputMaybe<StringFilter>;
+};
+
+export type HomeFeaturedPublicationsMagazineFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  issue?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  readLink?: InputMaybe<StringFilter>;
+};
+
+export type HomeFeaturedPublicationsFilter = {
+  sectionTitle?: InputMaybe<StringFilter>;
+  book?: InputMaybe<HomeFeaturedPublicationsBookFilter>;
+  magazine?: InputMaybe<HomeFeaturedPublicationsMagazineFilter>;
+};
+
+export type HomeAnnouncementsWidgetItemsFilter = {
+  date?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+};
+
+export type HomeAnnouncementsWidgetFilter = {
+  title?: InputMaybe<StringFilter>;
+  items?: InputMaybe<HomeAnnouncementsWidgetItemsFilter>;
+};
+
+export type HomeUsefulToolsWidgetToolsFilter = {
+  name?: InputMaybe<StringFilter>;
+  link?: InputMaybe<StringFilter>;
+};
+
+export type HomeUsefulToolsWidgetFilter = {
+  title?: InputMaybe<StringFilter>;
+  tools?: InputMaybe<HomeUsefulToolsWidgetToolsFilter>;
+};
+
+export type HomeQuarterlyNewsletterFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+};
+
 export type HomeFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
@@ -858,6 +1466,13 @@ export type HomeFilter = {
   featuredLessons?: InputMaybe<HomeFeaturedLessonsFilter>;
   newsletter?: InputMaybe<HomeNewsletterFilter>;
   zoomMeeting?: InputMaybe<HomeZoomMeetingFilter>;
+  latestReferences?: InputMaybe<HomeLatestReferencesFilter>;
+  featuredVideos?: InputMaybe<HomeFeaturedVideosFilter>;
+  galleryPreview?: InputMaybe<HomeGalleryPreviewFilter>;
+  featuredPublications?: InputMaybe<HomeFeaturedPublicationsFilter>;
+  announcementsWidget?: InputMaybe<HomeAnnouncementsWidgetFilter>;
+  usefulToolsWidget?: InputMaybe<HomeUsefulToolsWidgetFilter>;
+  quarterlyNewsletter?: InputMaybe<HomeQuarterlyNewsletterFilter>;
 };
 
 export type HomeConnectionEdges = {
@@ -910,6 +1525,24 @@ export type AboutQuoteWidget = {
   author: Scalars['String']['output'];
 };
 
+export type AboutLeadership = {
+  __typename?: 'AboutLeadership';
+  name: Scalars['String']['output'];
+  role: Scalars['String']['output'];
+  avatar: Scalars['String']['output'];
+  bio: Scalars['String']['output'];
+};
+
+export type AboutAcademicOffice = {
+  __typename?: 'AboutAcademicOffice';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  address?: Maybe<Scalars['String']['output']>;
+  email?: Maybe<Scalars['String']['output']>;
+  buttonText?: Maybe<Scalars['String']['output']>;
+  buttonLink?: Maybe<Scalars['String']['output']>;
+};
+
 export type About = Node & Document & {
   __typename?: 'About';
   announcementText: Scalars['String']['output'];
@@ -922,6 +1555,9 @@ export type About = Node & Document & {
   vision?: Maybe<AboutVision>;
   statementOfFaith?: Maybe<AboutStatementOfFaith>;
   quoteWidget?: Maybe<AboutQuoteWidget>;
+  leadershipTitle?: Maybe<Scalars['String']['output']>;
+  leadership?: Maybe<Array<Maybe<AboutLeadership>>>;
+  academicOffice?: Maybe<AboutAcademicOffice>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -959,6 +1595,22 @@ export type AboutQuoteWidgetFilter = {
   author?: InputMaybe<StringFilter>;
 };
 
+export type AboutLeadershipFilter = {
+  name?: InputMaybe<StringFilter>;
+  role?: InputMaybe<StringFilter>;
+  avatar?: InputMaybe<ImageFilter>;
+  bio?: InputMaybe<StringFilter>;
+};
+
+export type AboutAcademicOfficeFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  address?: InputMaybe<StringFilter>;
+  email?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+  buttonLink?: InputMaybe<StringFilter>;
+};
+
 export type AboutFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
@@ -970,6 +1622,9 @@ export type AboutFilter = {
   vision?: InputMaybe<AboutVisionFilter>;
   statementOfFaith?: InputMaybe<AboutStatementOfFaithFilter>;
   quoteWidget?: InputMaybe<AboutQuoteWidgetFilter>;
+  leadershipTitle?: InputMaybe<StringFilter>;
+  leadership?: InputMaybe<AboutLeadershipFilter>;
+  academicOffice?: InputMaybe<AboutAcademicOfficeFilter>;
 };
 
 export type AboutConnectionEdges = {
@@ -1029,6 +1684,18 @@ export type ContactOfficeHours = {
   note: Scalars['String']['output'];
 };
 
+export type ContactMapLocation = {
+  __typename?: 'ContactMapLocation';
+  imageUrl?: Maybe<Scalars['String']['output']>;
+  addressText?: Maybe<Scalars['String']['output']>;
+};
+
+export type ContactAdditionalInfo = {
+  __typename?: 'ContactAdditionalInfo';
+  title?: Maybe<Scalars['String']['output']>;
+  items?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+};
+
 export type Contact = Node & Document & {
   __typename?: 'Contact';
   announcementText: Scalars['String']['output'];
@@ -1039,6 +1706,8 @@ export type Contact = Node & Document & {
   locationCard?: Maybe<ContactLocationCard>;
   contactForm?: Maybe<ContactContactForm>;
   officeHours?: Maybe<ContactOfficeHours>;
+  mapLocation?: Maybe<ContactMapLocation>;
+  additionalInfo?: Maybe<ContactAdditionalInfo>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -1082,6 +1751,16 @@ export type ContactOfficeHoursFilter = {
   note?: InputMaybe<StringFilter>;
 };
 
+export type ContactMapLocationFilter = {
+  imageUrl?: InputMaybe<ImageFilter>;
+  addressText?: InputMaybe<StringFilter>;
+};
+
+export type ContactAdditionalInfoFilter = {
+  title?: InputMaybe<StringFilter>;
+  items?: InputMaybe<StringFilter>;
+};
+
 export type ContactFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
@@ -1091,6 +1770,8 @@ export type ContactFilter = {
   locationCard?: InputMaybe<ContactLocationCardFilter>;
   contactForm?: InputMaybe<ContactContactFormFilter>;
   officeHours?: InputMaybe<ContactOfficeHoursFilter>;
+  mapLocation?: InputMaybe<ContactMapLocationFilter>;
+  additionalInfo?: InputMaybe<ContactAdditionalInfoFilter>;
 };
 
 export type ContactConnectionEdges = {
@@ -1104,6 +1785,410 @@ export type ContactConnection = Connection & {
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
   edges?: Maybe<Array<Maybe<ContactConnectionEdges>>>;
+};
+
+export type ZoomInfoHero = {
+  __typename?: 'ZoomInfoHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type ZoomInfoFeaturedMeeting = {
+  __typename?: 'ZoomInfoFeaturedMeeting';
+  badge: Scalars['String']['output'];
+  tag: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  date: Scalars['String']['output'];
+  time: Scalars['String']['output'];
+  duration: Scalars['String']['output'];
+  buttonText: Scalars['String']['output'];
+  zoomUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type ZoomInfoSpeakerCard = {
+  __typename?: 'ZoomInfoSpeakerCard';
+  title: Scalars['String']['output'];
+  name: Scalars['String']['output'];
+  role: Scalars['String']['output'];
+  bio: Scalars['String']['output'];
+  avatarUrl?: Maybe<Scalars['String']['output']>;
+};
+
+export type ZoomInfoMeetingAccessCard = {
+  __typename?: 'ZoomInfoMeetingAccessCard';
+  title: Scalars['String']['output'];
+  platform: Scalars['String']['output'];
+  meetingId: Scalars['String']['output'];
+  passcode: Scalars['String']['output'];
+};
+
+export type ZoomInfoPreparationCard = {
+  __typename?: 'ZoomInfoPreparationCard';
+  title: Scalars['String']['output'];
+  subtitle: Scalars['String']['output'];
+  reading1: Scalars['String']['output'];
+  reading2: Scalars['String']['output'];
+  reading3: Scalars['String']['output'];
+};
+
+export type ZoomInfoSessions = {
+  __typename?: 'ZoomInfoSessions';
+  date: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  status: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  speaker: Scalars['String']['output'];
+  timeOrActionText?: Maybe<Scalars['String']['output']>;
+  actionUrl?: Maybe<Scalars['String']['output']>;
+  isDashed?: Maybe<Scalars['Boolean']['output']>;
+};
+
+export type ZoomInfoRelatedScripture = {
+  __typename?: 'ZoomInfoRelatedScripture';
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  scripture1Title: Scalars['String']['output'];
+  scripture1Subtitle: Scalars['String']['output'];
+  scripture2Title: Scalars['String']['output'];
+  scripture2Subtitle: Scalars['String']['output'];
+  scripture3Title: Scalars['String']['output'];
+  scripture3Subtitle: Scalars['String']['output'];
+};
+
+export type ZoomInfo = Node & Document & {
+  __typename?: 'ZoomInfo';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<ZoomInfoHero>;
+  featuredMeeting?: Maybe<ZoomInfoFeaturedMeeting>;
+  speakerCard?: Maybe<ZoomInfoSpeakerCard>;
+  meetingAccessCard?: Maybe<ZoomInfoMeetingAccessCard>;
+  preparationCard?: Maybe<ZoomInfoPreparationCard>;
+  sessionsTitle: Scalars['String']['output'];
+  sessions?: Maybe<Array<Maybe<ZoomInfoSessions>>>;
+  relatedScripture?: Maybe<ZoomInfoRelatedScripture>;
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ZoomInfoHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type ZoomInfoFeaturedMeetingFilter = {
+  badge?: InputMaybe<StringFilter>;
+  tag?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  date?: InputMaybe<StringFilter>;
+  time?: InputMaybe<StringFilter>;
+  duration?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+  zoomUrl?: InputMaybe<StringFilter>;
+};
+
+export type ZoomInfoSpeakerCardFilter = {
+  title?: InputMaybe<StringFilter>;
+  name?: InputMaybe<StringFilter>;
+  role?: InputMaybe<StringFilter>;
+  bio?: InputMaybe<StringFilter>;
+  avatarUrl?: InputMaybe<ImageFilter>;
+};
+
+export type ZoomInfoMeetingAccessCardFilter = {
+  title?: InputMaybe<StringFilter>;
+  platform?: InputMaybe<StringFilter>;
+  meetingId?: InputMaybe<StringFilter>;
+  passcode?: InputMaybe<StringFilter>;
+};
+
+export type ZoomInfoPreparationCardFilter = {
+  title?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  reading1?: InputMaybe<StringFilter>;
+  reading2?: InputMaybe<StringFilter>;
+  reading3?: InputMaybe<StringFilter>;
+};
+
+export type BooleanFilter = {
+  eq?: InputMaybe<Scalars['Boolean']['input']>;
+  exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ZoomInfoSessionsFilter = {
+  date?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  status?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  speaker?: InputMaybe<StringFilter>;
+  timeOrActionText?: InputMaybe<StringFilter>;
+  actionUrl?: InputMaybe<StringFilter>;
+  isDashed?: InputMaybe<BooleanFilter>;
+};
+
+export type ZoomInfoRelatedScriptureFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  scripture1Title?: InputMaybe<StringFilter>;
+  scripture1Subtitle?: InputMaybe<StringFilter>;
+  scripture2Title?: InputMaybe<StringFilter>;
+  scripture2Subtitle?: InputMaybe<StringFilter>;
+  scripture3Title?: InputMaybe<StringFilter>;
+  scripture3Subtitle?: InputMaybe<StringFilter>;
+};
+
+export type ZoomInfoFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<ZoomInfoHeroFilter>;
+  featuredMeeting?: InputMaybe<ZoomInfoFeaturedMeetingFilter>;
+  speakerCard?: InputMaybe<ZoomInfoSpeakerCardFilter>;
+  meetingAccessCard?: InputMaybe<ZoomInfoMeetingAccessCardFilter>;
+  preparationCard?: InputMaybe<ZoomInfoPreparationCardFilter>;
+  sessionsTitle?: InputMaybe<StringFilter>;
+  sessions?: InputMaybe<ZoomInfoSessionsFilter>;
+  relatedScripture?: InputMaybe<ZoomInfoRelatedScriptureFilter>;
+};
+
+export type ZoomInfoConnectionEdges = {
+  __typename?: 'ZoomInfoConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<ZoomInfo>;
+};
+
+export type ZoomInfoConnection = Connection & {
+  __typename?: 'ZoomInfoConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ZoomInfoConnectionEdges>>>;
+};
+
+export type BooksHero = {
+  __typename?: 'BooksHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type BooksFeaturedBook = {
+  __typename?: 'BooksFeaturedBook';
+  badge: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  coverImage?: Maybe<Scalars['String']['output']>;
+  description: Scalars['String']['output'];
+  downloadButtonText: Scalars['String']['output'];
+  abstractButtonText: Scalars['String']['output'];
+  pdfFile?: Maybe<Scalars['String']['output']>;
+};
+
+export type Books = Node & Document & {
+  __typename?: 'Books';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<BooksHero>;
+  searchPlaceholder: Scalars['String']['output'];
+  featuredBook?: Maybe<BooksFeaturedBook>;
+  submissionsTitle: Scalars['String']['output'];
+  submissionsDescription: Scalars['String']['output'];
+  submissionsButtonText: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type BooksHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type BooksFeaturedBookFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  description?: InputMaybe<StringFilter>;
+  downloadButtonText?: InputMaybe<StringFilter>;
+  abstractButtonText?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
+};
+
+export type BooksFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<BooksHeroFilter>;
+  searchPlaceholder?: InputMaybe<StringFilter>;
+  featuredBook?: InputMaybe<BooksFeaturedBookFilter>;
+  submissionsTitle?: InputMaybe<StringFilter>;
+  submissionsDescription?: InputMaybe<StringFilter>;
+  submissionsButtonText?: InputMaybe<StringFilter>;
+};
+
+export type BooksConnectionEdges = {
+  __typename?: 'BooksConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Books>;
+};
+
+export type BooksConnection = Connection & {
+  __typename?: 'BooksConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<BooksConnectionEdges>>>;
+};
+
+export type LessonsHero = {
+  __typename?: 'LessonsHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type LessonsFeaturedLesson = {
+  __typename?: 'LessonsFeaturedLesson';
+  badge: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  teacher: Scalars['String']['output'];
+  linkText: Scalars['String']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+};
+
+export type Lessons = Node & Document & {
+  __typename?: 'Lessons';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<LessonsHero>;
+  searchPlaceholder: Scalars['String']['output'];
+  featuredLesson?: Maybe<LessonsFeaturedLesson>;
+  progressTitle: Scalars['String']['output'];
+  progressCourse: Scalars['String']['output'];
+  progressPercentage: Scalars['String']['output'];
+  progressDescription: Scalars['String']['output'];
+  progressButtonText: Scalars['String']['output'];
+  seminarTitle: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type LessonsHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type LessonsFeaturedLessonFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  teacher?: InputMaybe<StringFilter>;
+  linkText?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+};
+
+export type LessonsFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<LessonsHeroFilter>;
+  searchPlaceholder?: InputMaybe<StringFilter>;
+  featuredLesson?: InputMaybe<LessonsFeaturedLessonFilter>;
+  progressTitle?: InputMaybe<StringFilter>;
+  progressCourse?: InputMaybe<StringFilter>;
+  progressPercentage?: InputMaybe<StringFilter>;
+  progressDescription?: InputMaybe<StringFilter>;
+  progressButtonText?: InputMaybe<StringFilter>;
+  seminarTitle?: InputMaybe<StringFilter>;
+};
+
+export type LessonsConnectionEdges = {
+  __typename?: 'LessonsConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Lessons>;
+};
+
+export type LessonsConnection = Connection & {
+  __typename?: 'LessonsConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<LessonsConnectionEdges>>>;
+};
+
+export type MagazinesHero = {
+  __typename?: 'MagazinesHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type MagazinesFeaturedIssue = {
+  __typename?: 'MagazinesFeaturedIssue';
+  badge: Scalars['String']['output'];
+  tag: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  date: Scalars['String']['output'];
+  details: Scalars['String']['output'];
+  coverImage?: Maybe<Scalars['String']['output']>;
+  readButtonText: Scalars['String']['output'];
+  downloadButtonText: Scalars['String']['output'];
+};
+
+export type Magazines = Node & Document & {
+  __typename?: 'Magazines';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<MagazinesHero>;
+  featuredIssue?: Maybe<MagazinesFeaturedIssue>;
+  spotlightTitle: Scalars['String']['output'];
+  archiveTitle: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type MagazinesHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type MagazinesFeaturedIssueFilter = {
+  badge?: InputMaybe<StringFilter>;
+  tag?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  date?: InputMaybe<StringFilter>;
+  details?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+  readButtonText?: InputMaybe<StringFilter>;
+  downloadButtonText?: InputMaybe<StringFilter>;
+};
+
+export type MagazinesFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<MagazinesHeroFilter>;
+  featuredIssue?: InputMaybe<MagazinesFeaturedIssueFilter>;
+  spotlightTitle?: InputMaybe<StringFilter>;
+  archiveTitle?: InputMaybe<StringFilter>;
+};
+
+export type MagazinesConnectionEdges = {
+  __typename?: 'MagazinesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Magazines>;
+};
+
+export type MagazinesConnection = Connection & {
+  __typename?: 'MagazinesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<MagazinesConnectionEdges>>>;
 };
 
 export type NewsletterHero = {
@@ -1121,6 +2206,7 @@ export type NewsletterFeaturedDevotional = {
   scripture: Scalars['String']['output'];
   content: Scalars['String']['output'];
   date: Scalars['String']['output'];
+  coverImage?: Maybe<Scalars['String']['output']>;
 };
 
 export type NewsletterSignupCta = {
@@ -1163,6 +2249,7 @@ export type NewsletterFeaturedDevotionalFilter = {
   scripture?: InputMaybe<StringFilter>;
   content?: InputMaybe<StringFilter>;
   date?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
 };
 
 export type NewsletterSignupCtaFilter = {
@@ -1199,303 +2286,298 @@ export type NewsletterConnection = Connection & {
   edges?: Maybe<Array<Maybe<NewsletterConnectionEdges>>>;
 };
 
-export type QuickLinksHero = {
-  __typename?: 'QuickLinksHero';
+export type ReferencesHero = {
+  __typename?: 'ReferencesHero';
   badge: Scalars['String']['output'];
   headline: Scalars['String']['output'];
   subheadline: Scalars['String']['output'];
 };
 
-export type QuickLinksFeaturedBanner = {
-  __typename?: 'QuickLinksFeaturedBanner';
+export type ReferencesFeaturedReference = {
+  __typename?: 'ReferencesFeaturedReference';
   badge: Scalars['String']['output'];
   tag: Scalars['String']['output'];
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  button1Text: Scalars['String']['output'];
-  button1Link: Scalars['String']['output'];
-  button2Text: Scalars['String']['output'];
-  button2Link: Scalars['String']['output'];
-  button3Text: Scalars['String']['output'];
-  button3Link: Scalars['String']['output'];
-};
-
-export type QuickLinks = Node & Document & {
-  __typename?: 'QuickLinks';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<QuickLinksHero>;
-  featuredBanner?: Maybe<QuickLinksFeaturedBanner>;
-  categorySectionTitle: Scalars['String']['output'];
-  searchSectionTitle: Scalars['String']['output'];
-  searchPlaceholder: Scalars['String']['output'];
-  shortcutsSectionTitle: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type QuickLinksHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-};
-
-export type QuickLinksFeaturedBannerFilter = {
-  badge?: InputMaybe<StringFilter>;
-  tag?: InputMaybe<StringFilter>;
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  button1Text?: InputMaybe<StringFilter>;
-  button1Link?: InputMaybe<StringFilter>;
-  button2Text?: InputMaybe<StringFilter>;
-  button2Link?: InputMaybe<StringFilter>;
-  button3Text?: InputMaybe<StringFilter>;
-  button3Link?: InputMaybe<StringFilter>;
-};
-
-export type QuickLinksFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<QuickLinksHeroFilter>;
-  featuredBanner?: InputMaybe<QuickLinksFeaturedBannerFilter>;
-  categorySectionTitle?: InputMaybe<StringFilter>;
-  searchSectionTitle?: InputMaybe<StringFilter>;
-  searchPlaceholder?: InputMaybe<StringFilter>;
-  shortcutsSectionTitle?: InputMaybe<StringFilter>;
-};
-
-export type QuickLinksConnectionEdges = {
-  __typename?: 'QuickLinksConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<QuickLinks>;
-};
-
-export type QuickLinksConnection = Connection & {
-  __typename?: 'QuickLinksConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<QuickLinksConnectionEdges>>>;
-};
-
-export type ResourcesHero = {
-  __typename?: 'ResourcesHero';
-  badge: Scalars['String']['output'];
-  headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
-};
-
-export type ResourcesFeaturedResource = {
-  __typename?: 'ResourcesFeaturedResource';
-  badge: Scalars['String']['output'];
-  tag: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  rating: Scalars['String']['output'];
+  crossReferences: Scalars['String']['output'];
   linkText: Scalars['String']['output'];
-  linkUrl: Scalars['String']['output'];
 };
 
-export type Resources = Node & Document & {
-  __typename?: 'Resources';
+export type References = Node & Document & {
+  __typename?: 'References';
   announcementText: Scalars['String']['output'];
   announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<ResourcesHero>;
-  featuredResource?: Maybe<ResourcesFeaturedResource>;
+  hero?: Maybe<ReferencesHero>;
   searchPlaceholder: Scalars['String']['output'];
-  popularResourcesTitle: Scalars['String']['output'];
-  recentAdditionsTitle: Scalars['String']['output'];
-  categoryTagsTitle: Scalars['String']['output'];
+  featuredReference?: Maybe<ReferencesFeaturedReference>;
+  topicsTitle: Scalars['String']['output'];
+  relatedLessonTitle: Scalars['String']['output'];
+  relatedLessonCourse: Scalars['String']['output'];
+  relatedLessonDescription: Scalars['String']['output'];
+  relatedLessonButtonText: Scalars['String']['output'];
+  relatedLessonImage?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type ResourcesHeroFilter = {
+export type ReferencesHeroFilter = {
   badge?: InputMaybe<StringFilter>;
   headline?: InputMaybe<StringFilter>;
   subheadline?: InputMaybe<StringFilter>;
 };
 
-export type ResourcesFeaturedResourceFilter = {
+export type ReferencesFeaturedReferenceFilter = {
   badge?: InputMaybe<StringFilter>;
   tag?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  rating?: InputMaybe<StringFilter>;
+  crossReferences?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
-  linkUrl?: InputMaybe<StringFilter>;
 };
 
-export type ResourcesFilter = {
+export type ReferencesFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<ResourcesHeroFilter>;
-  featuredResource?: InputMaybe<ResourcesFeaturedResourceFilter>;
+  hero?: InputMaybe<ReferencesHeroFilter>;
   searchPlaceholder?: InputMaybe<StringFilter>;
-  popularResourcesTitle?: InputMaybe<StringFilter>;
-  recentAdditionsTitle?: InputMaybe<StringFilter>;
-  categoryTagsTitle?: InputMaybe<StringFilter>;
+  featuredReference?: InputMaybe<ReferencesFeaturedReferenceFilter>;
+  topicsTitle?: InputMaybe<StringFilter>;
+  relatedLessonTitle?: InputMaybe<StringFilter>;
+  relatedLessonCourse?: InputMaybe<StringFilter>;
+  relatedLessonDescription?: InputMaybe<StringFilter>;
+  relatedLessonButtonText?: InputMaybe<StringFilter>;
+  relatedLessonImage?: InputMaybe<ImageFilter>;
 };
 
-export type ResourcesConnectionEdges = {
-  __typename?: 'ResourcesConnectionEdges';
+export type ReferencesConnectionEdges = {
+  __typename?: 'ReferencesConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Resources>;
+  node?: Maybe<References>;
 };
 
-export type ResourcesConnection = Connection & {
-  __typename?: 'ResourcesConnection';
+export type ReferencesConnection = Connection & {
+  __typename?: 'ReferencesConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<ResourcesConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<ReferencesConnectionEdges>>>;
 };
 
-export type ZoomInfoHero = {
-  __typename?: 'ZoomInfoHero';
+export type VideosHero = {
+  __typename?: 'VideosHero';
   badge: Scalars['String']['output'];
   headline: Scalars['String']['output'];
   subheadline: Scalars['String']['output'];
 };
 
-export type ZoomInfoFeaturedMeeting = {
-  __typename?: 'ZoomInfoFeaturedMeeting';
+export type VideosFeaturedVideo = {
+  __typename?: 'VideosFeaturedVideo';
   badge: Scalars['String']['output'];
-  tag: Scalars['String']['output'];
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  date: Scalars['String']['output'];
-  time: Scalars['String']['output'];
-  duration: Scalars['String']['output'];
+  speaker: Scalars['String']['output'];
+  scripture: Scalars['String']['output'];
+  recorded: Scalars['String']['output'];
   buttonText: Scalars['String']['output'];
+  videoUrl?: Maybe<Scalars['String']['output']>;
+  coverImage?: Maybe<Scalars['String']['output']>;
 };
 
-export type ZoomInfoSpeakerCard = {
-  __typename?: 'ZoomInfoSpeakerCard';
-  title: Scalars['String']['output'];
-  name: Scalars['String']['output'];
-  role: Scalars['String']['output'];
-  bio: Scalars['String']['output'];
-};
-
-export type ZoomInfoMeetingAccessCard = {
-  __typename?: 'ZoomInfoMeetingAccessCard';
-  title: Scalars['String']['output'];
-  platform: Scalars['String']['output'];
-  meetingId: Scalars['String']['output'];
-  passcode: Scalars['String']['output'];
-};
-
-export type ZoomInfoPreparationCard = {
-  __typename?: 'ZoomInfoPreparationCard';
-  title: Scalars['String']['output'];
-  subtitle: Scalars['String']['output'];
-  reading1: Scalars['String']['output'];
-  reading2: Scalars['String']['output'];
-  reading3: Scalars['String']['output'];
-};
-
-export type ZoomInfoRelatedScripture = {
-  __typename?: 'ZoomInfoRelatedScripture';
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  scripture1Title: Scalars['String']['output'];
-  scripture1Subtitle: Scalars['String']['output'];
-  scripture2Title: Scalars['String']['output'];
-  scripture2Subtitle: Scalars['String']['output'];
-  scripture3Title: Scalars['String']['output'];
-  scripture3Subtitle: Scalars['String']['output'];
-};
-
-export type ZoomInfo = Node & Document & {
-  __typename?: 'ZoomInfo';
+export type Videos = Node & Document & {
+  __typename?: 'Videos';
   announcementText: Scalars['String']['output'];
   announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<ZoomInfoHero>;
-  featuredMeeting?: Maybe<ZoomInfoFeaturedMeeting>;
-  speakerCard?: Maybe<ZoomInfoSpeakerCard>;
-  meetingAccessCard?: Maybe<ZoomInfoMeetingAccessCard>;
-  preparationCard?: Maybe<ZoomInfoPreparationCard>;
-  sessionsTitle: Scalars['String']['output'];
-  relatedScripture?: Maybe<ZoomInfoRelatedScripture>;
+  hero?: Maybe<VideosHero>;
+  searchPlaceholder: Scalars['String']['output'];
+  featuredVideo?: Maybe<VideosFeaturedVideo>;
+  lecturesTitle: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type ZoomInfoHeroFilter = {
+export type VideosHeroFilter = {
   badge?: InputMaybe<StringFilter>;
   headline?: InputMaybe<StringFilter>;
   subheadline?: InputMaybe<StringFilter>;
 };
 
-export type ZoomInfoFeaturedMeetingFilter = {
+export type VideosFeaturedVideoFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  speaker?: InputMaybe<StringFilter>;
+  scripture?: InputMaybe<StringFilter>;
+  recorded?: InputMaybe<StringFilter>;
+  buttonText?: InputMaybe<StringFilter>;
+  videoUrl?: InputMaybe<StringFilter>;
+  coverImage?: InputMaybe<ImageFilter>;
+};
+
+export type VideosFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<VideosHeroFilter>;
+  searchPlaceholder?: InputMaybe<StringFilter>;
+  featuredVideo?: InputMaybe<VideosFeaturedVideoFilter>;
+  lecturesTitle?: InputMaybe<StringFilter>;
+};
+
+export type VideosConnectionEdges = {
+  __typename?: 'VideosConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Videos>;
+};
+
+export type VideosConnection = Connection & {
+  __typename?: 'VideosConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<VideosConnectionEdges>>>;
+};
+
+export type ImagesHero = {
+  __typename?: 'ImagesHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type ImagesFeaturedImage = {
+  __typename?: 'ImagesFeaturedImage';
+  badge: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  scriptureLabel: Scalars['String']['output'];
+  scriptureQuote: Scalars['String']['output'];
+  scriptureReference: Scalars['String']['output'];
+  downloadButtonText: Scalars['String']['output'];
+  citationButtonText: Scalars['String']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+};
+
+export type Images = Node & Document & {
+  __typename?: 'Images';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<ImagesHero>;
+  searchPlaceholder: Scalars['String']['output'];
+  featuredImage?: Maybe<ImagesFeaturedImage>;
+  archiveTitle: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type ImagesHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type ImagesFeaturedImageFilter = {
+  badge?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  scriptureLabel?: InputMaybe<StringFilter>;
+  scriptureQuote?: InputMaybe<StringFilter>;
+  scriptureReference?: InputMaybe<StringFilter>;
+  downloadButtonText?: InputMaybe<StringFilter>;
+  citationButtonText?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
+};
+
+export type ImagesFilter = {
+  announcementText?: InputMaybe<StringFilter>;
+  announcementSubtext?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<ImagesHeroFilter>;
+  searchPlaceholder?: InputMaybe<StringFilter>;
+  featuredImage?: InputMaybe<ImagesFeaturedImageFilter>;
+  archiveTitle?: InputMaybe<StringFilter>;
+};
+
+export type ImagesConnectionEdges = {
+  __typename?: 'ImagesConnectionEdges';
+  cursor: Scalars['String']['output'];
+  node?: Maybe<Images>;
+};
+
+export type ImagesConnection = Connection & {
+  __typename?: 'ImagesConnection';
+  pageInfo: PageInfo;
+  totalCount: Scalars['Float']['output'];
+  edges?: Maybe<Array<Maybe<ImagesConnectionEdges>>>;
+};
+
+export type LibraryHero = {
+  __typename?: 'LibraryHero';
+  badge: Scalars['String']['output'];
+  headline: Scalars['String']['output'];
+  subheadline: Scalars['String']['output'];
+};
+
+export type LibraryFeaturedResource = {
+  __typename?: 'LibraryFeaturedResource';
+  badge: Scalars['String']['output'];
+  tag: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  description: Scalars['String']['output'];
+  details: Scalars['String']['output'];
+  linkText: Scalars['String']['output'];
+};
+
+export type Library = Node & Document & {
+  __typename?: 'Library';
+  announcementText: Scalars['String']['output'];
+  announcementSubtext?: Maybe<Scalars['String']['output']>;
+  hero?: Maybe<LibraryHero>;
+  searchPlaceholder: Scalars['String']['output'];
+  featuredResource?: Maybe<LibraryFeaturedResource>;
+  categoriesTitle: Scalars['String']['output'];
+  popularTitle: Scalars['String']['output'];
+  recentTitle: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  _sys: SystemInfo;
+  _values: Scalars['JSON']['output'];
+};
+
+export type LibraryHeroFilter = {
+  badge?: InputMaybe<StringFilter>;
+  headline?: InputMaybe<StringFilter>;
+  subheadline?: InputMaybe<StringFilter>;
+};
+
+export type LibraryFeaturedResourceFilter = {
   badge?: InputMaybe<StringFilter>;
   tag?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  date?: InputMaybe<StringFilter>;
-  time?: InputMaybe<StringFilter>;
-  duration?: InputMaybe<StringFilter>;
-  buttonText?: InputMaybe<StringFilter>;
+  details?: InputMaybe<StringFilter>;
+  linkText?: InputMaybe<StringFilter>;
 };
 
-export type ZoomInfoSpeakerCardFilter = {
-  title?: InputMaybe<StringFilter>;
-  name?: InputMaybe<StringFilter>;
-  role?: InputMaybe<StringFilter>;
-  bio?: InputMaybe<StringFilter>;
-};
-
-export type ZoomInfoMeetingAccessCardFilter = {
-  title?: InputMaybe<StringFilter>;
-  platform?: InputMaybe<StringFilter>;
-  meetingId?: InputMaybe<StringFilter>;
-  passcode?: InputMaybe<StringFilter>;
-};
-
-export type ZoomInfoPreparationCardFilter = {
-  title?: InputMaybe<StringFilter>;
-  subtitle?: InputMaybe<StringFilter>;
-  reading1?: InputMaybe<StringFilter>;
-  reading2?: InputMaybe<StringFilter>;
-  reading3?: InputMaybe<StringFilter>;
-};
-
-export type ZoomInfoRelatedScriptureFilter = {
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  scripture1Title?: InputMaybe<StringFilter>;
-  scripture1Subtitle?: InputMaybe<StringFilter>;
-  scripture2Title?: InputMaybe<StringFilter>;
-  scripture2Subtitle?: InputMaybe<StringFilter>;
-  scripture3Title?: InputMaybe<StringFilter>;
-  scripture3Subtitle?: InputMaybe<StringFilter>;
-};
-
-export type ZoomInfoFilter = {
+export type LibraryFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<ZoomInfoHeroFilter>;
-  featuredMeeting?: InputMaybe<ZoomInfoFeaturedMeetingFilter>;
-  speakerCard?: InputMaybe<ZoomInfoSpeakerCardFilter>;
-  meetingAccessCard?: InputMaybe<ZoomInfoMeetingAccessCardFilter>;
-  preparationCard?: InputMaybe<ZoomInfoPreparationCardFilter>;
-  sessionsTitle?: InputMaybe<StringFilter>;
-  relatedScripture?: InputMaybe<ZoomInfoRelatedScriptureFilter>;
+  hero?: InputMaybe<LibraryHeroFilter>;
+  searchPlaceholder?: InputMaybe<StringFilter>;
+  featuredResource?: InputMaybe<LibraryFeaturedResourceFilter>;
+  categoriesTitle?: InputMaybe<StringFilter>;
+  popularTitle?: InputMaybe<StringFilter>;
+  recentTitle?: InputMaybe<StringFilter>;
 };
 
-export type ZoomInfoConnectionEdges = {
-  __typename?: 'ZoomInfoConnectionEdges';
+export type LibraryConnectionEdges = {
+  __typename?: 'LibraryConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<ZoomInfo>;
+  node?: Maybe<Library>;
 };
 
-export type ZoomInfoConnection = Connection & {
-  __typename?: 'ZoomInfoConnection';
+export type LibraryConnection = Connection & {
+  __typename?: 'LibraryConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<ZoomInfoConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<LibraryConnectionEdges>>>;
 };
 
 export type ArchivesHero = {
@@ -1578,505 +2660,202 @@ export type ArchivesConnection = Connection & {
   edges?: Maybe<Array<Maybe<ArchivesConnectionEdges>>>;
 };
 
-export type LessonsHero = {
-  __typename?: 'LessonsHero';
+export type ResourcesHero = {
+  __typename?: 'ResourcesHero';
   badge: Scalars['String']['output'];
   headline: Scalars['String']['output'];
   subheadline: Scalars['String']['output'];
 };
 
-export type LessonsFeaturedLesson = {
-  __typename?: 'LessonsFeaturedLesson';
-  badge: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  teacher: Scalars['String']['output'];
-  linkText: Scalars['String']['output'];
-};
-
-export type Lessons = Node & Document & {
-  __typename?: 'Lessons';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<LessonsHero>;
-  searchPlaceholder: Scalars['String']['output'];
-  featuredLesson?: Maybe<LessonsFeaturedLesson>;
-  progressTitle: Scalars['String']['output'];
-  progressCourse: Scalars['String']['output'];
-  progressPercentage: Scalars['String']['output'];
-  progressDescription: Scalars['String']['output'];
-  progressButtonText: Scalars['String']['output'];
-  seminarTitle: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type LessonsHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-};
-
-export type LessonsFeaturedLessonFilter = {
-  badge?: InputMaybe<StringFilter>;
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  teacher?: InputMaybe<StringFilter>;
-  linkText?: InputMaybe<StringFilter>;
-};
-
-export type LessonsFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<LessonsHeroFilter>;
-  searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredLesson?: InputMaybe<LessonsFeaturedLessonFilter>;
-  progressTitle?: InputMaybe<StringFilter>;
-  progressCourse?: InputMaybe<StringFilter>;
-  progressPercentage?: InputMaybe<StringFilter>;
-  progressDescription?: InputMaybe<StringFilter>;
-  progressButtonText?: InputMaybe<StringFilter>;
-  seminarTitle?: InputMaybe<StringFilter>;
-};
-
-export type LessonsConnectionEdges = {
-  __typename?: 'LessonsConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Lessons>;
-};
-
-export type LessonsConnection = Connection & {
-  __typename?: 'LessonsConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<LessonsConnectionEdges>>>;
-};
-
-export type ReferencesHero = {
-  __typename?: 'ReferencesHero';
-  badge: Scalars['String']['output'];
-  headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
-};
-
-export type ReferencesFeaturedReference = {
-  __typename?: 'ReferencesFeaturedReference';
+export type ResourcesFeaturedResource = {
+  __typename?: 'ResourcesFeaturedResource';
   badge: Scalars['String']['output'];
   tag: Scalars['String']['output'];
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  crossReferences: Scalars['String']['output'];
+  rating: Scalars['String']['output'];
   linkText: Scalars['String']['output'];
+  linkUrl: Scalars['String']['output'];
 };
 
-export type References = Node & Document & {
-  __typename?: 'References';
+export type Resources = Node & Document & {
+  __typename?: 'Resources';
   announcementText: Scalars['String']['output'];
   announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<ReferencesHero>;
+  hero?: Maybe<ResourcesHero>;
+  featuredResource?: Maybe<ResourcesFeaturedResource>;
   searchPlaceholder: Scalars['String']['output'];
-  featuredReference?: Maybe<ReferencesFeaturedReference>;
-  topicsTitle: Scalars['String']['output'];
-  relatedLessonTitle: Scalars['String']['output'];
-  relatedLessonCourse: Scalars['String']['output'];
-  relatedLessonDescription: Scalars['String']['output'];
-  relatedLessonButtonText: Scalars['String']['output'];
+  popularResourcesTitle: Scalars['String']['output'];
+  recentAdditionsTitle: Scalars['String']['output'];
+  categoryTagsTitle: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type ReferencesHeroFilter = {
+export type ResourcesHeroFilter = {
   badge?: InputMaybe<StringFilter>;
   headline?: InputMaybe<StringFilter>;
   subheadline?: InputMaybe<StringFilter>;
 };
 
-export type ReferencesFeaturedReferenceFilter = {
+export type ResourcesFeaturedResourceFilter = {
   badge?: InputMaybe<StringFilter>;
   tag?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  crossReferences?: InputMaybe<StringFilter>;
+  rating?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
+  linkUrl?: InputMaybe<StringFilter>;
 };
 
-export type ReferencesFilter = {
+export type ResourcesFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<ReferencesHeroFilter>;
+  hero?: InputMaybe<ResourcesHeroFilter>;
+  featuredResource?: InputMaybe<ResourcesFeaturedResourceFilter>;
   searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredReference?: InputMaybe<ReferencesFeaturedReferenceFilter>;
-  topicsTitle?: InputMaybe<StringFilter>;
-  relatedLessonTitle?: InputMaybe<StringFilter>;
-  relatedLessonCourse?: InputMaybe<StringFilter>;
-  relatedLessonDescription?: InputMaybe<StringFilter>;
-  relatedLessonButtonText?: InputMaybe<StringFilter>;
+  popularResourcesTitle?: InputMaybe<StringFilter>;
+  recentAdditionsTitle?: InputMaybe<StringFilter>;
+  categoryTagsTitle?: InputMaybe<StringFilter>;
 };
 
-export type ReferencesConnectionEdges = {
-  __typename?: 'ReferencesConnectionEdges';
+export type ResourcesConnectionEdges = {
+  __typename?: 'ResourcesConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<References>;
+  node?: Maybe<Resources>;
 };
 
-export type ReferencesConnection = Connection & {
-  __typename?: 'ReferencesConnection';
+export type ResourcesConnection = Connection & {
+  __typename?: 'ResourcesConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<ReferencesConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<ResourcesConnectionEdges>>>;
 };
 
-export type ImagesHero = {
-  __typename?: 'ImagesHero';
+export type QuickLinksHero = {
+  __typename?: 'QuickLinksHero';
   badge: Scalars['String']['output'];
   headline: Scalars['String']['output'];
   subheadline: Scalars['String']['output'];
 };
 
-export type ImagesFeaturedImage = {
-  __typename?: 'ImagesFeaturedImage';
-  badge: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  scriptureLabel: Scalars['String']['output'];
-  scriptureQuote: Scalars['String']['output'];
-  scriptureReference: Scalars['String']['output'];
-  downloadButtonText: Scalars['String']['output'];
-  citationButtonText: Scalars['String']['output'];
-};
-
-export type Images = Node & Document & {
-  __typename?: 'Images';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<ImagesHero>;
-  searchPlaceholder: Scalars['String']['output'];
-  featuredImage?: Maybe<ImagesFeaturedImage>;
-  archiveTitle: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type ImagesHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-};
-
-export type ImagesFeaturedImageFilter = {
-  badge?: InputMaybe<StringFilter>;
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  scriptureLabel?: InputMaybe<StringFilter>;
-  scriptureQuote?: InputMaybe<StringFilter>;
-  scriptureReference?: InputMaybe<StringFilter>;
-  downloadButtonText?: InputMaybe<StringFilter>;
-  citationButtonText?: InputMaybe<StringFilter>;
-};
-
-export type ImagesFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<ImagesHeroFilter>;
-  searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredImage?: InputMaybe<ImagesFeaturedImageFilter>;
-  archiveTitle?: InputMaybe<StringFilter>;
-};
-
-export type ImagesConnectionEdges = {
-  __typename?: 'ImagesConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Images>;
-};
-
-export type ImagesConnection = Connection & {
-  __typename?: 'ImagesConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<ImagesConnectionEdges>>>;
-};
-
-export type VideosHero = {
-  __typename?: 'VideosHero';
-  badge: Scalars['String']['output'];
-  headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
-};
-
-export type VideosFeaturedVideo = {
-  __typename?: 'VideosFeaturedVideo';
-  badge: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  speaker: Scalars['String']['output'];
-  scripture: Scalars['String']['output'];
-  recorded: Scalars['String']['output'];
-  buttonText: Scalars['String']['output'];
-};
-
-export type Videos = Node & Document & {
-  __typename?: 'Videos';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<VideosHero>;
-  searchPlaceholder: Scalars['String']['output'];
-  featuredVideo?: Maybe<VideosFeaturedVideo>;
-  lecturesTitle: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type VideosHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-};
-
-export type VideosFeaturedVideoFilter = {
-  badge?: InputMaybe<StringFilter>;
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  speaker?: InputMaybe<StringFilter>;
-  scripture?: InputMaybe<StringFilter>;
-  recorded?: InputMaybe<StringFilter>;
-  buttonText?: InputMaybe<StringFilter>;
-};
-
-export type VideosFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<VideosHeroFilter>;
-  searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredVideo?: InputMaybe<VideosFeaturedVideoFilter>;
-  lecturesTitle?: InputMaybe<StringFilter>;
-};
-
-export type VideosConnectionEdges = {
-  __typename?: 'VideosConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Videos>;
-};
-
-export type VideosConnection = Connection & {
-  __typename?: 'VideosConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<VideosConnectionEdges>>>;
-};
-
-export type LibraryHero = {
-  __typename?: 'LibraryHero';
-  badge: Scalars['String']['output'];
-  headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
-};
-
-export type LibraryFeaturedResource = {
-  __typename?: 'LibraryFeaturedResource';
+export type QuickLinksFeaturedBanner = {
+  __typename?: 'QuickLinksFeaturedBanner';
   badge: Scalars['String']['output'];
   tag: Scalars['String']['output'];
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  details: Scalars['String']['output'];
-  linkText: Scalars['String']['output'];
+  button1Text: Scalars['String']['output'];
+  button1Link: Scalars['String']['output'];
+  button2Text: Scalars['String']['output'];
+  button2Link: Scalars['String']['output'];
+  button3Text: Scalars['String']['output'];
+  button3Link: Scalars['String']['output'];
 };
 
-export type Library = Node & Document & {
-  __typename?: 'Library';
+export type QuickLinks = Node & Document & {
+  __typename?: 'QuickLinks';
   announcementText: Scalars['String']['output'];
   announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<LibraryHero>;
+  hero?: Maybe<QuickLinksHero>;
+  featuredBanner?: Maybe<QuickLinksFeaturedBanner>;
+  categorySectionTitle: Scalars['String']['output'];
+  searchSectionTitle: Scalars['String']['output'];
   searchPlaceholder: Scalars['String']['output'];
-  featuredResource?: Maybe<LibraryFeaturedResource>;
-  categoriesTitle: Scalars['String']['output'];
-  popularTitle: Scalars['String']['output'];
-  recentTitle: Scalars['String']['output'];
+  shortcutsSectionTitle: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type LibraryHeroFilter = {
+export type QuickLinksHeroFilter = {
   badge?: InputMaybe<StringFilter>;
   headline?: InputMaybe<StringFilter>;
   subheadline?: InputMaybe<StringFilter>;
 };
 
-export type LibraryFeaturedResourceFilter = {
+export type QuickLinksFeaturedBannerFilter = {
   badge?: InputMaybe<StringFilter>;
   tag?: InputMaybe<StringFilter>;
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  details?: InputMaybe<StringFilter>;
-  linkText?: InputMaybe<StringFilter>;
+  button1Text?: InputMaybe<StringFilter>;
+  button1Link?: InputMaybe<StringFilter>;
+  button2Text?: InputMaybe<StringFilter>;
+  button2Link?: InputMaybe<StringFilter>;
+  button3Text?: InputMaybe<StringFilter>;
+  button3Link?: InputMaybe<StringFilter>;
 };
 
-export type LibraryFilter = {
+export type QuickLinksFilter = {
   announcementText?: InputMaybe<StringFilter>;
   announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<LibraryHeroFilter>;
+  hero?: InputMaybe<QuickLinksHeroFilter>;
+  featuredBanner?: InputMaybe<QuickLinksFeaturedBannerFilter>;
+  categorySectionTitle?: InputMaybe<StringFilter>;
+  searchSectionTitle?: InputMaybe<StringFilter>;
   searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredResource?: InputMaybe<LibraryFeaturedResourceFilter>;
-  categoriesTitle?: InputMaybe<StringFilter>;
-  popularTitle?: InputMaybe<StringFilter>;
-  recentTitle?: InputMaybe<StringFilter>;
+  shortcutsSectionTitle?: InputMaybe<StringFilter>;
 };
 
-export type LibraryConnectionEdges = {
-  __typename?: 'LibraryConnectionEdges';
+export type QuickLinksConnectionEdges = {
+  __typename?: 'QuickLinksConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Library>;
+  node?: Maybe<QuickLinks>;
 };
 
-export type LibraryConnection = Connection & {
-  __typename?: 'LibraryConnection';
+export type QuickLinksConnection = Connection & {
+  __typename?: 'QuickLinksConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<LibraryConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<QuickLinksConnectionEdges>>>;
 };
 
-export type BooksHero = {
-  __typename?: 'BooksHero';
-  badge: Scalars['String']['output'];
+export type PageHero = {
+  __typename?: 'PageHero';
   headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
+  subheadline?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink?: Maybe<Scalars['String']['output']>;
+  heroImage?: Maybe<Scalars['String']['output']>;
 };
 
-export type BooksFeaturedBook = {
-  __typename?: 'BooksFeaturedBook';
-  badge: Scalars['String']['output'];
+export type Page = Node & Document & {
+  __typename?: 'Page';
   title: Scalars['String']['output'];
   description: Scalars['String']['output'];
-  downloadButtonText: Scalars['String']['output'];
-  abstractButtonText: Scalars['String']['output'];
-};
-
-export type Books = Node & Document & {
-  __typename?: 'Books';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<BooksHero>;
-  searchPlaceholder: Scalars['String']['output'];
-  featuredBook?: Maybe<BooksFeaturedBook>;
-  submissionsTitle: Scalars['String']['output'];
-  submissionsDescription: Scalars['String']['output'];
-  submissionsButtonText: Scalars['String']['output'];
+  hero?: Maybe<PageHero>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
 };
 
-export type BooksHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
+export type PageHeroFilter = {
   headline?: InputMaybe<StringFilter>;
   subheadline?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  heroImage?: InputMaybe<ImageFilter>;
 };
 
-export type BooksFeaturedBookFilter = {
-  badge?: InputMaybe<StringFilter>;
+export type PageFilter = {
   title?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
-  downloadButtonText?: InputMaybe<StringFilter>;
-  abstractButtonText?: InputMaybe<StringFilter>;
+  hero?: InputMaybe<PageHeroFilter>;
 };
 
-export type BooksFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<BooksHeroFilter>;
-  searchPlaceholder?: InputMaybe<StringFilter>;
-  featuredBook?: InputMaybe<BooksFeaturedBookFilter>;
-  submissionsTitle?: InputMaybe<StringFilter>;
-  submissionsDescription?: InputMaybe<StringFilter>;
-  submissionsButtonText?: InputMaybe<StringFilter>;
-};
-
-export type BooksConnectionEdges = {
-  __typename?: 'BooksConnectionEdges';
+export type PageConnectionEdges = {
+  __typename?: 'PageConnectionEdges';
   cursor: Scalars['String']['output'];
-  node?: Maybe<Books>;
+  node?: Maybe<Page>;
 };
 
-export type BooksConnection = Connection & {
-  __typename?: 'BooksConnection';
+export type PageConnection = Connection & {
+  __typename?: 'PageConnection';
   pageInfo: PageInfo;
   totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<BooksConnectionEdges>>>;
-};
-
-export type MagazinesHero = {
-  __typename?: 'MagazinesHero';
-  badge: Scalars['String']['output'];
-  headline: Scalars['String']['output'];
-  subheadline: Scalars['String']['output'];
-};
-
-export type MagazinesFeaturedIssue = {
-  __typename?: 'MagazinesFeaturedIssue';
-  badge: Scalars['String']['output'];
-  tag: Scalars['String']['output'];
-  title: Scalars['String']['output'];
-  description: Scalars['String']['output'];
-  date: Scalars['String']['output'];
-  details: Scalars['String']['output'];
-  readButtonText: Scalars['String']['output'];
-  downloadButtonText: Scalars['String']['output'];
-};
-
-export type Magazines = Node & Document & {
-  __typename?: 'Magazines';
-  announcementText: Scalars['String']['output'];
-  announcementSubtext?: Maybe<Scalars['String']['output']>;
-  hero?: Maybe<MagazinesHero>;
-  featuredIssue?: Maybe<MagazinesFeaturedIssue>;
-  spotlightTitle: Scalars['String']['output'];
-  archiveTitle: Scalars['String']['output'];
-  id: Scalars['ID']['output'];
-  _sys: SystemInfo;
-  _values: Scalars['JSON']['output'];
-};
-
-export type MagazinesHeroFilter = {
-  badge?: InputMaybe<StringFilter>;
-  headline?: InputMaybe<StringFilter>;
-  subheadline?: InputMaybe<StringFilter>;
-};
-
-export type MagazinesFeaturedIssueFilter = {
-  badge?: InputMaybe<StringFilter>;
-  tag?: InputMaybe<StringFilter>;
-  title?: InputMaybe<StringFilter>;
-  description?: InputMaybe<StringFilter>;
-  date?: InputMaybe<StringFilter>;
-  details?: InputMaybe<StringFilter>;
-  readButtonText?: InputMaybe<StringFilter>;
-  downloadButtonText?: InputMaybe<StringFilter>;
-};
-
-export type MagazinesFilter = {
-  announcementText?: InputMaybe<StringFilter>;
-  announcementSubtext?: InputMaybe<StringFilter>;
-  hero?: InputMaybe<MagazinesHeroFilter>;
-  featuredIssue?: InputMaybe<MagazinesFeaturedIssueFilter>;
-  spotlightTitle?: InputMaybe<StringFilter>;
-  archiveTitle?: InputMaybe<StringFilter>;
-};
-
-export type MagazinesConnectionEdges = {
-  __typename?: 'MagazinesConnectionEdges';
-  cursor: Scalars['String']['output'];
-  node?: Maybe<Magazines>;
-};
-
-export type MagazinesConnection = Connection & {
-  __typename?: 'MagazinesConnection';
-  pageInfo: PageInfo;
-  totalCount: Scalars['Float']['output'];
-  edges?: Maybe<Array<Maybe<MagazinesConnectionEdges>>>;
+  edges?: Maybe<Array<Maybe<PageConnectionEdges>>>;
 };
 
 export type Mutation = {
@@ -2086,46 +2865,60 @@ export type Mutation = {
   deleteDocument: DocumentNode;
   createDocument: DocumentNode;
   createFolder: DocumentNode;
-  updatePage: Page;
-  createPage: Page;
   updateBook: Book;
   createBook: Book;
-  updateMagazine: Magazine;
-  createMagazine: Magazine;
   updateLesson: Lesson;
   createLesson: Lesson;
+  updateMagazine: Magazine;
+  createMagazine: Magazine;
+  updateDailyLetter: DailyLetter;
+  createDailyLetter: DailyLetter;
   updateBibleReference: BibleReference;
   createBibleReference: BibleReference;
+  updateVideo: Video;
+  createVideo: Video;
+  updateBibleImage: BibleImage;
+  createBibleImage: BibleImage;
+  updateLibraryResource: LibraryResource;
+  createLibraryResource: LibraryResource;
+  updateArchiveDocument: ArchiveDocument;
+  createArchiveDocument: ArchiveDocument;
+  updateUsefulResource: UsefulResource;
+  createUsefulResource: UsefulResource;
+  updateQuickLink: QuickLink;
+  createQuickLink: QuickLink;
   updateHome: Home;
   createHome: Home;
   updateAbout: About;
   createAbout: About;
   updateContact: Contact;
   createContact: Contact;
-  updateNewsletter: Newsletter;
-  createNewsletter: Newsletter;
-  updateQuickLinks: QuickLinks;
-  createQuickLinks: QuickLinks;
-  updateResources: Resources;
-  createResources: Resources;
   updateZoomInfo: ZoomInfo;
   createZoomInfo: ZoomInfo;
-  updateArchives: Archives;
-  createArchives: Archives;
-  updateLessons: Lessons;
-  createLessons: Lessons;
-  updateReferences: References;
-  createReferences: References;
-  updateImages: Images;
-  createImages: Images;
-  updateVideos: Videos;
-  createVideos: Videos;
-  updateLibrary: Library;
-  createLibrary: Library;
   updateBooks: Books;
   createBooks: Books;
+  updateLessons: Lessons;
+  createLessons: Lessons;
   updateMagazines: Magazines;
   createMagazines: Magazines;
+  updateNewsletter: Newsletter;
+  createNewsletter: Newsletter;
+  updateReferences: References;
+  createReferences: References;
+  updateVideos: Videos;
+  createVideos: Videos;
+  updateImages: Images;
+  createImages: Images;
+  updateLibrary: Library;
+  createLibrary: Library;
+  updateArchives: Archives;
+  createArchives: Archives;
+  updateResources: Resources;
+  createResources: Resources;
+  updateQuickLinks: QuickLinks;
+  createQuickLinks: QuickLinks;
+  updatePage: Page;
+  createPage: Page;
 };
 
 
@@ -2162,18 +2955,6 @@ export type MutationCreateFolderArgs = {
 };
 
 
-export type MutationUpdatePageArgs = {
-  relativePath: Scalars['String']['input'];
-  params: PageMutation;
-};
-
-
-export type MutationCreatePageArgs = {
-  relativePath: Scalars['String']['input'];
-  params: PageMutation;
-};
-
-
 export type MutationUpdateBookArgs = {
   relativePath: Scalars['String']['input'];
   params: BookMutation;
@@ -2183,18 +2964,6 @@ export type MutationUpdateBookArgs = {
 export type MutationCreateBookArgs = {
   relativePath: Scalars['String']['input'];
   params: BookMutation;
-};
-
-
-export type MutationUpdateMagazineArgs = {
-  relativePath: Scalars['String']['input'];
-  params: MagazineMutation;
-};
-
-
-export type MutationCreateMagazineArgs = {
-  relativePath: Scalars['String']['input'];
-  params: MagazineMutation;
 };
 
 
@@ -2210,6 +2979,30 @@ export type MutationCreateLessonArgs = {
 };
 
 
+export type MutationUpdateMagazineArgs = {
+  relativePath: Scalars['String']['input'];
+  params: MagazineMutation;
+};
+
+
+export type MutationCreateMagazineArgs = {
+  relativePath: Scalars['String']['input'];
+  params: MagazineMutation;
+};
+
+
+export type MutationUpdateDailyLetterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: DailyLetterMutation;
+};
+
+
+export type MutationCreateDailyLetterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: DailyLetterMutation;
+};
+
+
 export type MutationUpdateBibleReferenceArgs = {
   relativePath: Scalars['String']['input'];
   params: BibleReferenceMutation;
@@ -2219,6 +3012,78 @@ export type MutationUpdateBibleReferenceArgs = {
 export type MutationCreateBibleReferenceArgs = {
   relativePath: Scalars['String']['input'];
   params: BibleReferenceMutation;
+};
+
+
+export type MutationUpdateVideoArgs = {
+  relativePath: Scalars['String']['input'];
+  params: VideoMutation;
+};
+
+
+export type MutationCreateVideoArgs = {
+  relativePath: Scalars['String']['input'];
+  params: VideoMutation;
+};
+
+
+export type MutationUpdateBibleImageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: BibleImageMutation;
+};
+
+
+export type MutationCreateBibleImageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: BibleImageMutation;
+};
+
+
+export type MutationUpdateLibraryResourceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LibraryResourceMutation;
+};
+
+
+export type MutationCreateLibraryResourceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LibraryResourceMutation;
+};
+
+
+export type MutationUpdateArchiveDocumentArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArchiveDocumentMutation;
+};
+
+
+export type MutationCreateArchiveDocumentArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArchiveDocumentMutation;
+};
+
+
+export type MutationUpdateUsefulResourceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: UsefulResourceMutation;
+};
+
+
+export type MutationCreateUsefulResourceArgs = {
+  relativePath: Scalars['String']['input'];
+  params: UsefulResourceMutation;
+};
+
+
+export type MutationUpdateQuickLinkArgs = {
+  relativePath: Scalars['String']['input'];
+  params: QuickLinkMutation;
+};
+
+
+export type MutationCreateQuickLinkArgs = {
+  relativePath: Scalars['String']['input'];
+  params: QuickLinkMutation;
 };
 
 
@@ -2258,42 +3123,6 @@ export type MutationCreateContactArgs = {
 };
 
 
-export type MutationUpdateNewsletterArgs = {
-  relativePath: Scalars['String']['input'];
-  params: NewsletterMutation;
-};
-
-
-export type MutationCreateNewsletterArgs = {
-  relativePath: Scalars['String']['input'];
-  params: NewsletterMutation;
-};
-
-
-export type MutationUpdateQuickLinksArgs = {
-  relativePath: Scalars['String']['input'];
-  params: QuickLinksMutation;
-};
-
-
-export type MutationCreateQuickLinksArgs = {
-  relativePath: Scalars['String']['input'];
-  params: QuickLinksMutation;
-};
-
-
-export type MutationUpdateResourcesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ResourcesMutation;
-};
-
-
-export type MutationCreateResourcesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ResourcesMutation;
-};
-
-
 export type MutationUpdateZoomInfoArgs = {
   relativePath: Scalars['String']['input'];
   params: ZoomInfoMutation;
@@ -2303,78 +3132,6 @@ export type MutationUpdateZoomInfoArgs = {
 export type MutationCreateZoomInfoArgs = {
   relativePath: Scalars['String']['input'];
   params: ZoomInfoMutation;
-};
-
-
-export type MutationUpdateArchivesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ArchivesMutation;
-};
-
-
-export type MutationCreateArchivesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ArchivesMutation;
-};
-
-
-export type MutationUpdateLessonsArgs = {
-  relativePath: Scalars['String']['input'];
-  params: LessonsMutation;
-};
-
-
-export type MutationCreateLessonsArgs = {
-  relativePath: Scalars['String']['input'];
-  params: LessonsMutation;
-};
-
-
-export type MutationUpdateReferencesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ReferencesMutation;
-};
-
-
-export type MutationCreateReferencesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ReferencesMutation;
-};
-
-
-export type MutationUpdateImagesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ImagesMutation;
-};
-
-
-export type MutationCreateImagesArgs = {
-  relativePath: Scalars['String']['input'];
-  params: ImagesMutation;
-};
-
-
-export type MutationUpdateVideosArgs = {
-  relativePath: Scalars['String']['input'];
-  params: VideosMutation;
-};
-
-
-export type MutationCreateVideosArgs = {
-  relativePath: Scalars['String']['input'];
-  params: VideosMutation;
-};
-
-
-export type MutationUpdateLibraryArgs = {
-  relativePath: Scalars['String']['input'];
-  params: LibraryMutation;
-};
-
-
-export type MutationCreateLibraryArgs = {
-  relativePath: Scalars['String']['input'];
-  params: LibraryMutation;
 };
 
 
@@ -2390,6 +3147,18 @@ export type MutationCreateBooksArgs = {
 };
 
 
+export type MutationUpdateLessonsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LessonsMutation;
+};
+
+
+export type MutationCreateLessonsArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LessonsMutation;
+};
+
+
 export type MutationUpdateMagazinesArgs = {
   relativePath: Scalars['String']['input'];
   params: MagazinesMutation;
@@ -2401,82 +3170,186 @@ export type MutationCreateMagazinesArgs = {
   params: MagazinesMutation;
 };
 
+
+export type MutationUpdateNewsletterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: NewsletterMutation;
+};
+
+
+export type MutationCreateNewsletterArgs = {
+  relativePath: Scalars['String']['input'];
+  params: NewsletterMutation;
+};
+
+
+export type MutationUpdateReferencesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ReferencesMutation;
+};
+
+
+export type MutationCreateReferencesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ReferencesMutation;
+};
+
+
+export type MutationUpdateVideosArgs = {
+  relativePath: Scalars['String']['input'];
+  params: VideosMutation;
+};
+
+
+export type MutationCreateVideosArgs = {
+  relativePath: Scalars['String']['input'];
+  params: VideosMutation;
+};
+
+
+export type MutationUpdateImagesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ImagesMutation;
+};
+
+
+export type MutationCreateImagesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ImagesMutation;
+};
+
+
+export type MutationUpdateLibraryArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LibraryMutation;
+};
+
+
+export type MutationCreateLibraryArgs = {
+  relativePath: Scalars['String']['input'];
+  params: LibraryMutation;
+};
+
+
+export type MutationUpdateArchivesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArchivesMutation;
+};
+
+
+export type MutationCreateArchivesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ArchivesMutation;
+};
+
+
+export type MutationUpdateResourcesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResourcesMutation;
+};
+
+
+export type MutationCreateResourcesArgs = {
+  relativePath: Scalars['String']['input'];
+  params: ResourcesMutation;
+};
+
+
+export type MutationUpdateQuickLinksArgs = {
+  relativePath: Scalars['String']['input'];
+  params: QuickLinksMutation;
+};
+
+
+export type MutationCreateQuickLinksArgs = {
+  relativePath: Scalars['String']['input'];
+  params: QuickLinksMutation;
+};
+
+
+export type MutationUpdatePageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PageMutation;
+};
+
+
+export type MutationCreatePageArgs = {
+  relativePath: Scalars['String']['input'];
+  params: PageMutation;
+};
+
 export type DocumentUpdateMutation = {
-  page?: InputMaybe<PageMutation>;
   book?: InputMaybe<BookMutation>;
-  magazine?: InputMaybe<MagazineMutation>;
   lesson?: InputMaybe<LessonMutation>;
+  magazine?: InputMaybe<MagazineMutation>;
+  dailyLetter?: InputMaybe<DailyLetterMutation>;
   bibleReference?: InputMaybe<BibleReferenceMutation>;
+  video?: InputMaybe<VideoMutation>;
+  bibleImage?: InputMaybe<BibleImageMutation>;
+  libraryResource?: InputMaybe<LibraryResourceMutation>;
+  archiveDocument?: InputMaybe<ArchiveDocumentMutation>;
+  usefulResource?: InputMaybe<UsefulResourceMutation>;
+  quickLink?: InputMaybe<QuickLinkMutation>;
   home?: InputMaybe<HomeMutation>;
   about?: InputMaybe<AboutMutation>;
   contact?: InputMaybe<ContactMutation>;
-  newsletter?: InputMaybe<NewsletterMutation>;
-  quickLinks?: InputMaybe<QuickLinksMutation>;
-  resources?: InputMaybe<ResourcesMutation>;
   zoomInfo?: InputMaybe<ZoomInfoMutation>;
-  archives?: InputMaybe<ArchivesMutation>;
-  lessons?: InputMaybe<LessonsMutation>;
-  references?: InputMaybe<ReferencesMutation>;
-  images?: InputMaybe<ImagesMutation>;
-  videos?: InputMaybe<VideosMutation>;
-  library?: InputMaybe<LibraryMutation>;
   books?: InputMaybe<BooksMutation>;
+  lessons?: InputMaybe<LessonsMutation>;
   magazines?: InputMaybe<MagazinesMutation>;
+  newsletter?: InputMaybe<NewsletterMutation>;
+  references?: InputMaybe<ReferencesMutation>;
+  videos?: InputMaybe<VideosMutation>;
+  images?: InputMaybe<ImagesMutation>;
+  library?: InputMaybe<LibraryMutation>;
+  archives?: InputMaybe<ArchivesMutation>;
+  resources?: InputMaybe<ResourcesMutation>;
+  quickLinks?: InputMaybe<QuickLinksMutation>;
+  page?: InputMaybe<PageMutation>;
   relativePath?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DocumentMutation = {
-  page?: InputMaybe<PageMutation>;
   book?: InputMaybe<BookMutation>;
-  magazine?: InputMaybe<MagazineMutation>;
   lesson?: InputMaybe<LessonMutation>;
+  magazine?: InputMaybe<MagazineMutation>;
+  dailyLetter?: InputMaybe<DailyLetterMutation>;
   bibleReference?: InputMaybe<BibleReferenceMutation>;
+  video?: InputMaybe<VideoMutation>;
+  bibleImage?: InputMaybe<BibleImageMutation>;
+  libraryResource?: InputMaybe<LibraryResourceMutation>;
+  archiveDocument?: InputMaybe<ArchiveDocumentMutation>;
+  usefulResource?: InputMaybe<UsefulResourceMutation>;
+  quickLink?: InputMaybe<QuickLinkMutation>;
   home?: InputMaybe<HomeMutation>;
   about?: InputMaybe<AboutMutation>;
   contact?: InputMaybe<ContactMutation>;
-  newsletter?: InputMaybe<NewsletterMutation>;
-  quickLinks?: InputMaybe<QuickLinksMutation>;
-  resources?: InputMaybe<ResourcesMutation>;
   zoomInfo?: InputMaybe<ZoomInfoMutation>;
-  archives?: InputMaybe<ArchivesMutation>;
-  lessons?: InputMaybe<LessonsMutation>;
-  references?: InputMaybe<ReferencesMutation>;
-  images?: InputMaybe<ImagesMutation>;
-  videos?: InputMaybe<VideosMutation>;
-  library?: InputMaybe<LibraryMutation>;
   books?: InputMaybe<BooksMutation>;
+  lessons?: InputMaybe<LessonsMutation>;
   magazines?: InputMaybe<MagazinesMutation>;
-};
-
-export type PageHeroMutation = {
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-  ctaText?: InputMaybe<Scalars['String']['input']>;
-  ctaLink?: InputMaybe<Scalars['String']['input']>;
-  heroImage?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type PageMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<PageHeroMutation>;
+  newsletter?: InputMaybe<NewsletterMutation>;
+  references?: InputMaybe<ReferencesMutation>;
+  videos?: InputMaybe<VideosMutation>;
+  images?: InputMaybe<ImagesMutation>;
+  library?: InputMaybe<LibraryMutation>;
+  archives?: InputMaybe<ArchivesMutation>;
+  resources?: InputMaybe<ResourcesMutation>;
+  quickLinks?: InputMaybe<QuickLinksMutation>;
+  page?: InputMaybe<PageMutation>;
 };
 
 export type BookMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   author?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  category?: InputMaybe<Scalars['String']['input']>;
+  abstract?: InputMaybe<Scalars['String']['input']>;
+  format?: InputMaybe<Scalars['String']['input']>;
+  subject?: InputMaybe<Scalars['String']['input']>;
   coverImage?: InputMaybe<Scalars['String']['input']>;
   featured?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MagazineMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  issue?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  coverImage?: InputMaybe<Scalars['String']['input']>;
-  publishDate?: InputMaybe<Scalars['String']['input']>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
 export type LessonMutation = {
@@ -2485,7 +3358,36 @@ export type LessonMutation = {
   chapters?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   content?: InputMaybe<Scalars['JSON']['input']>;
+  teacher?: InputMaybe<Scalars['String']['input']>;
+  division?: InputMaybe<Scalars['String']['input']>;
   difficulty?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MagazineMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  issue?: InputMaybe<Scalars['String']['input']>;
+  season?: InputMaybe<Scalars['String']['input']>;
+  year?: InputMaybe<Scalars['String']['input']>;
+  topic?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  publishDate?: InputMaybe<Scalars['String']['input']>;
+  articlesCount?: InputMaybe<Scalars['Float']['input']>;
+  contributorsCount?: InputMaybe<Scalars['Float']['input']>;
+  pagesCount?: InputMaybe<Scalars['Float']['input']>;
+  badge?: InputMaybe<Scalars['String']['input']>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type DailyLetterMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  scripture?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
 export type BibleReferenceMutation = {
@@ -2494,6 +3396,84 @@ export type BibleReferenceMutation = {
   category?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  testament?: InputMaybe<Scalars['String']['input']>;
+  genre?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type VideoMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  series?: InputMaybe<Scalars['String']['input']>;
+  speaker?: InputMaybe<Scalars['String']['input']>;
+  scripture?: InputMaybe<Scalars['String']['input']>;
+  duration?: InputMaybe<Scalars['String']['input']>;
+  recordedDate?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  thumbnail?: InputMaybe<Scalars['String']['input']>;
+  videoUrl?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type BibleImageMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  scripture?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  citation?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type LibraryResourceMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  era?: InputMaybe<Scalars['String']['input']>;
+  badge?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  primaryDetail?: InputMaybe<Scalars['String']['input']>;
+  detailIcon?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type ArchiveDocumentMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  catalogRef?: InputMaybe<Scalars['String']['input']>;
+  dateLabel?: InputMaybe<Scalars['String']['input']>;
+  attributionRole?: InputMaybe<Scalars['String']['input']>;
+  attributionName?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  actionLabel?: InputMaybe<Scalars['String']['input']>;
+  actionType?: InputMaybe<Scalars['String']['input']>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type UsefulResourceMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  pricingType?: InputMaybe<Scalars['String']['input']>;
+  rating?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  thumbnail?: InputMaybe<Scalars['String']['input']>;
+  externalUrl?: InputMaybe<Scalars['String']['input']>;
+  actionLabel?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type QuickLinkMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  targetUrl?: InputMaybe<Scalars['String']['input']>;
+  icon?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
 export type HomeHeroMutation = {
@@ -2552,6 +3532,96 @@ export type HomeZoomMeetingMutation = {
   buttonLink?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type HomeLatestReferencesItemsMutation = {
+  reference?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  tags?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeLatestReferencesMutation = {
+  sectionTitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<HomeLatestReferencesItemsMutation>>>;
+};
+
+export type HomeFeaturedVideosItemsMutation = {
+  series?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  duration?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeFeaturedVideosMutation = {
+  sectionTitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<HomeFeaturedVideosItemsMutation>>>;
+};
+
+export type HomeGalleryPreviewItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeGalleryPreviewMutation = {
+  sectionTitle?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<HomeGalleryPreviewItemsMutation>>>;
+};
+
+export type HomeFeaturedPublicationsBookMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  downloadLink?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeFeaturedPublicationsMagazineMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  issue?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  readLink?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeFeaturedPublicationsMutation = {
+  sectionTitle?: InputMaybe<Scalars['String']['input']>;
+  book?: InputMaybe<HomeFeaturedPublicationsBookMutation>;
+  magazine?: InputMaybe<HomeFeaturedPublicationsMagazineMutation>;
+};
+
+export type HomeAnnouncementsWidgetItemsMutation = {
+  date?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeAnnouncementsWidgetMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<HomeAnnouncementsWidgetItemsMutation>>>;
+};
+
+export type HomeUsefulToolsWidgetToolsMutation = {
+  name?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type HomeUsefulToolsWidgetMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  tools?: InputMaybe<Array<InputMaybe<HomeUsefulToolsWidgetToolsMutation>>>;
+};
+
+export type HomeQuarterlyNewsletterMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type HomeMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
@@ -2560,6 +3630,13 @@ export type HomeMutation = {
   featuredLessons?: InputMaybe<HomeFeaturedLessonsMutation>;
   newsletter?: InputMaybe<HomeNewsletterMutation>;
   zoomMeeting?: InputMaybe<HomeZoomMeetingMutation>;
+  latestReferences?: InputMaybe<HomeLatestReferencesMutation>;
+  featuredVideos?: InputMaybe<HomeFeaturedVideosMutation>;
+  galleryPreview?: InputMaybe<HomeGalleryPreviewMutation>;
+  featuredPublications?: InputMaybe<HomeFeaturedPublicationsMutation>;
+  announcementsWidget?: InputMaybe<HomeAnnouncementsWidgetMutation>;
+  usefulToolsWidget?: InputMaybe<HomeUsefulToolsWidgetMutation>;
+  quarterlyNewsletter?: InputMaybe<HomeQuarterlyNewsletterMutation>;
 };
 
 export type AboutHeroMutation = {
@@ -2594,6 +3671,22 @@ export type AboutQuoteWidgetMutation = {
   author?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type AboutLeadershipMutation = {
+  name?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  avatar?: InputMaybe<Scalars['String']['input']>;
+  bio?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutAcademicOfficeMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+  buttonLink?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type AboutMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
@@ -2605,6 +3698,9 @@ export type AboutMutation = {
   vision?: InputMaybe<AboutVisionMutation>;
   statementOfFaith?: InputMaybe<AboutStatementOfFaithMutation>;
   quoteWidget?: InputMaybe<AboutQuoteWidgetMutation>;
+  leadershipTitle?: InputMaybe<Scalars['String']['input']>;
+  leadership?: InputMaybe<Array<InputMaybe<AboutLeadershipMutation>>>;
+  academicOffice?: InputMaybe<AboutAcademicOfficeMutation>;
 };
 
 export type ContactHeroMutation = {
@@ -2645,6 +3741,16 @@ export type ContactOfficeHoursMutation = {
   note?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type ContactMapLocationMutation = {
+  imageUrl?: InputMaybe<Scalars['String']['input']>;
+  addressText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactAdditionalInfoMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  items?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type ContactMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
@@ -2654,6 +3760,167 @@ export type ContactMutation = {
   locationCard?: InputMaybe<ContactLocationCardMutation>;
   contactForm?: InputMaybe<ContactContactFormMutation>;
   officeHours?: InputMaybe<ContactOfficeHoursMutation>;
+  mapLocation?: InputMaybe<ContactMapLocationMutation>;
+  additionalInfo?: InputMaybe<ContactAdditionalInfoMutation>;
+};
+
+export type ZoomInfoHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoFeaturedMeetingMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  time?: InputMaybe<Scalars['String']['input']>;
+  duration?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+  zoomUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoSpeakerCardMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  bio?: InputMaybe<Scalars['String']['input']>;
+  avatarUrl?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoMeetingAccessCardMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  platform?: InputMaybe<Scalars['String']['input']>;
+  meetingId?: InputMaybe<Scalars['String']['input']>;
+  passcode?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoPreparationCardMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  reading1?: InputMaybe<Scalars['String']['input']>;
+  reading2?: InputMaybe<Scalars['String']['input']>;
+  reading3?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoSessionsMutation = {
+  date?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  status?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  speaker?: InputMaybe<Scalars['String']['input']>;
+  timeOrActionText?: InputMaybe<Scalars['String']['input']>;
+  actionUrl?: InputMaybe<Scalars['String']['input']>;
+  isDashed?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type ZoomInfoRelatedScriptureMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  scripture1Title?: InputMaybe<Scalars['String']['input']>;
+  scripture1Subtitle?: InputMaybe<Scalars['String']['input']>;
+  scripture2Title?: InputMaybe<Scalars['String']['input']>;
+  scripture2Subtitle?: InputMaybe<Scalars['String']['input']>;
+  scripture3Title?: InputMaybe<Scalars['String']['input']>;
+  scripture3Subtitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ZoomInfoMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<ZoomInfoHeroMutation>;
+  featuredMeeting?: InputMaybe<ZoomInfoFeaturedMeetingMutation>;
+  speakerCard?: InputMaybe<ZoomInfoSpeakerCardMutation>;
+  meetingAccessCard?: InputMaybe<ZoomInfoMeetingAccessCardMutation>;
+  preparationCard?: InputMaybe<ZoomInfoPreparationCardMutation>;
+  sessionsTitle?: InputMaybe<Scalars['String']['input']>;
+  sessions?: InputMaybe<Array<InputMaybe<ZoomInfoSessionsMutation>>>;
+  relatedScripture?: InputMaybe<ZoomInfoRelatedScriptureMutation>;
+};
+
+export type BooksHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BooksFeaturedBookMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
+  abstractButtonText?: InputMaybe<Scalars['String']['input']>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type BooksMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<BooksHeroMutation>;
+  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
+  featuredBook?: InputMaybe<BooksFeaturedBookMutation>;
+  submissionsTitle?: InputMaybe<Scalars['String']['input']>;
+  submissionsDescription?: InputMaybe<Scalars['String']['input']>;
+  submissionsButtonText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LessonsHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LessonsFeaturedLessonMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  teacher?: InputMaybe<Scalars['String']['input']>;
+  linkText?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LessonsMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<LessonsHeroMutation>;
+  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
+  featuredLesson?: InputMaybe<LessonsFeaturedLessonMutation>;
+  progressTitle?: InputMaybe<Scalars['String']['input']>;
+  progressCourse?: InputMaybe<Scalars['String']['input']>;
+  progressPercentage?: InputMaybe<Scalars['String']['input']>;
+  progressDescription?: InputMaybe<Scalars['String']['input']>;
+  progressButtonText?: InputMaybe<Scalars['String']['input']>;
+  seminarTitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MagazinesHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MagazinesFeaturedIssueMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  date?: InputMaybe<Scalars['String']['input']>;
+  details?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+  readButtonText?: InputMaybe<Scalars['String']['input']>;
+  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MagazinesMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<MagazinesHeroMutation>;
+  featuredIssue?: InputMaybe<MagazinesFeaturedIssueMutation>;
+  spotlightTitle?: InputMaybe<Scalars['String']['input']>;
+  archiveTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NewsletterHeroMutation = {
@@ -2669,6 +3936,7 @@ export type NewsletterFeaturedDevotionalMutation = {
   scripture?: InputMaybe<Scalars['String']['input']>;
   content?: InputMaybe<Scalars['String']['input']>;
   date?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type NewsletterSignupCtaMutation = {
@@ -2692,123 +3960,113 @@ export type NewsletterMutation = {
   scriptureQuote?: InputMaybe<NewsletterScriptureQuoteMutation>;
 };
 
-export type QuickLinksHeroMutation = {
+export type ReferencesHeroMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   headline?: InputMaybe<Scalars['String']['input']>;
   subheadline?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type QuickLinksFeaturedBannerMutation = {
+export type ReferencesFeaturedReferenceMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   tag?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  button1Text?: InputMaybe<Scalars['String']['input']>;
-  button1Link?: InputMaybe<Scalars['String']['input']>;
-  button2Text?: InputMaybe<Scalars['String']['input']>;
-  button2Link?: InputMaybe<Scalars['String']['input']>;
-  button3Text?: InputMaybe<Scalars['String']['input']>;
-  button3Link?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type QuickLinksMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<QuickLinksHeroMutation>;
-  featuredBanner?: InputMaybe<QuickLinksFeaturedBannerMutation>;
-  categorySectionTitle?: InputMaybe<Scalars['String']['input']>;
-  searchSectionTitle?: InputMaybe<Scalars['String']['input']>;
-  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  shortcutsSectionTitle?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ResourcesHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ResourcesFeaturedResourceMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  tag?: InputMaybe<Scalars['String']['input']>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  rating?: InputMaybe<Scalars['String']['input']>;
+  crossReferences?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
-  linkUrl?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ResourcesMutation = {
+export type ReferencesMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<ResourcesHeroMutation>;
-  featuredResource?: InputMaybe<ResourcesFeaturedResourceMutation>;
+  hero?: InputMaybe<ReferencesHeroMutation>;
   searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  popularResourcesTitle?: InputMaybe<Scalars['String']['input']>;
-  recentAdditionsTitle?: InputMaybe<Scalars['String']['input']>;
-  categoryTagsTitle?: InputMaybe<Scalars['String']['input']>;
+  featuredReference?: InputMaybe<ReferencesFeaturedReferenceMutation>;
+  topicsTitle?: InputMaybe<Scalars['String']['input']>;
+  relatedLessonTitle?: InputMaybe<Scalars['String']['input']>;
+  relatedLessonCourse?: InputMaybe<Scalars['String']['input']>;
+  relatedLessonDescription?: InputMaybe<Scalars['String']['input']>;
+  relatedLessonButtonText?: InputMaybe<Scalars['String']['input']>;
+  relatedLessonImage?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ZoomInfoHeroMutation = {
+export type VideosHeroMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   headline?: InputMaybe<Scalars['String']['input']>;
   subheadline?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ZoomInfoFeaturedMeetingMutation = {
+export type VideosFeaturedVideoMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  speaker?: InputMaybe<Scalars['String']['input']>;
+  scripture?: InputMaybe<Scalars['String']['input']>;
+  recorded?: InputMaybe<Scalars['String']['input']>;
+  buttonText?: InputMaybe<Scalars['String']['input']>;
+  videoUrl?: InputMaybe<Scalars['String']['input']>;
+  coverImage?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type VideosMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<VideosHeroMutation>;
+  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
+  featuredVideo?: InputMaybe<VideosFeaturedVideoMutation>;
+  lecturesTitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ImagesHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ImagesFeaturedImageMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  scriptureLabel?: InputMaybe<Scalars['String']['input']>;
+  scriptureQuote?: InputMaybe<Scalars['String']['input']>;
+  scriptureReference?: InputMaybe<Scalars['String']['input']>;
+  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
+  citationButtonText?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ImagesMutation = {
+  announcementText?: InputMaybe<Scalars['String']['input']>;
+  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<ImagesHeroMutation>;
+  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
+  featuredImage?: InputMaybe<ImagesFeaturedImageMutation>;
+  archiveTitle?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LibraryHeroMutation = {
+  badge?: InputMaybe<Scalars['String']['input']>;
+  headline?: InputMaybe<Scalars['String']['input']>;
+  subheadline?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LibraryFeaturedResourceMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   tag?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  time?: InputMaybe<Scalars['String']['input']>;
-  duration?: InputMaybe<Scalars['String']['input']>;
-  buttonText?: InputMaybe<Scalars['String']['input']>;
+  details?: InputMaybe<Scalars['String']['input']>;
+  linkText?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ZoomInfoSpeakerCardMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  role?: InputMaybe<Scalars['String']['input']>;
-  bio?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ZoomInfoMeetingAccessCardMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  platform?: InputMaybe<Scalars['String']['input']>;
-  meetingId?: InputMaybe<Scalars['String']['input']>;
-  passcode?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ZoomInfoPreparationCardMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  subtitle?: InputMaybe<Scalars['String']['input']>;
-  reading1?: InputMaybe<Scalars['String']['input']>;
-  reading2?: InputMaybe<Scalars['String']['input']>;
-  reading3?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ZoomInfoRelatedScriptureMutation = {
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  scripture1Title?: InputMaybe<Scalars['String']['input']>;
-  scripture1Subtitle?: InputMaybe<Scalars['String']['input']>;
-  scripture2Title?: InputMaybe<Scalars['String']['input']>;
-  scripture2Subtitle?: InputMaybe<Scalars['String']['input']>;
-  scripture3Title?: InputMaybe<Scalars['String']['input']>;
-  scripture3Subtitle?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ZoomInfoMutation = {
+export type LibraryMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<ZoomInfoHeroMutation>;
-  featuredMeeting?: InputMaybe<ZoomInfoFeaturedMeetingMutation>;
-  speakerCard?: InputMaybe<ZoomInfoSpeakerCardMutation>;
-  meetingAccessCard?: InputMaybe<ZoomInfoMeetingAccessCardMutation>;
-  preparationCard?: InputMaybe<ZoomInfoPreparationCardMutation>;
-  sessionsTitle?: InputMaybe<Scalars['String']['input']>;
-  relatedScripture?: InputMaybe<ZoomInfoRelatedScriptureMutation>;
+  hero?: InputMaybe<LibraryHeroMutation>;
+  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
+  featuredResource?: InputMaybe<LibraryFeaturedResourceMutation>;
+  categoriesTitle?: InputMaybe<Scalars['String']['input']>;
+  popularTitle?: InputMaybe<Scalars['String']['input']>;
+  recentTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ArchivesHeroMutation = {
@@ -2841,255 +4099,137 @@ export type ArchivesMutation = {
   accessPolicy?: InputMaybe<ArchivesAccessPolicyMutation>;
 };
 
-export type LessonsHeroMutation = {
+export type ResourcesHeroMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   headline?: InputMaybe<Scalars['String']['input']>;
   subheadline?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type LessonsFeaturedLessonMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  teacher?: InputMaybe<Scalars['String']['input']>;
-  linkText?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type LessonsMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<LessonsHeroMutation>;
-  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredLesson?: InputMaybe<LessonsFeaturedLessonMutation>;
-  progressTitle?: InputMaybe<Scalars['String']['input']>;
-  progressCourse?: InputMaybe<Scalars['String']['input']>;
-  progressPercentage?: InputMaybe<Scalars['String']['input']>;
-  progressDescription?: InputMaybe<Scalars['String']['input']>;
-  progressButtonText?: InputMaybe<Scalars['String']['input']>;
-  seminarTitle?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ReferencesHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ReferencesFeaturedReferenceMutation = {
+export type ResourcesFeaturedResourceMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   tag?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  crossReferences?: InputMaybe<Scalars['String']['input']>;
+  rating?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
+  linkUrl?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ReferencesMutation = {
+export type ResourcesMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<ReferencesHeroMutation>;
+  hero?: InputMaybe<ResourcesHeroMutation>;
+  featuredResource?: InputMaybe<ResourcesFeaturedResourceMutation>;
   searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredReference?: InputMaybe<ReferencesFeaturedReferenceMutation>;
-  topicsTitle?: InputMaybe<Scalars['String']['input']>;
-  relatedLessonTitle?: InputMaybe<Scalars['String']['input']>;
-  relatedLessonCourse?: InputMaybe<Scalars['String']['input']>;
-  relatedLessonDescription?: InputMaybe<Scalars['String']['input']>;
-  relatedLessonButtonText?: InputMaybe<Scalars['String']['input']>;
+  popularResourcesTitle?: InputMaybe<Scalars['String']['input']>;
+  recentAdditionsTitle?: InputMaybe<Scalars['String']['input']>;
+  categoryTagsTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ImagesHeroMutation = {
+export type QuickLinksHeroMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   headline?: InputMaybe<Scalars['String']['input']>;
   subheadline?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type ImagesFeaturedImageMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  scriptureLabel?: InputMaybe<Scalars['String']['input']>;
-  scriptureQuote?: InputMaybe<Scalars['String']['input']>;
-  scriptureReference?: InputMaybe<Scalars['String']['input']>;
-  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
-  citationButtonText?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ImagesMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<ImagesHeroMutation>;
-  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredImage?: InputMaybe<ImagesFeaturedImageMutation>;
-  archiveTitle?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type VideosHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type VideosFeaturedVideoMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  speaker?: InputMaybe<Scalars['String']['input']>;
-  scripture?: InputMaybe<Scalars['String']['input']>;
-  recorded?: InputMaybe<Scalars['String']['input']>;
-  buttonText?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type VideosMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<VideosHeroMutation>;
-  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredVideo?: InputMaybe<VideosFeaturedVideoMutation>;
-  lecturesTitle?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type LibraryHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type LibraryFeaturedResourceMutation = {
+export type QuickLinksFeaturedBannerMutation = {
   badge?: InputMaybe<Scalars['String']['input']>;
   tag?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  details?: InputMaybe<Scalars['String']['input']>;
-  linkText?: InputMaybe<Scalars['String']['input']>;
+  button1Text?: InputMaybe<Scalars['String']['input']>;
+  button1Link?: InputMaybe<Scalars['String']['input']>;
+  button2Text?: InputMaybe<Scalars['String']['input']>;
+  button2Link?: InputMaybe<Scalars['String']['input']>;
+  button3Text?: InputMaybe<Scalars['String']['input']>;
+  button3Link?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type LibraryMutation = {
+export type QuickLinksMutation = {
   announcementText?: InputMaybe<Scalars['String']['input']>;
   announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<LibraryHeroMutation>;
+  hero?: InputMaybe<QuickLinksHeroMutation>;
+  featuredBanner?: InputMaybe<QuickLinksFeaturedBannerMutation>;
+  categorySectionTitle?: InputMaybe<Scalars['String']['input']>;
+  searchSectionTitle?: InputMaybe<Scalars['String']['input']>;
   searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredResource?: InputMaybe<LibraryFeaturedResourceMutation>;
-  categoriesTitle?: InputMaybe<Scalars['String']['input']>;
-  popularTitle?: InputMaybe<Scalars['String']['input']>;
-  recentTitle?: InputMaybe<Scalars['String']['input']>;
+  shortcutsSectionTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type BooksHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
+export type PageHeroMutation = {
   headline?: InputMaybe<Scalars['String']['input']>;
   subheadline?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  heroImage?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type BooksFeaturedBookMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
+export type PageMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
-  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
-  abstractButtonText?: InputMaybe<Scalars['String']['input']>;
+  hero?: InputMaybe<PageHeroMutation>;
 };
 
-export type BooksMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<BooksHeroMutation>;
-  searchPlaceholder?: InputMaybe<Scalars['String']['input']>;
-  featuredBook?: InputMaybe<BooksFeaturedBookMutation>;
-  submissionsTitle?: InputMaybe<Scalars['String']['input']>;
-  submissionsDescription?: InputMaybe<Scalars['String']['input']>;
-  submissionsButtonText?: InputMaybe<Scalars['String']['input']>;
-};
+export type BookPartsFragment = { __typename: 'Book', title: string, author: string, description: string, abstract?: string | null, format: string, subject: string, coverImage: string, featured?: string | null, pdfFile?: string | null, body?: any | null };
 
-export type MagazinesHeroMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  headline?: InputMaybe<Scalars['String']['input']>;
-  subheadline?: InputMaybe<Scalars['String']['input']>;
-};
+export type LessonPartsFragment = { __typename: 'Lesson', title: string, book: string, chapters: string, description: string, content?: any | null, teacher: string, division: string, difficulty: string, image?: string | null };
 
-export type MagazinesFeaturedIssueMutation = {
-  badge?: InputMaybe<Scalars['String']['input']>;
-  tag?: InputMaybe<Scalars['String']['input']>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  date?: InputMaybe<Scalars['String']['input']>;
-  details?: InputMaybe<Scalars['String']['input']>;
-  readButtonText?: InputMaybe<Scalars['String']['input']>;
-  downloadButtonText?: InputMaybe<Scalars['String']['input']>;
-};
+export type MagazinePartsFragment = { __typename: 'Magazine', title: string, issue: string, season?: string | null, year?: string | null, topic?: string | null, description: string, coverImage?: string | null, publishDate?: string | null, articlesCount?: number | null, contributorsCount?: number | null, pagesCount?: number | null, badge?: string | null, pdfFile?: string | null, body?: any | null };
 
-export type MagazinesMutation = {
-  announcementText?: InputMaybe<Scalars['String']['input']>;
-  announcementSubtext?: InputMaybe<Scalars['String']['input']>;
-  hero?: InputMaybe<MagazinesHeroMutation>;
-  featuredIssue?: InputMaybe<MagazinesFeaturedIssueMutation>;
-  spotlightTitle?: InputMaybe<Scalars['String']['input']>;
-  archiveTitle?: InputMaybe<Scalars['String']['input']>;
-};
+export type DailyLetterPartsFragment = { __typename: 'DailyLetter', title: string, date: string, scripture: string, author: string, description: string, body?: any | null };
 
-export type PagePartsFragment = { __typename: 'Page', title: string, description: string, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null };
+export type BibleReferencePartsFragment = { __typename: 'BibleReference', title: string, scripture: string, category: string, description: string, image?: string | null, author: string, testament: string, genre: string, tags?: Array<string | null> | null, body?: any | null };
 
-export type BookPartsFragment = { __typename: 'Book', title: string, author: string, description: string, category: string, coverImage?: string | null, featured: string };
+export type VideoPartsFragment = { __typename: 'Video', title: string, series: string, speaker: string, scripture: string, duration: string, recordedDate?: string | null, description: string, thumbnail?: string | null, videoUrl?: string | null, body?: any | null };
 
-export type MagazinePartsFragment = { __typename: 'Magazine', title: string, issue: string, description: string, coverImage?: string | null, publishDate: string };
+export type BibleImagePartsFragment = { __typename: 'BibleImage', title: string, category: string, scripture: string, description: string, image: string, date?: string | null, citation?: string | null, body?: any | null };
 
-export type LessonPartsFragment = { __typename: 'Lesson', title: string, book: string, chapters: string, description: string, content?: any | null, difficulty: string };
+export type LibraryResourcePartsFragment = { __typename: 'LibraryResource', title: string, category: string, era: string, badge: string, description: string, author?: string | null, primaryDetail?: string | null, detailIcon?: string | null, tags?: Array<string | null> | null, pdfFile?: string | null, body?: any | null };
 
-export type BibleReferencePartsFragment = { __typename: 'BibleReference', title: string, scripture: string, category: string, description: string, image?: string | null };
+export type ArchiveDocumentPartsFragment = { __typename: 'ArchiveDocument', title: string, category: string, catalogRef: string, dateLabel: string, attributionRole?: string | null, attributionName?: string | null, description: string, actionLabel?: string | null, actionType?: string | null, pdfFile?: string | null, body?: any | null };
 
-export type HomePartsFragment = { __typename: 'Home', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null };
+export type UsefulResourcePartsFragment = { __typename: 'UsefulResource', title: string, category: string, pricingType: string, rating: string, description: string, thumbnail?: string | null, externalUrl?: string | null, actionLabel?: string | null, body?: any | null };
 
-export type AboutPartsFragment = { __typename: 'About', announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null };
+export type QuickLinkPartsFragment = { __typename: 'QuickLink', title: string, subtitle: string, targetUrl: string, icon: string, description?: string | null, body?: any | null };
 
-export type ContactPartsFragment = { __typename: 'Contact', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null };
+export type HomePartsFragment = { __typename: 'Home', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null, latestReferences?: { __typename: 'HomeLatestReferences', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeLatestReferencesItems', reference?: string | null, category?: string | null, title?: string | null, description?: string | null, tags?: Array<string | null> | null, link?: string | null } | null> | null } | null, featuredVideos?: { __typename: 'HomeFeaturedVideos', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeFeaturedVideosItems', series?: string | null, title?: string | null, description?: string | null, duration?: string | null, image?: string | null, link?: string | null } | null> | null } | null, galleryPreview?: { __typename: 'HomeGalleryPreview', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeGalleryPreviewItems', title?: string | null, category?: string | null, image?: string | null } | null> | null } | null, featuredPublications?: { __typename: 'HomeFeaturedPublications', sectionTitle?: string | null, book?: { __typename: 'HomeFeaturedPublicationsBook', badge?: string | null, title?: string | null, author?: string | null, description?: string | null, coverImage?: string | null, downloadLink?: string | null } | null, magazine?: { __typename: 'HomeFeaturedPublicationsMagazine', badge?: string | null, title?: string | null, issue?: string | null, description?: string | null, coverImage?: string | null, readLink?: string | null } | null } | null, announcementsWidget?: { __typename: 'HomeAnnouncementsWidget', title?: string | null, items?: Array<{ __typename: 'HomeAnnouncementsWidgetItems', date?: string | null, title?: string | null, description?: string | null } | null> | null } | null, usefulToolsWidget?: { __typename: 'HomeUsefulToolsWidget', title?: string | null, tools?: Array<{ __typename: 'HomeUsefulToolsWidgetTools', name?: string | null, link?: string | null } | null> | null } | null, quarterlyNewsletter?: { __typename: 'HomeQuarterlyNewsletter', title?: string | null, description?: string | null, buttonText?: string | null } | null };
 
-export type NewsletterPartsFragment = { __typename: 'Newsletter', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null };
+export type AboutPartsFragment = { __typename: 'About', announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, leadershipTitle?: string | null, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null, leadership?: Array<{ __typename: 'AboutLeadership', name: string, role: string, avatar: string, bio: string } | null> | null, academicOffice?: { __typename: 'AboutAcademicOffice', title?: string | null, description?: string | null, address?: string | null, email?: string | null, buttonText?: string | null, buttonLink?: string | null } | null };
 
-export type QuickLinksPartsFragment = { __typename: 'QuickLinks', announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null };
+export type ContactPartsFragment = { __typename: 'Contact', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null, mapLocation?: { __typename: 'ContactMapLocation', imageUrl?: string | null, addressText?: string | null } | null, additionalInfo?: { __typename: 'ContactAdditionalInfo', title?: string | null, items?: Array<string | null> | null } | null };
 
-export type ResourcesPartsFragment = { __typename: 'Resources', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null };
+export type ZoomInfoPartsFragment = { __typename: 'ZoomInfo', announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string, zoomUrl?: string | null } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string, avatarUrl?: string | null } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, sessions?: Array<{ __typename: 'ZoomInfoSessions', date: string, title: string, status: string, description: string, speaker: string, timeOrActionText?: string | null, actionUrl?: string | null, isDashed?: boolean | null } | null> | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null };
 
-export type ZoomInfoPartsFragment = { __typename: 'ZoomInfo', announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null };
+export type BooksPartsFragment = { __typename: 'Books', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, coverImage?: string | null, description: string, downloadButtonText: string, abstractButtonText: string, pdfFile?: string | null } | null };
 
-export type ArchivesPartsFragment = { __typename: 'Archives', announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null };
+export type LessonsPartsFragment = { __typename: 'Lessons', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string, image?: string | null } | null };
 
-export type LessonsPartsFragment = { __typename: 'Lessons', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string } | null };
+export type MagazinesPartsFragment = { __typename: 'Magazines', announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null };
 
-export type ReferencesPartsFragment = { __typename: 'References', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null };
+export type NewsletterPartsFragment = { __typename: 'Newsletter', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string, coverImage?: string | null } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null };
 
-export type ImagesPartsFragment = { __typename: 'Images', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string } | null };
+export type ReferencesPartsFragment = { __typename: 'References', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, relatedLessonImage?: string | null, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null };
 
-export type VideosPartsFragment = { __typename: 'Videos', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string } | null };
+export type VideosPartsFragment = { __typename: 'Videos', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string, videoUrl?: string | null, coverImage?: string | null } | null };
+
+export type ImagesPartsFragment = { __typename: 'Images', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string, image?: string | null } | null };
 
 export type LibraryPartsFragment = { __typename: 'Library', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, categoriesTitle: string, popularTitle: string, recentTitle: string, hero?: { __typename: 'LibraryHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'LibraryFeaturedResource', badge: string, tag: string, title: string, description: string, details: string, linkText: string } | null };
 
-export type BooksPartsFragment = { __typename: 'Books', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, description: string, downloadButtonText: string, abstractButtonText: string } | null };
+export type ArchivesPartsFragment = { __typename: 'Archives', announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null };
 
-export type MagazinesPartsFragment = { __typename: 'Magazines', announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, readButtonText: string, downloadButtonText: string } | null };
+export type ResourcesPartsFragment = { __typename: 'Resources', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null };
 
-export type PageQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
+export type QuickLinksPartsFragment = { __typename: 'QuickLinks', announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null };
 
-
-export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null } };
-
-export type PageConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<PageFilter>;
-}>;
-
-
-export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null } | null } | null> | null } };
+export type PagePartsFragment = { __typename: 'Page', title: string, description: string, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null };
 
 export type BookQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author: string, description: string, category: string, coverImage?: string | null, featured: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BookQuery = { __typename?: 'Query', book: { __typename: 'Book', id: string, title: string, author: string, description: string, abstract?: string | null, format: string, subject: string, coverImage: string, featured?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BookConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3101,33 +4241,14 @@ export type BookConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author: string, description: string, category: string, coverImage?: string | null, featured: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
-
-export type MagazineQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type MagazineQuery = { __typename?: 'Query', magazine: { __typename: 'Magazine', id: string, title: string, issue: string, description: string, coverImage?: string | null, publishDate: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
-
-export type MagazineConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<MagazineFilter>;
-}>;
-
-
-export type MagazineConnectionQuery = { __typename?: 'Query', magazineConnection: { __typename?: 'MagazineConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazineConnectionEdges', cursor: string, node?: { __typename: 'Magazine', id: string, title: string, issue: string, description: string, coverImage?: string | null, publishDate: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BookConnectionQuery = { __typename?: 'Query', bookConnection: { __typename?: 'BookConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BookConnectionEdges', cursor: string, node?: { __typename: 'Book', id: string, title: string, author: string, description: string, abstract?: string | null, format: string, subject: string, coverImage: string, featured?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type LessonQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type LessonQuery = { __typename?: 'Query', lesson: { __typename: 'Lesson', id: string, title: string, book: string, chapters: string, description: string, content?: any | null, difficulty: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type LessonQuery = { __typename?: 'Query', lesson: { __typename: 'Lesson', id: string, title: string, book: string, chapters: string, description: string, content?: any | null, teacher: string, division: string, difficulty: string, image?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type LessonConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3139,14 +4260,52 @@ export type LessonConnectionQueryVariables = Exact<{
 }>;
 
 
-export type LessonConnectionQuery = { __typename?: 'Query', lessonConnection: { __typename?: 'LessonConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LessonConnectionEdges', cursor: string, node?: { __typename: 'Lesson', id: string, title: string, book: string, chapters: string, description: string, content?: any | null, difficulty: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type LessonConnectionQuery = { __typename?: 'Query', lessonConnection: { __typename?: 'LessonConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LessonConnectionEdges', cursor: string, node?: { __typename: 'Lesson', id: string, title: string, book: string, chapters: string, description: string, content?: any | null, teacher: string, division: string, difficulty: string, image?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type MagazineQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type MagazineQuery = { __typename?: 'Query', magazine: { __typename: 'Magazine', id: string, title: string, issue: string, season?: string | null, year?: string | null, topic?: string | null, description: string, coverImage?: string | null, publishDate?: string | null, articlesCount?: number | null, contributorsCount?: number | null, pagesCount?: number | null, badge?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type MagazineConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<MagazineFilter>;
+}>;
+
+
+export type MagazineConnectionQuery = { __typename?: 'Query', magazineConnection: { __typename?: 'MagazineConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazineConnectionEdges', cursor: string, node?: { __typename: 'Magazine', id: string, title: string, issue: string, season?: string | null, year?: string | null, topic?: string | null, description: string, coverImage?: string | null, publishDate?: string | null, articlesCount?: number | null, contributorsCount?: number | null, pagesCount?: number | null, badge?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type DailyLetterQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type DailyLetterQuery = { __typename?: 'Query', dailyLetter: { __typename: 'DailyLetter', id: string, title: string, date: string, scripture: string, author: string, description: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type DailyLetterConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<DailyLetterFilter>;
+}>;
+
+
+export type DailyLetterConnectionQuery = { __typename?: 'Query', dailyLetterConnection: { __typename?: 'DailyLetterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'DailyLetterConnectionEdges', cursor: string, node?: { __typename: 'DailyLetter', id: string, title: string, date: string, scripture: string, author: string, description: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type BibleReferenceQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BibleReferenceQuery = { __typename?: 'Query', bibleReference: { __typename: 'BibleReference', id: string, title: string, scripture: string, category: string, description: string, image?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type BibleReferenceQuery = { __typename?: 'Query', bibleReference: { __typename: 'BibleReference', id: string, title: string, scripture: string, category: string, description: string, image?: string | null, author: string, testament: string, genre: string, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type BibleReferenceConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3158,14 +4317,128 @@ export type BibleReferenceConnectionQueryVariables = Exact<{
 }>;
 
 
-export type BibleReferenceConnectionQuery = { __typename?: 'Query', bibleReferenceConnection: { __typename?: 'BibleReferenceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BibleReferenceConnectionEdges', cursor: string, node?: { __typename: 'BibleReference', id: string, title: string, scripture: string, category: string, description: string, image?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type BibleReferenceConnectionQuery = { __typename?: 'Query', bibleReferenceConnection: { __typename?: 'BibleReferenceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BibleReferenceConnectionEdges', cursor: string, node?: { __typename: 'BibleReference', id: string, title: string, scripture: string, category: string, description: string, image?: string | null, author: string, testament: string, genre: string, tags?: Array<string | null> | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type VideoQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type VideoQuery = { __typename?: 'Query', video: { __typename: 'Video', id: string, title: string, series: string, speaker: string, scripture: string, duration: string, recordedDate?: string | null, description: string, thumbnail?: string | null, videoUrl?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type VideoConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<VideoFilter>;
+}>;
+
+
+export type VideoConnectionQuery = { __typename?: 'Query', videoConnection: { __typename?: 'VideoConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'VideoConnectionEdges', cursor: string, node?: { __typename: 'Video', id: string, title: string, series: string, speaker: string, scripture: string, duration: string, recordedDate?: string | null, description: string, thumbnail?: string | null, videoUrl?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type BibleImageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type BibleImageQuery = { __typename?: 'Query', bibleImage: { __typename: 'BibleImage', id: string, title: string, category: string, scripture: string, description: string, image: string, date?: string | null, citation?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type BibleImageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<BibleImageFilter>;
+}>;
+
+
+export type BibleImageConnectionQuery = { __typename?: 'Query', bibleImageConnection: { __typename?: 'BibleImageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BibleImageConnectionEdges', cursor: string, node?: { __typename: 'BibleImage', id: string, title: string, category: string, scripture: string, description: string, image: string, date?: string | null, citation?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type LibraryResourceQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type LibraryResourceQuery = { __typename?: 'Query', libraryResource: { __typename: 'LibraryResource', id: string, title: string, category: string, era: string, badge: string, description: string, author?: string | null, primaryDetail?: string | null, detailIcon?: string | null, tags?: Array<string | null> | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type LibraryResourceConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<LibraryResourceFilter>;
+}>;
+
+
+export type LibraryResourceConnectionQuery = { __typename?: 'Query', libraryResourceConnection: { __typename?: 'LibraryResourceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LibraryResourceConnectionEdges', cursor: string, node?: { __typename: 'LibraryResource', id: string, title: string, category: string, era: string, badge: string, description: string, author?: string | null, primaryDetail?: string | null, detailIcon?: string | null, tags?: Array<string | null> | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type ArchiveDocumentQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ArchiveDocumentQuery = { __typename?: 'Query', archiveDocument: { __typename: 'ArchiveDocument', id: string, title: string, category: string, catalogRef: string, dateLabel: string, attributionRole?: string | null, attributionName?: string | null, description: string, actionLabel?: string | null, actionType?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type ArchiveDocumentConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ArchiveDocumentFilter>;
+}>;
+
+
+export type ArchiveDocumentConnectionQuery = { __typename?: 'Query', archiveDocumentConnection: { __typename?: 'ArchiveDocumentConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArchiveDocumentConnectionEdges', cursor: string, node?: { __typename: 'ArchiveDocument', id: string, title: string, category: string, catalogRef: string, dateLabel: string, attributionRole?: string | null, attributionName?: string | null, description: string, actionLabel?: string | null, actionType?: string | null, pdfFile?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type UsefulResourceQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type UsefulResourceQuery = { __typename?: 'Query', usefulResource: { __typename: 'UsefulResource', id: string, title: string, category: string, pricingType: string, rating: string, description: string, thumbnail?: string | null, externalUrl?: string | null, actionLabel?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type UsefulResourceConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<UsefulResourceFilter>;
+}>;
+
+
+export type UsefulResourceConnectionQuery = { __typename?: 'Query', usefulResourceConnection: { __typename?: 'UsefulResourceConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'UsefulResourceConnectionEdges', cursor: string, node?: { __typename: 'UsefulResource', id: string, title: string, category: string, pricingType: string, rating: string, description: string, thumbnail?: string | null, externalUrl?: string | null, actionLabel?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+
+export type QuickLinkQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type QuickLinkQuery = { __typename?: 'Query', quickLink: { __typename: 'QuickLink', id: string, title: string, subtitle: string, targetUrl: string, icon: string, description?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+
+export type QuickLinkConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<QuickLinkFilter>;
+}>;
+
+
+export type QuickLinkConnectionQuery = { __typename?: 'Query', quickLinkConnection: { __typename?: 'QuickLinkConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'QuickLinkConnectionEdges', cursor: string, node?: { __typename: 'QuickLink', id: string, title: string, subtitle: string, targetUrl: string, icon: string, description?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type HomeQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null } };
+export type HomeQuery = { __typename?: 'Query', home: { __typename: 'Home', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null, latestReferences?: { __typename: 'HomeLatestReferences', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeLatestReferencesItems', reference?: string | null, category?: string | null, title?: string | null, description?: string | null, tags?: Array<string | null> | null, link?: string | null } | null> | null } | null, featuredVideos?: { __typename: 'HomeFeaturedVideos', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeFeaturedVideosItems', series?: string | null, title?: string | null, description?: string | null, duration?: string | null, image?: string | null, link?: string | null } | null> | null } | null, galleryPreview?: { __typename: 'HomeGalleryPreview', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeGalleryPreviewItems', title?: string | null, category?: string | null, image?: string | null } | null> | null } | null, featuredPublications?: { __typename: 'HomeFeaturedPublications', sectionTitle?: string | null, book?: { __typename: 'HomeFeaturedPublicationsBook', badge?: string | null, title?: string | null, author?: string | null, description?: string | null, coverImage?: string | null, downloadLink?: string | null } | null, magazine?: { __typename: 'HomeFeaturedPublicationsMagazine', badge?: string | null, title?: string | null, issue?: string | null, description?: string | null, coverImage?: string | null, readLink?: string | null } | null } | null, announcementsWidget?: { __typename: 'HomeAnnouncementsWidget', title?: string | null, items?: Array<{ __typename: 'HomeAnnouncementsWidgetItems', date?: string | null, title?: string | null, description?: string | null } | null> | null } | null, usefulToolsWidget?: { __typename: 'HomeUsefulToolsWidget', title?: string | null, tools?: Array<{ __typename: 'HomeUsefulToolsWidgetTools', name?: string | null, link?: string | null } | null> | null } | null, quarterlyNewsletter?: { __typename: 'HomeQuarterlyNewsletter', title?: string | null, description?: string | null, buttonText?: string | null } | null } };
 
 export type HomeConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3177,14 +4450,14 @@ export type HomeConnectionQueryVariables = Exact<{
 }>;
 
 
-export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null } | null } | null> | null } };
+export type HomeConnectionQuery = { __typename?: 'Query', homeConnection: { __typename?: 'HomeConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'HomeConnectionEdges', cursor: string, node?: { __typename: 'Home', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'HomeHero', headline: string, subheadline: string, ctaText: string, ctaLink: string, secondaryCtaText: string, secondaryCtaLink: string, heroImage?: string | null } | null, scriptureOfTheDay?: { __typename: 'HomeScriptureOfTheDay', verse: string, reference: string } | null, featuredLessons?: { __typename: 'HomeFeaturedLessons', sectionTitle: string, lesson1?: { __typename: 'HomeFeaturedLessonsLesson1', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null, lesson2?: { __typename: 'HomeFeaturedLessonsLesson2', category: string, reference: string, author: string, title: string, description: string, readTime: string, image?: string | null } | null } | null, newsletter?: { __typename: 'HomeNewsletter', title: string, description: string, buttonText: string } | null, zoomMeeting?: { __typename: 'HomeZoomMeeting', title: string, description: string, date: string, time: string, buttonText: string, buttonLink: string } | null, latestReferences?: { __typename: 'HomeLatestReferences', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeLatestReferencesItems', reference?: string | null, category?: string | null, title?: string | null, description?: string | null, tags?: Array<string | null> | null, link?: string | null } | null> | null } | null, featuredVideos?: { __typename: 'HomeFeaturedVideos', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeFeaturedVideosItems', series?: string | null, title?: string | null, description?: string | null, duration?: string | null, image?: string | null, link?: string | null } | null> | null } | null, galleryPreview?: { __typename: 'HomeGalleryPreview', sectionTitle?: string | null, items?: Array<{ __typename: 'HomeGalleryPreviewItems', title?: string | null, category?: string | null, image?: string | null } | null> | null } | null, featuredPublications?: { __typename: 'HomeFeaturedPublications', sectionTitle?: string | null, book?: { __typename: 'HomeFeaturedPublicationsBook', badge?: string | null, title?: string | null, author?: string | null, description?: string | null, coverImage?: string | null, downloadLink?: string | null } | null, magazine?: { __typename: 'HomeFeaturedPublicationsMagazine', badge?: string | null, title?: string | null, issue?: string | null, description?: string | null, coverImage?: string | null, readLink?: string | null } | null } | null, announcementsWidget?: { __typename: 'HomeAnnouncementsWidget', title?: string | null, items?: Array<{ __typename: 'HomeAnnouncementsWidgetItems', date?: string | null, title?: string | null, description?: string | null } | null> | null } | null, usefulToolsWidget?: { __typename: 'HomeUsefulToolsWidget', title?: string | null, tools?: Array<{ __typename: 'HomeUsefulToolsWidgetTools', name?: string | null, link?: string | null } | null> | null } | null, quarterlyNewsletter?: { __typename: 'HomeQuarterlyNewsletter', title?: string | null, description?: string | null, buttonText?: string | null } | null } | null } | null> | null } };
 
 export type AboutQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type AboutQuery = { __typename?: 'Query', about: { __typename: 'About', id: string, announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null } };
+export type AboutQuery = { __typename?: 'Query', about: { __typename: 'About', id: string, announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, leadershipTitle?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null, leadership?: Array<{ __typename: 'AboutLeadership', name: string, role: string, avatar: string, bio: string } | null> | null, academicOffice?: { __typename: 'AboutAcademicOffice', title?: string | null, description?: string | null, address?: string | null, email?: string | null, buttonText?: string | null, buttonLink?: string | null } | null } };
 
 export type AboutConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3196,14 +4469,14 @@ export type AboutConnectionQueryVariables = Exact<{
 }>;
 
 
-export type AboutConnectionQuery = { __typename?: 'Query', aboutConnection: { __typename?: 'AboutConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AboutConnectionEdges', cursor: string, node?: { __typename: 'About', id: string, announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null } | null } | null> | null } };
+export type AboutConnectionQuery = { __typename?: 'Query', aboutConnection: { __typename?: 'AboutConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'AboutConnectionEdges', cursor: string, node?: { __typename: 'About', id: string, announcementText: string, announcementSubtext?: string | null, introTitle: string, introParagraph1: string, introParagraph2: string, leadershipTitle?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'AboutHero', badge: string, headline: string, subheadline: string } | null, mission?: { __typename: 'AboutMission', title: string, description: string } | null, vision?: { __typename: 'AboutVision', title: string, description: string } | null, statementOfFaith?: { __typename: 'AboutStatementOfFaith', badge: string, title: string, point1Title: string, point1Text: string, point2Title: string, point2Text: string, point3Title: string, point3Text: string } | null, quoteWidget?: { __typename: 'AboutQuoteWidget', quote: string, author: string } | null, leadership?: Array<{ __typename: 'AboutLeadership', name: string, role: string, avatar: string, bio: string } | null> | null, academicOffice?: { __typename: 'AboutAcademicOffice', title?: string | null, description?: string | null, address?: string | null, email?: string | null, buttonText?: string | null, buttonLink?: string | null } | null } | null } | null> | null } };
 
 export type ContactQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ContactQuery = { __typename?: 'Query', contact: { __typename: 'Contact', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null } };
+export type ContactQuery = { __typename?: 'Query', contact: { __typename: 'Contact', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null, mapLocation?: { __typename: 'ContactMapLocation', imageUrl?: string | null, addressText?: string | null } | null, additionalInfo?: { __typename: 'ContactAdditionalInfo', title?: string | null, items?: Array<string | null> | null } | null } };
 
 export type ContactConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3215,71 +4488,14 @@ export type ContactConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ContactConnectionQuery = { __typename?: 'Query', contactConnection: { __typename?: 'ContactConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ContactConnectionEdges', cursor: string, node?: { __typename: 'Contact', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null } | null } | null> | null } };
-
-export type NewsletterQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type NewsletterQuery = { __typename?: 'Query', newsletter: { __typename: 'Newsletter', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null } };
-
-export type NewsletterConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<NewsletterFilter>;
-}>;
-
-
-export type NewsletterConnectionQuery = { __typename?: 'Query', newsletterConnection: { __typename?: 'NewsletterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NewsletterConnectionEdges', cursor: string, node?: { __typename: 'Newsletter', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null } | null } | null> | null } };
-
-export type QuickLinksQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type QuickLinksQuery = { __typename?: 'Query', quickLinks: { __typename: 'QuickLinks', id: string, announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null } };
-
-export type QuickLinksConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<QuickLinksFilter>;
-}>;
-
-
-export type QuickLinksConnectionQuery = { __typename?: 'Query', quickLinksConnection: { __typename?: 'QuickLinksConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'QuickLinksConnectionEdges', cursor: string, node?: { __typename: 'QuickLinks', id: string, announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null } | null } | null> | null } };
-
-export type ResourcesQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type ResourcesQuery = { __typename?: 'Query', resources: { __typename: 'Resources', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null } };
-
-export type ResourcesConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ResourcesFilter>;
-}>;
-
-
-export type ResourcesConnectionQuery = { __typename?: 'Query', resourcesConnection: { __typename?: 'ResourcesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResourcesConnectionEdges', cursor: string, node?: { __typename: 'Resources', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null } | null } | null> | null } };
+export type ContactConnectionQuery = { __typename?: 'Query', contactConnection: { __typename?: 'ContactConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ContactConnectionEdges', cursor: string, node?: { __typename: 'Contact', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ContactHero', badge: string, headline: string, subheadline: string } | null, emailCard?: { __typename: 'ContactEmailCard', title: string, description: string, email: string } | null, phoneCard?: { __typename: 'ContactPhoneCard', title: string, description: string, phone: string } | null, locationCard?: { __typename: 'ContactLocationCard', title: string, description: string, address: string } | null, contactForm?: { __typename: 'ContactContactForm', title: string, description: string, submitButtonText: string } | null, officeHours?: { __typename: 'ContactOfficeHours', title: string, weekdayHours: string, saturdayHours: string, sundayHours: string, note: string } | null, mapLocation?: { __typename: 'ContactMapLocation', imageUrl?: string | null, addressText?: string | null } | null, additionalInfo?: { __typename: 'ContactAdditionalInfo', title?: string | null, items?: Array<string | null> | null } | null } | null } | null> | null } };
 
 export type ZoomInfoQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ZoomInfoQuery = { __typename?: 'Query', zoomInfo: { __typename: 'ZoomInfo', id: string, announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null } };
+export type ZoomInfoQuery = { __typename?: 'Query', zoomInfo: { __typename: 'ZoomInfo', id: string, announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string, zoomUrl?: string | null } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string, avatarUrl?: string | null } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, sessions?: Array<{ __typename: 'ZoomInfoSessions', date: string, title: string, status: string, description: string, speaker: string, timeOrActionText?: string | null, actionUrl?: string | null, isDashed?: boolean | null } | null> | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null } };
 
 export type ZoomInfoConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3291,33 +4507,33 @@ export type ZoomInfoConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ZoomInfoConnectionQuery = { __typename?: 'Query', zoomInfoConnection: { __typename?: 'ZoomInfoConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ZoomInfoConnectionEdges', cursor: string, node?: { __typename: 'ZoomInfo', id: string, announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null } | null } | null> | null } };
+export type ZoomInfoConnectionQuery = { __typename?: 'Query', zoomInfoConnection: { __typename?: 'ZoomInfoConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ZoomInfoConnectionEdges', cursor: string, node?: { __typename: 'ZoomInfo', id: string, announcementText: string, announcementSubtext?: string | null, sessionsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ZoomInfoHero', badge: string, headline: string, subheadline: string } | null, featuredMeeting?: { __typename: 'ZoomInfoFeaturedMeeting', badge: string, tag: string, title: string, description: string, date: string, time: string, duration: string, buttonText: string, zoomUrl?: string | null } | null, speakerCard?: { __typename: 'ZoomInfoSpeakerCard', title: string, name: string, role: string, bio: string, avatarUrl?: string | null } | null, meetingAccessCard?: { __typename: 'ZoomInfoMeetingAccessCard', title: string, platform: string, meetingId: string, passcode: string } | null, preparationCard?: { __typename: 'ZoomInfoPreparationCard', title: string, subtitle: string, reading1: string, reading2: string, reading3: string } | null, sessions?: Array<{ __typename: 'ZoomInfoSessions', date: string, title: string, status: string, description: string, speaker: string, timeOrActionText?: string | null, actionUrl?: string | null, isDashed?: boolean | null } | null> | null, relatedScripture?: { __typename: 'ZoomInfoRelatedScripture', title: string, description: string, scripture1Title: string, scripture1Subtitle: string, scripture2Title: string, scripture2Subtitle: string, scripture3Title: string, scripture3Subtitle: string } | null } | null } | null> | null } };
 
-export type ArchivesQueryVariables = Exact<{
+export type BooksQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ArchivesQuery = { __typename?: 'Query', archives: { __typename: 'Archives', id: string, announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null } };
+export type BooksQuery = { __typename?: 'Query', books: { __typename: 'Books', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, coverImage?: string | null, description: string, downloadButtonText: string, abstractButtonText: string, pdfFile?: string | null } | null } };
 
-export type ArchivesConnectionQueryVariables = Exact<{
+export type BooksConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ArchivesFilter>;
+  filter?: InputMaybe<BooksFilter>;
 }>;
 
 
-export type ArchivesConnectionQuery = { __typename?: 'Query', archivesConnection: { __typename?: 'ArchivesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArchivesConnectionEdges', cursor: string, node?: { __typename: 'Archives', id: string, announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null } | null } | null> | null } };
+export type BooksConnectionQuery = { __typename?: 'Query', booksConnection: { __typename?: 'BooksConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BooksConnectionEdges', cursor: string, node?: { __typename: 'Books', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, coverImage?: string | null, description: string, downloadButtonText: string, abstractButtonText: string, pdfFile?: string | null } | null } | null } | null> | null } };
 
 export type LessonsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type LessonsQuery = { __typename?: 'Query', lessons: { __typename: 'Lessons', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string } | null } };
+export type LessonsQuery = { __typename?: 'Query', lessons: { __typename: 'Lessons', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string, image?: string | null } | null } };
 
 export type LessonsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3329,14 +4545,52 @@ export type LessonsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type LessonsConnectionQuery = { __typename?: 'Query', lessonsConnection: { __typename?: 'LessonsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LessonsConnectionEdges', cursor: string, node?: { __typename: 'Lessons', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string } | null } | null } | null> | null } };
+export type LessonsConnectionQuery = { __typename?: 'Query', lessonsConnection: { __typename?: 'LessonsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LessonsConnectionEdges', cursor: string, node?: { __typename: 'Lessons', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string, image?: string | null } | null } | null } | null> | null } };
+
+export type MagazinesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type MagazinesQuery = { __typename?: 'Query', magazines: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null } };
+
+export type MagazinesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<MagazinesFilter>;
+}>;
+
+
+export type MagazinesConnectionQuery = { __typename?: 'Query', magazinesConnection: { __typename?: 'MagazinesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazinesConnectionEdges', cursor: string, node?: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null } | null } | null> | null } };
+
+export type NewsletterQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type NewsletterQuery = { __typename?: 'Query', newsletter: { __typename: 'Newsletter', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string, coverImage?: string | null } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null } };
+
+export type NewsletterConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<NewsletterFilter>;
+}>;
+
+
+export type NewsletterConnectionQuery = { __typename?: 'Query', newsletterConnection: { __typename?: 'NewsletterConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'NewsletterConnectionEdges', cursor: string, node?: { __typename: 'Newsletter', id: string, announcementText: string, announcementSubtext?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string, coverImage?: string | null } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null } | null } | null> | null } };
 
 export type ReferencesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ReferencesQuery = { __typename?: 'Query', references: { __typename: 'References', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null } };
+export type ReferencesQuery = { __typename?: 'Query', references: { __typename: 'References', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, relatedLessonImage?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null } };
 
 export type ReferencesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3348,33 +4602,14 @@ export type ReferencesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ReferencesConnectionQuery = { __typename?: 'Query', referencesConnection: { __typename?: 'ReferencesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ReferencesConnectionEdges', cursor: string, node?: { __typename: 'References', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null } | null } | null> | null } };
-
-export type ImagesQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
-}>;
-
-
-export type ImagesQuery = { __typename?: 'Query', images: { __typename: 'Images', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string } | null } };
-
-export type ImagesConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ImagesFilter>;
-}>;
-
-
-export type ImagesConnectionQuery = { __typename?: 'Query', imagesConnection: { __typename?: 'ImagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ImagesConnectionEdges', cursor: string, node?: { __typename: 'Images', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string } | null } | null } | null> | null } };
+export type ReferencesConnectionQuery = { __typename?: 'Query', referencesConnection: { __typename?: 'ReferencesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ReferencesConnectionEdges', cursor: string, node?: { __typename: 'References', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, topicsTitle: string, relatedLessonTitle: string, relatedLessonCourse: string, relatedLessonDescription: string, relatedLessonButtonText: string, relatedLessonImage?: string | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ReferencesHero', badge: string, headline: string, subheadline: string } | null, featuredReference?: { __typename: 'ReferencesFeaturedReference', badge: string, tag: string, title: string, description: string, crossReferences: string, linkText: string } | null } | null } | null> | null } };
 
 export type VideosQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type VideosQuery = { __typename?: 'Query', videos: { __typename: 'Videos', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string } | null } };
+export type VideosQuery = { __typename?: 'Query', videos: { __typename: 'Videos', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string, videoUrl?: string | null, coverImage?: string | null } | null } };
 
 export type VideosConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -3386,7 +4621,26 @@ export type VideosConnectionQueryVariables = Exact<{
 }>;
 
 
-export type VideosConnectionQuery = { __typename?: 'Query', videosConnection: { __typename?: 'VideosConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'VideosConnectionEdges', cursor: string, node?: { __typename: 'Videos', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string } | null } | null } | null> | null } };
+export type VideosConnectionQuery = { __typename?: 'Query', videosConnection: { __typename?: 'VideosConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'VideosConnectionEdges', cursor: string, node?: { __typename: 'Videos', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, lecturesTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'VideosHero', badge: string, headline: string, subheadline: string } | null, featuredVideo?: { __typename: 'VideosFeaturedVideo', badge: string, title: string, description: string, speaker: string, scripture: string, recorded: string, buttonText: string, videoUrl?: string | null, coverImage?: string | null } | null } | null } | null> | null } };
+
+export type ImagesQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type ImagesQuery = { __typename?: 'Query', images: { __typename: 'Images', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string, image?: string | null } | null } };
+
+export type ImagesConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<ImagesFilter>;
+}>;
+
+
+export type ImagesConnectionQuery = { __typename?: 'Query', imagesConnection: { __typename?: 'ImagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ImagesConnectionEdges', cursor: string, node?: { __typename: 'Images', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ImagesHero', badge: string, headline: string, subheadline: string } | null, featuredImage?: { __typename: 'ImagesFeaturedImage', badge: string, title: string, description: string, scriptureLabel: string, scriptureQuote: string, scriptureReference: string, downloadButtonText: string, citationButtonText: string, image?: string | null } | null } | null } | null> | null } };
 
 export type LibraryQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -3407,78 +4661,95 @@ export type LibraryConnectionQueryVariables = Exact<{
 
 export type LibraryConnectionQuery = { __typename?: 'Query', libraryConnection: { __typename?: 'LibraryConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LibraryConnectionEdges', cursor: string, node?: { __typename: 'Library', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, categoriesTitle: string, popularTitle: string, recentTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'LibraryHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'LibraryFeaturedResource', badge: string, tag: string, title: string, description: string, details: string, linkText: string } | null } | null } | null> | null } };
 
-export type BooksQueryVariables = Exact<{
+export type ArchivesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type BooksQuery = { __typename?: 'Query', books: { __typename: 'Books', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, description: string, downloadButtonText: string, abstractButtonText: string } | null } };
+export type ArchivesQuery = { __typename?: 'Query', archives: { __typename: 'Archives', id: string, announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null } };
 
-export type BooksConnectionQueryVariables = Exact<{
+export type ArchivesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<BooksFilter>;
+  filter?: InputMaybe<ArchivesFilter>;
 }>;
 
 
-export type BooksConnectionQuery = { __typename?: 'Query', booksConnection: { __typename?: 'BooksConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'BooksConnectionEdges', cursor: string, node?: { __typename: 'Books', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, submissionsTitle: string, submissionsDescription: string, submissionsButtonText: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'BooksHero', badge: string, headline: string, subheadline: string } | null, featuredBook?: { __typename: 'BooksFeaturedBook', badge: string, title: string, description: string, downloadButtonText: string, abstractButtonText: string } | null } | null } | null> | null } };
+export type ArchivesConnectionQuery = { __typename?: 'Query', archivesConnection: { __typename?: 'ArchivesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ArchivesConnectionEdges', cursor: string, node?: { __typename: 'Archives', id: string, announcementText: string, announcementSubtext?: string | null, catalogInfo: string, classificationsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ArchivesHero', badge: string, headline: string, subheadline: string } | null, featuredArchive?: { __typename: 'ArchivesFeaturedArchive', badge: string, catalogRef: string, title: string, description: string, category: string, linkText: string } | null, accessPolicy?: { __typename: 'ArchivesAccessPolicy', title: string, description: string } | null } | null } | null> | null } };
 
-export type MagazinesQueryVariables = Exact<{
+export type ResourcesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type MagazinesQuery = { __typename?: 'Query', magazines: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, readButtonText: string, downloadButtonText: string } | null } };
+export type ResourcesQuery = { __typename?: 'Query', resources: { __typename: 'Resources', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null } };
 
-export type MagazinesConnectionQueryVariables = Exact<{
+export type ResourcesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
   after?: InputMaybe<Scalars['String']['input']>;
   first?: InputMaybe<Scalars['Float']['input']>;
   last?: InputMaybe<Scalars['Float']['input']>;
   sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<MagazinesFilter>;
+  filter?: InputMaybe<ResourcesFilter>;
 }>;
 
 
-export type MagazinesConnectionQuery = { __typename?: 'Query', magazinesConnection: { __typename?: 'MagazinesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazinesConnectionEdges', cursor: string, node?: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, readButtonText: string, downloadButtonText: string } | null } | null } | null> | null } };
+export type ResourcesConnectionQuery = { __typename?: 'Query', resourcesConnection: { __typename?: 'ResourcesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResourcesConnectionEdges', cursor: string, node?: { __typename: 'Resources', id: string, announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, popularResourcesTitle: string, recentAdditionsTitle: string, categoryTagsTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'ResourcesHero', badge: string, headline: string, subheadline: string } | null, featuredResource?: { __typename: 'ResourcesFeaturedResource', badge: string, tag: string, title: string, description: string, rating: string, linkText: string, linkUrl: string } | null } | null } | null> | null } };
 
-export const PagePartsFragmentDoc = gql`
-    fragment PageParts on Page {
-  __typename
-  title
-  description
-  hero {
-    __typename
-    headline
-    subheadline
-    ctaText
-    ctaLink
-    heroImage
-  }
-}
-    `;
+export type QuickLinksQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type QuickLinksQuery = { __typename?: 'Query', quickLinks: { __typename: 'QuickLinks', id: string, announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null } };
+
+export type QuickLinksConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<QuickLinksFilter>;
+}>;
+
+
+export type QuickLinksConnectionQuery = { __typename?: 'Query', quickLinksConnection: { __typename?: 'QuickLinksConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'QuickLinksConnectionEdges', cursor: string, node?: { __typename: 'QuickLinks', id: string, announcementText: string, announcementSubtext?: string | null, categorySectionTitle: string, searchSectionTitle: string, searchPlaceholder: string, shortcutsSectionTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'QuickLinksHero', badge: string, headline: string, subheadline: string } | null, featuredBanner?: { __typename: 'QuickLinksFeaturedBanner', badge: string, tag: string, title: string, description: string, button1Text: string, button1Link: string, button2Text: string, button2Link: string, button3Text: string, button3Link: string } | null } | null } | null> | null } };
+
+export type PageQueryVariables = Exact<{
+  relativePath: Scalars['String']['input'];
+}>;
+
+
+export type PageQuery = { __typename?: 'Query', page: { __typename: 'Page', id: string, title: string, description: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null } };
+
+export type PageConnectionQueryVariables = Exact<{
+  before?: InputMaybe<Scalars['String']['input']>;
+  after?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Float']['input']>;
+  last?: InputMaybe<Scalars['Float']['input']>;
+  sort?: InputMaybe<Scalars['String']['input']>;
+  filter?: InputMaybe<PageFilter>;
+}>;
+
+
+export type PageConnectionQuery = { __typename?: 'Query', pageConnection: { __typename?: 'PageConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PageConnectionEdges', cursor: string, node?: { __typename: 'Page', id: string, title: string, description: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'PageHero', headline: string, subheadline?: string | null, ctaText?: string | null, ctaLink?: string | null, heroImage?: string | null } | null } | null } | null> | null } };
+
 export const BookPartsFragmentDoc = gql`
     fragment BookParts on Book {
   __typename
   title
   author
   description
-  category
+  abstract
+  format
+  subject
   coverImage
   featured
-}
-    `;
-export const MagazinePartsFragmentDoc = gql`
-    fragment MagazineParts on Magazine {
-  __typename
-  title
-  issue
-  description
-  coverImage
-  publishDate
+  pdfFile
+  body
 }
     `;
 export const LessonPartsFragmentDoc = gql`
@@ -3489,7 +4760,40 @@ export const LessonPartsFragmentDoc = gql`
   chapters
   description
   content
+  teacher
+  division
   difficulty
+  image
+}
+    `;
+export const MagazinePartsFragmentDoc = gql`
+    fragment MagazineParts on Magazine {
+  __typename
+  title
+  issue
+  season
+  year
+  topic
+  description
+  coverImage
+  publishDate
+  articlesCount
+  contributorsCount
+  pagesCount
+  badge
+  pdfFile
+  body
+}
+    `;
+export const DailyLetterPartsFragmentDoc = gql`
+    fragment DailyLetterParts on DailyLetter {
+  __typename
+  title
+  date
+  scripture
+  author
+  description
+  body
 }
     `;
 export const BibleReferencePartsFragmentDoc = gql`
@@ -3500,6 +4804,96 @@ export const BibleReferencePartsFragmentDoc = gql`
   category
   description
   image
+  author
+  testament
+  genre
+  tags
+  body
+}
+    `;
+export const VideoPartsFragmentDoc = gql`
+    fragment VideoParts on Video {
+  __typename
+  title
+  series
+  speaker
+  scripture
+  duration
+  recordedDate
+  description
+  thumbnail
+  videoUrl
+  body
+}
+    `;
+export const BibleImagePartsFragmentDoc = gql`
+    fragment BibleImageParts on BibleImage {
+  __typename
+  title
+  category
+  scripture
+  description
+  image
+  date
+  citation
+  body
+}
+    `;
+export const LibraryResourcePartsFragmentDoc = gql`
+    fragment LibraryResourceParts on LibraryResource {
+  __typename
+  title
+  category
+  era
+  badge
+  description
+  author
+  primaryDetail
+  detailIcon
+  tags
+  pdfFile
+  body
+}
+    `;
+export const ArchiveDocumentPartsFragmentDoc = gql`
+    fragment ArchiveDocumentParts on ArchiveDocument {
+  __typename
+  title
+  category
+  catalogRef
+  dateLabel
+  attributionRole
+  attributionName
+  description
+  actionLabel
+  actionType
+  pdfFile
+  body
+}
+    `;
+export const UsefulResourcePartsFragmentDoc = gql`
+    fragment UsefulResourceParts on UsefulResource {
+  __typename
+  title
+  category
+  pricingType
+  rating
+  description
+  thumbnail
+  externalUrl
+  actionLabel
+  body
+}
+    `;
+export const QuickLinkPartsFragmentDoc = gql`
+    fragment QuickLinkParts on QuickLink {
+  __typename
+  title
+  subtitle
+  targetUrl
+  icon
+  description
+  body
 }
     `;
 export const HomePartsFragmentDoc = gql`
@@ -3561,6 +4955,89 @@ export const HomePartsFragmentDoc = gql`
     buttonText
     buttonLink
   }
+  latestReferences {
+    __typename
+    sectionTitle
+    items {
+      __typename
+      reference
+      category
+      title
+      description
+      tags
+      link
+    }
+  }
+  featuredVideos {
+    __typename
+    sectionTitle
+    items {
+      __typename
+      series
+      title
+      description
+      duration
+      image
+      link
+    }
+  }
+  galleryPreview {
+    __typename
+    sectionTitle
+    items {
+      __typename
+      title
+      category
+      image
+    }
+  }
+  featuredPublications {
+    __typename
+    sectionTitle
+    book {
+      __typename
+      badge
+      title
+      author
+      description
+      coverImage
+      downloadLink
+    }
+    magazine {
+      __typename
+      badge
+      title
+      issue
+      description
+      coverImage
+      readLink
+    }
+  }
+  announcementsWidget {
+    __typename
+    title
+    items {
+      __typename
+      date
+      title
+      description
+    }
+  }
+  usefulToolsWidget {
+    __typename
+    title
+    tools {
+      __typename
+      name
+      link
+    }
+  }
+  quarterlyNewsletter {
+    __typename
+    title
+    description
+    buttonText
+  }
 }
     `;
 export const AboutPartsFragmentDoc = gql`
@@ -3602,6 +5079,23 @@ export const AboutPartsFragmentDoc = gql`
     __typename
     quote
     author
+  }
+  leadershipTitle
+  leadership {
+    __typename
+    name
+    role
+    avatar
+    bio
+  }
+  academicOffice {
+    __typename
+    title
+    description
+    address
+    email
+    buttonText
+    buttonLink
   }
 }
     `;
@@ -3648,6 +5142,170 @@ export const ContactPartsFragmentDoc = gql`
     sundayHours
     note
   }
+  mapLocation {
+    __typename
+    imageUrl
+    addressText
+  }
+  additionalInfo {
+    __typename
+    title
+    items
+  }
+}
+    `;
+export const ZoomInfoPartsFragmentDoc = gql`
+    fragment ZoomInfoParts on ZoomInfo {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredMeeting {
+    __typename
+    badge
+    tag
+    title
+    description
+    date
+    time
+    duration
+    buttonText
+    zoomUrl
+  }
+  speakerCard {
+    __typename
+    title
+    name
+    role
+    bio
+    avatarUrl
+  }
+  meetingAccessCard {
+    __typename
+    title
+    platform
+    meetingId
+    passcode
+  }
+  preparationCard {
+    __typename
+    title
+    subtitle
+    reading1
+    reading2
+    reading3
+  }
+  sessionsTitle
+  sessions {
+    __typename
+    date
+    title
+    status
+    description
+    speaker
+    timeOrActionText
+    actionUrl
+    isDashed
+  }
+  relatedScripture {
+    __typename
+    title
+    description
+    scripture1Title
+    scripture1Subtitle
+    scripture2Title
+    scripture2Subtitle
+    scripture3Title
+    scripture3Subtitle
+  }
+}
+    `;
+export const BooksPartsFragmentDoc = gql`
+    fragment BooksParts on Books {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredBook {
+    __typename
+    badge
+    title
+    coverImage
+    description
+    downloadButtonText
+    abstractButtonText
+    pdfFile
+  }
+  submissionsTitle
+  submissionsDescription
+  submissionsButtonText
+}
+    `;
+export const LessonsPartsFragmentDoc = gql`
+    fragment LessonsParts on Lessons {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredLesson {
+    __typename
+    badge
+    title
+    description
+    teacher
+    linkText
+    image
+  }
+  progressTitle
+  progressCourse
+  progressPercentage
+  progressDescription
+  progressButtonText
+  seminarTitle
+}
+    `;
+export const MagazinesPartsFragmentDoc = gql`
+    fragment MagazinesParts on Magazines {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredIssue {
+    __typename
+    badge
+    tag
+    title
+    description
+    date
+    details
+    coverImage
+    readButtonText
+    downloadButtonText
+  }
+  spotlightTitle
+  archiveTitle
 }
     `;
 export const NewsletterPartsFragmentDoc = gql`
@@ -3669,6 +5327,7 @@ export const NewsletterPartsFragmentDoc = gql`
     scripture
     content
     date
+    coverImage
   }
   signupCTA {
     __typename
@@ -3682,6 +5341,171 @@ export const NewsletterPartsFragmentDoc = gql`
     quote
     reference
   }
+}
+    `;
+export const ReferencesPartsFragmentDoc = gql`
+    fragment ReferencesParts on References {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredReference {
+    __typename
+    badge
+    tag
+    title
+    description
+    crossReferences
+    linkText
+  }
+  topicsTitle
+  relatedLessonTitle
+  relatedLessonCourse
+  relatedLessonDescription
+  relatedLessonButtonText
+  relatedLessonImage
+}
+    `;
+export const VideosPartsFragmentDoc = gql`
+    fragment VideosParts on Videos {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredVideo {
+    __typename
+    badge
+    title
+    description
+    speaker
+    scripture
+    recorded
+    buttonText
+    videoUrl
+    coverImage
+  }
+  lecturesTitle
+}
+    `;
+export const ImagesPartsFragmentDoc = gql`
+    fragment ImagesParts on Images {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredImage {
+    __typename
+    badge
+    title
+    description
+    scriptureLabel
+    scriptureQuote
+    scriptureReference
+    downloadButtonText
+    citationButtonText
+    image
+  }
+  archiveTitle
+}
+    `;
+export const LibraryPartsFragmentDoc = gql`
+    fragment LibraryParts on Library {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  searchPlaceholder
+  featuredResource {
+    __typename
+    badge
+    tag
+    title
+    description
+    details
+    linkText
+  }
+  categoriesTitle
+  popularTitle
+  recentTitle
+}
+    `;
+export const ArchivesPartsFragmentDoc = gql`
+    fragment ArchivesParts on Archives {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  catalogInfo
+  featuredArchive {
+    __typename
+    badge
+    catalogRef
+    title
+    description
+    category
+    linkText
+  }
+  classificationsTitle
+  accessPolicy {
+    __typename
+    title
+    description
+  }
+}
+    `;
+export const ResourcesPartsFragmentDoc = gql`
+    fragment ResourcesParts on Resources {
+  __typename
+  announcementText
+  announcementSubtext
+  hero {
+    __typename
+    badge
+    headline
+    subheadline
+  }
+  featuredResource {
+    __typename
+    badge
+    tag
+    title
+    description
+    rating
+    linkText
+    linkUrl
+  }
+  searchPlaceholder
+  popularResourcesTitle
+  recentAdditionsTitle
+  categoryTagsTitle
 }
     `;
 export const QuickLinksPartsFragmentDoc = gql`
@@ -3714,361 +5538,21 @@ export const QuickLinksPartsFragmentDoc = gql`
   shortcutsSectionTitle
 }
     `;
-export const ResourcesPartsFragmentDoc = gql`
-    fragment ResourcesParts on Resources {
+export const PagePartsFragmentDoc = gql`
+    fragment PageParts on Page {
   __typename
-  announcementText
-  announcementSubtext
+  title
+  description
   hero {
     __typename
-    badge
     headline
     subheadline
-  }
-  featuredResource {
-    __typename
-    badge
-    tag
-    title
-    description
-    rating
-    linkText
-    linkUrl
-  }
-  searchPlaceholder
-  popularResourcesTitle
-  recentAdditionsTitle
-  categoryTagsTitle
-}
-    `;
-export const ZoomInfoPartsFragmentDoc = gql`
-    fragment ZoomInfoParts on ZoomInfo {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  featuredMeeting {
-    __typename
-    badge
-    tag
-    title
-    description
-    date
-    time
-    duration
-    buttonText
-  }
-  speakerCard {
-    __typename
-    title
-    name
-    role
-    bio
-  }
-  meetingAccessCard {
-    __typename
-    title
-    platform
-    meetingId
-    passcode
-  }
-  preparationCard {
-    __typename
-    title
-    subtitle
-    reading1
-    reading2
-    reading3
-  }
-  sessionsTitle
-  relatedScripture {
-    __typename
-    title
-    description
-    scripture1Title
-    scripture1Subtitle
-    scripture2Title
-    scripture2Subtitle
-    scripture3Title
-    scripture3Subtitle
+    ctaText
+    ctaLink
+    heroImage
   }
 }
     `;
-export const ArchivesPartsFragmentDoc = gql`
-    fragment ArchivesParts on Archives {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  catalogInfo
-  featuredArchive {
-    __typename
-    badge
-    catalogRef
-    title
-    description
-    category
-    linkText
-  }
-  classificationsTitle
-  accessPolicy {
-    __typename
-    title
-    description
-  }
-}
-    `;
-export const LessonsPartsFragmentDoc = gql`
-    fragment LessonsParts on Lessons {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredLesson {
-    __typename
-    badge
-    title
-    description
-    teacher
-    linkText
-  }
-  progressTitle
-  progressCourse
-  progressPercentage
-  progressDescription
-  progressButtonText
-  seminarTitle
-}
-    `;
-export const ReferencesPartsFragmentDoc = gql`
-    fragment ReferencesParts on References {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredReference {
-    __typename
-    badge
-    tag
-    title
-    description
-    crossReferences
-    linkText
-  }
-  topicsTitle
-  relatedLessonTitle
-  relatedLessonCourse
-  relatedLessonDescription
-  relatedLessonButtonText
-}
-    `;
-export const ImagesPartsFragmentDoc = gql`
-    fragment ImagesParts on Images {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredImage {
-    __typename
-    badge
-    title
-    description
-    scriptureLabel
-    scriptureQuote
-    scriptureReference
-    downloadButtonText
-    citationButtonText
-  }
-  archiveTitle
-}
-    `;
-export const VideosPartsFragmentDoc = gql`
-    fragment VideosParts on Videos {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredVideo {
-    __typename
-    badge
-    title
-    description
-    speaker
-    scripture
-    recorded
-    buttonText
-  }
-  lecturesTitle
-}
-    `;
-export const LibraryPartsFragmentDoc = gql`
-    fragment LibraryParts on Library {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredResource {
-    __typename
-    badge
-    tag
-    title
-    description
-    details
-    linkText
-  }
-  categoriesTitle
-  popularTitle
-  recentTitle
-}
-    `;
-export const BooksPartsFragmentDoc = gql`
-    fragment BooksParts on Books {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  searchPlaceholder
-  featuredBook {
-    __typename
-    badge
-    title
-    description
-    downloadButtonText
-    abstractButtonText
-  }
-  submissionsTitle
-  submissionsDescription
-  submissionsButtonText
-}
-    `;
-export const MagazinesPartsFragmentDoc = gql`
-    fragment MagazinesParts on Magazines {
-  __typename
-  announcementText
-  announcementSubtext
-  hero {
-    __typename
-    badge
-    headline
-    subheadline
-  }
-  featuredIssue {
-    __typename
-    badge
-    tag
-    title
-    description
-    date
-    details
-    readButtonText
-    downloadButtonText
-  }
-  spotlightTitle
-  archiveTitle
-}
-    `;
-export const PageDocument = gql`
-    query page($relativePath: String!) {
-  page(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...PageParts
-  }
-}
-    ${PagePartsFragmentDoc}`;
-export const PageConnectionDocument = gql`
-    query pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PageFilter) {
-  pageConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...PageParts
-      }
-    }
-  }
-}
-    ${PagePartsFragmentDoc}`;
 export const BookDocument = gql`
     query book($relativePath: String!) {
   book(relativePath: $relativePath) {
@@ -4126,63 +5610,6 @@ export const BookConnectionDocument = gql`
   }
 }
     ${BookPartsFragmentDoc}`;
-export const MagazineDocument = gql`
-    query magazine($relativePath: String!) {
-  magazine(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...MagazineParts
-  }
-}
-    ${MagazinePartsFragmentDoc}`;
-export const MagazineConnectionDocument = gql`
-    query magazineConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: MagazineFilter) {
-  magazineConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...MagazineParts
-      }
-    }
-  }
-}
-    ${MagazinePartsFragmentDoc}`;
 export const LessonDocument = gql`
     query lesson($relativePath: String!) {
   lesson(relativePath: $relativePath) {
@@ -4240,6 +5667,120 @@ export const LessonConnectionDocument = gql`
   }
 }
     ${LessonPartsFragmentDoc}`;
+export const MagazineDocument = gql`
+    query magazine($relativePath: String!) {
+  magazine(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...MagazineParts
+  }
+}
+    ${MagazinePartsFragmentDoc}`;
+export const MagazineConnectionDocument = gql`
+    query magazineConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: MagazineFilter) {
+  magazineConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...MagazineParts
+      }
+    }
+  }
+}
+    ${MagazinePartsFragmentDoc}`;
+export const DailyLetterDocument = gql`
+    query dailyLetter($relativePath: String!) {
+  dailyLetter(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...DailyLetterParts
+  }
+}
+    ${DailyLetterPartsFragmentDoc}`;
+export const DailyLetterConnectionDocument = gql`
+    query dailyLetterConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: DailyLetterFilter) {
+  dailyLetterConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...DailyLetterParts
+      }
+    }
+  }
+}
+    ${DailyLetterPartsFragmentDoc}`;
 export const BibleReferenceDocument = gql`
     query bibleReference($relativePath: String!) {
   bibleReference(relativePath: $relativePath) {
@@ -4297,6 +5838,348 @@ export const BibleReferenceConnectionDocument = gql`
   }
 }
     ${BibleReferencePartsFragmentDoc}`;
+export const VideoDocument = gql`
+    query video($relativePath: String!) {
+  video(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...VideoParts
+  }
+}
+    ${VideoPartsFragmentDoc}`;
+export const VideoConnectionDocument = gql`
+    query videoConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: VideoFilter) {
+  videoConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...VideoParts
+      }
+    }
+  }
+}
+    ${VideoPartsFragmentDoc}`;
+export const BibleImageDocument = gql`
+    query bibleImage($relativePath: String!) {
+  bibleImage(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...BibleImageParts
+  }
+}
+    ${BibleImagePartsFragmentDoc}`;
+export const BibleImageConnectionDocument = gql`
+    query bibleImageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: BibleImageFilter) {
+  bibleImageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...BibleImageParts
+      }
+    }
+  }
+}
+    ${BibleImagePartsFragmentDoc}`;
+export const LibraryResourceDocument = gql`
+    query libraryResource($relativePath: String!) {
+  libraryResource(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LibraryResourceParts
+  }
+}
+    ${LibraryResourcePartsFragmentDoc}`;
+export const LibraryResourceConnectionDocument = gql`
+    query libraryResourceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LibraryResourceFilter) {
+  libraryResourceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LibraryResourceParts
+      }
+    }
+  }
+}
+    ${LibraryResourcePartsFragmentDoc}`;
+export const ArchiveDocumentDocument = gql`
+    query archiveDocument($relativePath: String!) {
+  archiveDocument(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ArchiveDocumentParts
+  }
+}
+    ${ArchiveDocumentPartsFragmentDoc}`;
+export const ArchiveDocumentConnectionDocument = gql`
+    query archiveDocumentConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ArchiveDocumentFilter) {
+  archiveDocumentConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ArchiveDocumentParts
+      }
+    }
+  }
+}
+    ${ArchiveDocumentPartsFragmentDoc}`;
+export const UsefulResourceDocument = gql`
+    query usefulResource($relativePath: String!) {
+  usefulResource(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...UsefulResourceParts
+  }
+}
+    ${UsefulResourcePartsFragmentDoc}`;
+export const UsefulResourceConnectionDocument = gql`
+    query usefulResourceConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: UsefulResourceFilter) {
+  usefulResourceConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...UsefulResourceParts
+      }
+    }
+  }
+}
+    ${UsefulResourcePartsFragmentDoc}`;
+export const QuickLinkDocument = gql`
+    query quickLink($relativePath: String!) {
+  quickLink(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...QuickLinkParts
+  }
+}
+    ${QuickLinkPartsFragmentDoc}`;
+export const QuickLinkConnectionDocument = gql`
+    query quickLinkConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: QuickLinkFilter) {
+  quickLinkConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...QuickLinkParts
+      }
+    }
+  }
+}
+    ${QuickLinkPartsFragmentDoc}`;
 export const HomeDocument = gql`
     query home($relativePath: String!) {
   home(relativePath: $relativePath) {
@@ -4468,177 +6351,6 @@ export const ContactConnectionDocument = gql`
   }
 }
     ${ContactPartsFragmentDoc}`;
-export const NewsletterDocument = gql`
-    query newsletter($relativePath: String!) {
-  newsletter(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...NewsletterParts
-  }
-}
-    ${NewsletterPartsFragmentDoc}`;
-export const NewsletterConnectionDocument = gql`
-    query newsletterConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: NewsletterFilter) {
-  newsletterConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...NewsletterParts
-      }
-    }
-  }
-}
-    ${NewsletterPartsFragmentDoc}`;
-export const QuickLinksDocument = gql`
-    query quickLinks($relativePath: String!) {
-  quickLinks(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...QuickLinksParts
-  }
-}
-    ${QuickLinksPartsFragmentDoc}`;
-export const QuickLinksConnectionDocument = gql`
-    query quickLinksConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: QuickLinksFilter) {
-  quickLinksConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...QuickLinksParts
-      }
-    }
-  }
-}
-    ${QuickLinksPartsFragmentDoc}`;
-export const ResourcesDocument = gql`
-    query resources($relativePath: String!) {
-  resources(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...ResourcesParts
-  }
-}
-    ${ResourcesPartsFragmentDoc}`;
-export const ResourcesConnectionDocument = gql`
-    query resourcesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ResourcesFilter) {
-  resourcesConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...ResourcesParts
-      }
-    }
-  }
-}
-    ${ResourcesPartsFragmentDoc}`;
 export const ZoomInfoDocument = gql`
     query zoomInfo($relativePath: String!) {
   zoomInfo(relativePath: $relativePath) {
@@ -4696,348 +6408,6 @@ export const ZoomInfoConnectionDocument = gql`
   }
 }
     ${ZoomInfoPartsFragmentDoc}`;
-export const ArchivesDocument = gql`
-    query archives($relativePath: String!) {
-  archives(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...ArchivesParts
-  }
-}
-    ${ArchivesPartsFragmentDoc}`;
-export const ArchivesConnectionDocument = gql`
-    query archivesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ArchivesFilter) {
-  archivesConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...ArchivesParts
-      }
-    }
-  }
-}
-    ${ArchivesPartsFragmentDoc}`;
-export const LessonsDocument = gql`
-    query lessons($relativePath: String!) {
-  lessons(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...LessonsParts
-  }
-}
-    ${LessonsPartsFragmentDoc}`;
-export const LessonsConnectionDocument = gql`
-    query lessonsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LessonsFilter) {
-  lessonsConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...LessonsParts
-      }
-    }
-  }
-}
-    ${LessonsPartsFragmentDoc}`;
-export const ReferencesDocument = gql`
-    query references($relativePath: String!) {
-  references(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...ReferencesParts
-  }
-}
-    ${ReferencesPartsFragmentDoc}`;
-export const ReferencesConnectionDocument = gql`
-    query referencesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ReferencesFilter) {
-  referencesConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...ReferencesParts
-      }
-    }
-  }
-}
-    ${ReferencesPartsFragmentDoc}`;
-export const ImagesDocument = gql`
-    query images($relativePath: String!) {
-  images(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...ImagesParts
-  }
-}
-    ${ImagesPartsFragmentDoc}`;
-export const ImagesConnectionDocument = gql`
-    query imagesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ImagesFilter) {
-  imagesConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...ImagesParts
-      }
-    }
-  }
-}
-    ${ImagesPartsFragmentDoc}`;
-export const VideosDocument = gql`
-    query videos($relativePath: String!) {
-  videos(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...VideosParts
-  }
-}
-    ${VideosPartsFragmentDoc}`;
-export const VideosConnectionDocument = gql`
-    query videosConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: VideosFilter) {
-  videosConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...VideosParts
-      }
-    }
-  }
-}
-    ${VideosPartsFragmentDoc}`;
-export const LibraryDocument = gql`
-    query library($relativePath: String!) {
-  library(relativePath: $relativePath) {
-    ... on Document {
-      _sys {
-        filename
-        basename
-        hasReferences
-        breadcrumbs
-        path
-        relativePath
-        extension
-      }
-      id
-    }
-    ...LibraryParts
-  }
-}
-    ${LibraryPartsFragmentDoc}`;
-export const LibraryConnectionDocument = gql`
-    query libraryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LibraryFilter) {
-  libraryConnection(
-    before: $before
-    after: $after
-    first: $first
-    last: $last
-    sort: $sort
-    filter: $filter
-  ) {
-    pageInfo {
-      hasPreviousPage
-      hasNextPage
-      startCursor
-      endCursor
-    }
-    totalCount
-    edges {
-      cursor
-      node {
-        ... on Document {
-          _sys {
-            filename
-            basename
-            hasReferences
-            breadcrumbs
-            path
-            relativePath
-            extension
-          }
-          id
-        }
-        ...LibraryParts
-      }
-    }
-  }
-}
-    ${LibraryPartsFragmentDoc}`;
 export const BooksDocument = gql`
     query books($relativePath: String!) {
   books(relativePath: $relativePath) {
@@ -5095,6 +6465,63 @@ export const BooksConnectionDocument = gql`
   }
 }
     ${BooksPartsFragmentDoc}`;
+export const LessonsDocument = gql`
+    query lessons($relativePath: String!) {
+  lessons(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LessonsParts
+  }
+}
+    ${LessonsPartsFragmentDoc}`;
+export const LessonsConnectionDocument = gql`
+    query lessonsConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LessonsFilter) {
+  lessonsConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LessonsParts
+      }
+    }
+  }
+}
+    ${LessonsPartsFragmentDoc}`;
 export const MagazinesDocument = gql`
     query magazines($relativePath: String!) {
   magazines(relativePath: $relativePath) {
@@ -5152,26 +6579,527 @@ export const MagazinesConnectionDocument = gql`
   }
 }
     ${MagazinesPartsFragmentDoc}`;
+export const NewsletterDocument = gql`
+    query newsletter($relativePath: String!) {
+  newsletter(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...NewsletterParts
+  }
+}
+    ${NewsletterPartsFragmentDoc}`;
+export const NewsletterConnectionDocument = gql`
+    query newsletterConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: NewsletterFilter) {
+  newsletterConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...NewsletterParts
+      }
+    }
+  }
+}
+    ${NewsletterPartsFragmentDoc}`;
+export const ReferencesDocument = gql`
+    query references($relativePath: String!) {
+  references(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ReferencesParts
+  }
+}
+    ${ReferencesPartsFragmentDoc}`;
+export const ReferencesConnectionDocument = gql`
+    query referencesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ReferencesFilter) {
+  referencesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ReferencesParts
+      }
+    }
+  }
+}
+    ${ReferencesPartsFragmentDoc}`;
+export const VideosDocument = gql`
+    query videos($relativePath: String!) {
+  videos(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...VideosParts
+  }
+}
+    ${VideosPartsFragmentDoc}`;
+export const VideosConnectionDocument = gql`
+    query videosConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: VideosFilter) {
+  videosConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...VideosParts
+      }
+    }
+  }
+}
+    ${VideosPartsFragmentDoc}`;
+export const ImagesDocument = gql`
+    query images($relativePath: String!) {
+  images(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ImagesParts
+  }
+}
+    ${ImagesPartsFragmentDoc}`;
+export const ImagesConnectionDocument = gql`
+    query imagesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ImagesFilter) {
+  imagesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ImagesParts
+      }
+    }
+  }
+}
+    ${ImagesPartsFragmentDoc}`;
+export const LibraryDocument = gql`
+    query library($relativePath: String!) {
+  library(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...LibraryParts
+  }
+}
+    ${LibraryPartsFragmentDoc}`;
+export const LibraryConnectionDocument = gql`
+    query libraryConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: LibraryFilter) {
+  libraryConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...LibraryParts
+      }
+    }
+  }
+}
+    ${LibraryPartsFragmentDoc}`;
+export const ArchivesDocument = gql`
+    query archives($relativePath: String!) {
+  archives(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ArchivesParts
+  }
+}
+    ${ArchivesPartsFragmentDoc}`;
+export const ArchivesConnectionDocument = gql`
+    query archivesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ArchivesFilter) {
+  archivesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ArchivesParts
+      }
+    }
+  }
+}
+    ${ArchivesPartsFragmentDoc}`;
+export const ResourcesDocument = gql`
+    query resources($relativePath: String!) {
+  resources(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ResourcesParts
+  }
+}
+    ${ResourcesPartsFragmentDoc}`;
+export const ResourcesConnectionDocument = gql`
+    query resourcesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: ResourcesFilter) {
+  resourcesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...ResourcesParts
+      }
+    }
+  }
+}
+    ${ResourcesPartsFragmentDoc}`;
+export const QuickLinksDocument = gql`
+    query quickLinks($relativePath: String!) {
+  quickLinks(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...QuickLinksParts
+  }
+}
+    ${QuickLinksPartsFragmentDoc}`;
+export const QuickLinksConnectionDocument = gql`
+    query quickLinksConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: QuickLinksFilter) {
+  quickLinksConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...QuickLinksParts
+      }
+    }
+  }
+}
+    ${QuickLinksPartsFragmentDoc}`;
+export const PageDocument = gql`
+    query page($relativePath: String!) {
+  page(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...PageParts
+  }
+}
+    ${PagePartsFragmentDoc}`;
+export const PageConnectionDocument = gql`
+    query pageConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: PageFilter) {
+  pageConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...PageParts
+      }
+    }
+  }
+}
+    ${PagePartsFragmentDoc}`;
 export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R>
   export function getSdk<C>(requester: Requester<C>) {
     return {
-      page(variables: PageQueryVariables, options?: C): Promise<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}> {
-        return requester<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}, PageQueryVariables>(PageDocument, variables, options);
-      },
-    pageConnection(variables?: PageConnectionQueryVariables, options?: C): Promise<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}> {
-        return requester<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}, PageConnectionQueryVariables>(PageConnectionDocument, variables, options);
-      },
-    book(variables: BookQueryVariables, options?: C): Promise<{data: BookQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BookQueryVariables, query: string}> {
+      book(variables: BookQueryVariables, options?: C): Promise<{data: BookQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BookQueryVariables, query: string}> {
         return requester<{data: BookQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BookQueryVariables, query: string}, BookQueryVariables>(BookDocument, variables, options);
       },
     bookConnection(variables?: BookConnectionQueryVariables, options?: C): Promise<{data: BookConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BookConnectionQueryVariables, query: string}> {
         return requester<{data: BookConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BookConnectionQueryVariables, query: string}, BookConnectionQueryVariables>(BookConnectionDocument, variables, options);
-      },
-    magazine(variables: MagazineQueryVariables, options?: C): Promise<{data: MagazineQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineQueryVariables, query: string}> {
-        return requester<{data: MagazineQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineQueryVariables, query: string}, MagazineQueryVariables>(MagazineDocument, variables, options);
-      },
-    magazineConnection(variables?: MagazineConnectionQueryVariables, options?: C): Promise<{data: MagazineConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineConnectionQueryVariables, query: string}> {
-        return requester<{data: MagazineConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineConnectionQueryVariables, query: string}, MagazineConnectionQueryVariables>(MagazineConnectionDocument, variables, options);
       },
     lesson(variables: LessonQueryVariables, options?: C): Promise<{data: LessonQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonQueryVariables, query: string}> {
         return requester<{data: LessonQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonQueryVariables, query: string}, LessonQueryVariables>(LessonDocument, variables, options);
@@ -5179,11 +7107,59 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     lessonConnection(variables?: LessonConnectionQueryVariables, options?: C): Promise<{data: LessonConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonConnectionQueryVariables, query: string}> {
         return requester<{data: LessonConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonConnectionQueryVariables, query: string}, LessonConnectionQueryVariables>(LessonConnectionDocument, variables, options);
       },
+    magazine(variables: MagazineQueryVariables, options?: C): Promise<{data: MagazineQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineQueryVariables, query: string}> {
+        return requester<{data: MagazineQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineQueryVariables, query: string}, MagazineQueryVariables>(MagazineDocument, variables, options);
+      },
+    magazineConnection(variables?: MagazineConnectionQueryVariables, options?: C): Promise<{data: MagazineConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineConnectionQueryVariables, query: string}> {
+        return requester<{data: MagazineConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazineConnectionQueryVariables, query: string}, MagazineConnectionQueryVariables>(MagazineConnectionDocument, variables, options);
+      },
+    dailyLetter(variables: DailyLetterQueryVariables, options?: C): Promise<{data: DailyLetterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: DailyLetterQueryVariables, query: string}> {
+        return requester<{data: DailyLetterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: DailyLetterQueryVariables, query: string}, DailyLetterQueryVariables>(DailyLetterDocument, variables, options);
+      },
+    dailyLetterConnection(variables?: DailyLetterConnectionQueryVariables, options?: C): Promise<{data: DailyLetterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: DailyLetterConnectionQueryVariables, query: string}> {
+        return requester<{data: DailyLetterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: DailyLetterConnectionQueryVariables, query: string}, DailyLetterConnectionQueryVariables>(DailyLetterConnectionDocument, variables, options);
+      },
     bibleReference(variables: BibleReferenceQueryVariables, options?: C): Promise<{data: BibleReferenceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleReferenceQueryVariables, query: string}> {
         return requester<{data: BibleReferenceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleReferenceQueryVariables, query: string}, BibleReferenceQueryVariables>(BibleReferenceDocument, variables, options);
       },
     bibleReferenceConnection(variables?: BibleReferenceConnectionQueryVariables, options?: C): Promise<{data: BibleReferenceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleReferenceConnectionQueryVariables, query: string}> {
         return requester<{data: BibleReferenceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleReferenceConnectionQueryVariables, query: string}, BibleReferenceConnectionQueryVariables>(BibleReferenceConnectionDocument, variables, options);
+      },
+    video(variables: VideoQueryVariables, options?: C): Promise<{data: VideoQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideoQueryVariables, query: string}> {
+        return requester<{data: VideoQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideoQueryVariables, query: string}, VideoQueryVariables>(VideoDocument, variables, options);
+      },
+    videoConnection(variables?: VideoConnectionQueryVariables, options?: C): Promise<{data: VideoConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideoConnectionQueryVariables, query: string}> {
+        return requester<{data: VideoConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideoConnectionQueryVariables, query: string}, VideoConnectionQueryVariables>(VideoConnectionDocument, variables, options);
+      },
+    bibleImage(variables: BibleImageQueryVariables, options?: C): Promise<{data: BibleImageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleImageQueryVariables, query: string}> {
+        return requester<{data: BibleImageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleImageQueryVariables, query: string}, BibleImageQueryVariables>(BibleImageDocument, variables, options);
+      },
+    bibleImageConnection(variables?: BibleImageConnectionQueryVariables, options?: C): Promise<{data: BibleImageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleImageConnectionQueryVariables, query: string}> {
+        return requester<{data: BibleImageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BibleImageConnectionQueryVariables, query: string}, BibleImageConnectionQueryVariables>(BibleImageConnectionDocument, variables, options);
+      },
+    libraryResource(variables: LibraryResourceQueryVariables, options?: C): Promise<{data: LibraryResourceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryResourceQueryVariables, query: string}> {
+        return requester<{data: LibraryResourceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryResourceQueryVariables, query: string}, LibraryResourceQueryVariables>(LibraryResourceDocument, variables, options);
+      },
+    libraryResourceConnection(variables?: LibraryResourceConnectionQueryVariables, options?: C): Promise<{data: LibraryResourceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryResourceConnectionQueryVariables, query: string}> {
+        return requester<{data: LibraryResourceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryResourceConnectionQueryVariables, query: string}, LibraryResourceConnectionQueryVariables>(LibraryResourceConnectionDocument, variables, options);
+      },
+    archiveDocument(variables: ArchiveDocumentQueryVariables, options?: C): Promise<{data: ArchiveDocumentQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchiveDocumentQueryVariables, query: string}> {
+        return requester<{data: ArchiveDocumentQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchiveDocumentQueryVariables, query: string}, ArchiveDocumentQueryVariables>(ArchiveDocumentDocument, variables, options);
+      },
+    archiveDocumentConnection(variables?: ArchiveDocumentConnectionQueryVariables, options?: C): Promise<{data: ArchiveDocumentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchiveDocumentConnectionQueryVariables, query: string}> {
+        return requester<{data: ArchiveDocumentConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchiveDocumentConnectionQueryVariables, query: string}, ArchiveDocumentConnectionQueryVariables>(ArchiveDocumentConnectionDocument, variables, options);
+      },
+    usefulResource(variables: UsefulResourceQueryVariables, options?: C): Promise<{data: UsefulResourceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: UsefulResourceQueryVariables, query: string}> {
+        return requester<{data: UsefulResourceQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: UsefulResourceQueryVariables, query: string}, UsefulResourceQueryVariables>(UsefulResourceDocument, variables, options);
+      },
+    usefulResourceConnection(variables?: UsefulResourceConnectionQueryVariables, options?: C): Promise<{data: UsefulResourceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: UsefulResourceConnectionQueryVariables, query: string}> {
+        return requester<{data: UsefulResourceConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: UsefulResourceConnectionQueryVariables, query: string}, UsefulResourceConnectionQueryVariables>(UsefulResourceConnectionDocument, variables, options);
+      },
+    quickLink(variables: QuickLinkQueryVariables, options?: C): Promise<{data: QuickLinkQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinkQueryVariables, query: string}> {
+        return requester<{data: QuickLinkQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinkQueryVariables, query: string}, QuickLinkQueryVariables>(QuickLinkDocument, variables, options);
+      },
+    quickLinkConnection(variables?: QuickLinkConnectionQueryVariables, options?: C): Promise<{data: QuickLinkConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinkConnectionQueryVariables, query: string}> {
+        return requester<{data: QuickLinkConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinkConnectionQueryVariables, query: string}, QuickLinkConnectionQueryVariables>(QuickLinkConnectionDocument, variables, options);
       },
     home(variables: HomeQueryVariables, options?: C): Promise<{data: HomeQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQueryVariables, query: string}> {
         return requester<{data: HomeQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: HomeQueryVariables, query: string}, HomeQueryVariables>(HomeDocument, variables, options);
@@ -5203,65 +7179,11 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     contactConnection(variables?: ContactConnectionQueryVariables, options?: C): Promise<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}> {
         return requester<{data: ContactConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ContactConnectionQueryVariables, query: string}, ContactConnectionQueryVariables>(ContactConnectionDocument, variables, options);
       },
-    newsletter(variables: NewsletterQueryVariables, options?: C): Promise<{data: NewsletterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterQueryVariables, query: string}> {
-        return requester<{data: NewsletterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterQueryVariables, query: string}, NewsletterQueryVariables>(NewsletterDocument, variables, options);
-      },
-    newsletterConnection(variables?: NewsletterConnectionQueryVariables, options?: C): Promise<{data: NewsletterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterConnectionQueryVariables, query: string}> {
-        return requester<{data: NewsletterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterConnectionQueryVariables, query: string}, NewsletterConnectionQueryVariables>(NewsletterConnectionDocument, variables, options);
-      },
-    quickLinks(variables: QuickLinksQueryVariables, options?: C): Promise<{data: QuickLinksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksQueryVariables, query: string}> {
-        return requester<{data: QuickLinksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksQueryVariables, query: string}, QuickLinksQueryVariables>(QuickLinksDocument, variables, options);
-      },
-    quickLinksConnection(variables?: QuickLinksConnectionQueryVariables, options?: C): Promise<{data: QuickLinksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksConnectionQueryVariables, query: string}> {
-        return requester<{data: QuickLinksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksConnectionQueryVariables, query: string}, QuickLinksConnectionQueryVariables>(QuickLinksConnectionDocument, variables, options);
-      },
-    resources(variables: ResourcesQueryVariables, options?: C): Promise<{data: ResourcesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesQueryVariables, query: string}> {
-        return requester<{data: ResourcesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesQueryVariables, query: string}, ResourcesQueryVariables>(ResourcesDocument, variables, options);
-      },
-    resourcesConnection(variables?: ResourcesConnectionQueryVariables, options?: C): Promise<{data: ResourcesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesConnectionQueryVariables, query: string}> {
-        return requester<{data: ResourcesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesConnectionQueryVariables, query: string}, ResourcesConnectionQueryVariables>(ResourcesConnectionDocument, variables, options);
-      },
     zoomInfo(variables: ZoomInfoQueryVariables, options?: C): Promise<{data: ZoomInfoQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ZoomInfoQueryVariables, query: string}> {
         return requester<{data: ZoomInfoQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ZoomInfoQueryVariables, query: string}, ZoomInfoQueryVariables>(ZoomInfoDocument, variables, options);
       },
     zoomInfoConnection(variables?: ZoomInfoConnectionQueryVariables, options?: C): Promise<{data: ZoomInfoConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ZoomInfoConnectionQueryVariables, query: string}> {
         return requester<{data: ZoomInfoConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ZoomInfoConnectionQueryVariables, query: string}, ZoomInfoConnectionQueryVariables>(ZoomInfoConnectionDocument, variables, options);
-      },
-    archives(variables: ArchivesQueryVariables, options?: C): Promise<{data: ArchivesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesQueryVariables, query: string}> {
-        return requester<{data: ArchivesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesQueryVariables, query: string}, ArchivesQueryVariables>(ArchivesDocument, variables, options);
-      },
-    archivesConnection(variables?: ArchivesConnectionQueryVariables, options?: C): Promise<{data: ArchivesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesConnectionQueryVariables, query: string}> {
-        return requester<{data: ArchivesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesConnectionQueryVariables, query: string}, ArchivesConnectionQueryVariables>(ArchivesConnectionDocument, variables, options);
-      },
-    lessons(variables: LessonsQueryVariables, options?: C): Promise<{data: LessonsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsQueryVariables, query: string}> {
-        return requester<{data: LessonsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsQueryVariables, query: string}, LessonsQueryVariables>(LessonsDocument, variables, options);
-      },
-    lessonsConnection(variables?: LessonsConnectionQueryVariables, options?: C): Promise<{data: LessonsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsConnectionQueryVariables, query: string}> {
-        return requester<{data: LessonsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsConnectionQueryVariables, query: string}, LessonsConnectionQueryVariables>(LessonsConnectionDocument, variables, options);
-      },
-    references(variables: ReferencesQueryVariables, options?: C): Promise<{data: ReferencesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesQueryVariables, query: string}> {
-        return requester<{data: ReferencesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesQueryVariables, query: string}, ReferencesQueryVariables>(ReferencesDocument, variables, options);
-      },
-    referencesConnection(variables?: ReferencesConnectionQueryVariables, options?: C): Promise<{data: ReferencesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesConnectionQueryVariables, query: string}> {
-        return requester<{data: ReferencesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesConnectionQueryVariables, query: string}, ReferencesConnectionQueryVariables>(ReferencesConnectionDocument, variables, options);
-      },
-    images(variables: ImagesQueryVariables, options?: C): Promise<{data: ImagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesQueryVariables, query: string}> {
-        return requester<{data: ImagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesQueryVariables, query: string}, ImagesQueryVariables>(ImagesDocument, variables, options);
-      },
-    imagesConnection(variables?: ImagesConnectionQueryVariables, options?: C): Promise<{data: ImagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesConnectionQueryVariables, query: string}> {
-        return requester<{data: ImagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesConnectionQueryVariables, query: string}, ImagesConnectionQueryVariables>(ImagesConnectionDocument, variables, options);
-      },
-    videos(variables: VideosQueryVariables, options?: C): Promise<{data: VideosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosQueryVariables, query: string}> {
-        return requester<{data: VideosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosQueryVariables, query: string}, VideosQueryVariables>(VideosDocument, variables, options);
-      },
-    videosConnection(variables?: VideosConnectionQueryVariables, options?: C): Promise<{data: VideosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosConnectionQueryVariables, query: string}> {
-        return requester<{data: VideosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosConnectionQueryVariables, query: string}, VideosConnectionQueryVariables>(VideosConnectionDocument, variables, options);
-      },
-    library(variables: LibraryQueryVariables, options?: C): Promise<{data: LibraryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryQueryVariables, query: string}> {
-        return requester<{data: LibraryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryQueryVariables, query: string}, LibraryQueryVariables>(LibraryDocument, variables, options);
-      },
-    libraryConnection(variables?: LibraryConnectionQueryVariables, options?: C): Promise<{data: LibraryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryConnectionQueryVariables, query: string}> {
-        return requester<{data: LibraryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryConnectionQueryVariables, query: string}, LibraryConnectionQueryVariables>(LibraryConnectionDocument, variables, options);
       },
     books(variables: BooksQueryVariables, options?: C): Promise<{data: BooksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BooksQueryVariables, query: string}> {
         return requester<{data: BooksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BooksQueryVariables, query: string}, BooksQueryVariables>(BooksDocument, variables, options);
@@ -5269,11 +7191,71 @@ export type Requester<C= {}> = <R, V>(doc: DocumentNode, vars?: V, options?: C) 
     booksConnection(variables?: BooksConnectionQueryVariables, options?: C): Promise<{data: BooksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BooksConnectionQueryVariables, query: string}> {
         return requester<{data: BooksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: BooksConnectionQueryVariables, query: string}, BooksConnectionQueryVariables>(BooksConnectionDocument, variables, options);
       },
+    lessons(variables: LessonsQueryVariables, options?: C): Promise<{data: LessonsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsQueryVariables, query: string}> {
+        return requester<{data: LessonsQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsQueryVariables, query: string}, LessonsQueryVariables>(LessonsDocument, variables, options);
+      },
+    lessonsConnection(variables?: LessonsConnectionQueryVariables, options?: C): Promise<{data: LessonsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsConnectionQueryVariables, query: string}> {
+        return requester<{data: LessonsConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LessonsConnectionQueryVariables, query: string}, LessonsConnectionQueryVariables>(LessonsConnectionDocument, variables, options);
+      },
     magazines(variables: MagazinesQueryVariables, options?: C): Promise<{data: MagazinesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazinesQueryVariables, query: string}> {
         return requester<{data: MagazinesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazinesQueryVariables, query: string}, MagazinesQueryVariables>(MagazinesDocument, variables, options);
       },
     magazinesConnection(variables?: MagazinesConnectionQueryVariables, options?: C): Promise<{data: MagazinesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazinesConnectionQueryVariables, query: string}> {
         return requester<{data: MagazinesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: MagazinesConnectionQueryVariables, query: string}, MagazinesConnectionQueryVariables>(MagazinesConnectionDocument, variables, options);
+      },
+    newsletter(variables: NewsletterQueryVariables, options?: C): Promise<{data: NewsletterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterQueryVariables, query: string}> {
+        return requester<{data: NewsletterQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterQueryVariables, query: string}, NewsletterQueryVariables>(NewsletterDocument, variables, options);
+      },
+    newsletterConnection(variables?: NewsletterConnectionQueryVariables, options?: C): Promise<{data: NewsletterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterConnectionQueryVariables, query: string}> {
+        return requester<{data: NewsletterConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: NewsletterConnectionQueryVariables, query: string}, NewsletterConnectionQueryVariables>(NewsletterConnectionDocument, variables, options);
+      },
+    references(variables: ReferencesQueryVariables, options?: C): Promise<{data: ReferencesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesQueryVariables, query: string}> {
+        return requester<{data: ReferencesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesQueryVariables, query: string}, ReferencesQueryVariables>(ReferencesDocument, variables, options);
+      },
+    referencesConnection(variables?: ReferencesConnectionQueryVariables, options?: C): Promise<{data: ReferencesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesConnectionQueryVariables, query: string}> {
+        return requester<{data: ReferencesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ReferencesConnectionQueryVariables, query: string}, ReferencesConnectionQueryVariables>(ReferencesConnectionDocument, variables, options);
+      },
+    videos(variables: VideosQueryVariables, options?: C): Promise<{data: VideosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosQueryVariables, query: string}> {
+        return requester<{data: VideosQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosQueryVariables, query: string}, VideosQueryVariables>(VideosDocument, variables, options);
+      },
+    videosConnection(variables?: VideosConnectionQueryVariables, options?: C): Promise<{data: VideosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosConnectionQueryVariables, query: string}> {
+        return requester<{data: VideosConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: VideosConnectionQueryVariables, query: string}, VideosConnectionQueryVariables>(VideosConnectionDocument, variables, options);
+      },
+    images(variables: ImagesQueryVariables, options?: C): Promise<{data: ImagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesQueryVariables, query: string}> {
+        return requester<{data: ImagesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesQueryVariables, query: string}, ImagesQueryVariables>(ImagesDocument, variables, options);
+      },
+    imagesConnection(variables?: ImagesConnectionQueryVariables, options?: C): Promise<{data: ImagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesConnectionQueryVariables, query: string}> {
+        return requester<{data: ImagesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ImagesConnectionQueryVariables, query: string}, ImagesConnectionQueryVariables>(ImagesConnectionDocument, variables, options);
+      },
+    library(variables: LibraryQueryVariables, options?: C): Promise<{data: LibraryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryQueryVariables, query: string}> {
+        return requester<{data: LibraryQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryQueryVariables, query: string}, LibraryQueryVariables>(LibraryDocument, variables, options);
+      },
+    libraryConnection(variables?: LibraryConnectionQueryVariables, options?: C): Promise<{data: LibraryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryConnectionQueryVariables, query: string}> {
+        return requester<{data: LibraryConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: LibraryConnectionQueryVariables, query: string}, LibraryConnectionQueryVariables>(LibraryConnectionDocument, variables, options);
+      },
+    archives(variables: ArchivesQueryVariables, options?: C): Promise<{data: ArchivesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesQueryVariables, query: string}> {
+        return requester<{data: ArchivesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesQueryVariables, query: string}, ArchivesQueryVariables>(ArchivesDocument, variables, options);
+      },
+    archivesConnection(variables?: ArchivesConnectionQueryVariables, options?: C): Promise<{data: ArchivesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesConnectionQueryVariables, query: string}> {
+        return requester<{data: ArchivesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ArchivesConnectionQueryVariables, query: string}, ArchivesConnectionQueryVariables>(ArchivesConnectionDocument, variables, options);
+      },
+    resources(variables: ResourcesQueryVariables, options?: C): Promise<{data: ResourcesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesQueryVariables, query: string}> {
+        return requester<{data: ResourcesQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesQueryVariables, query: string}, ResourcesQueryVariables>(ResourcesDocument, variables, options);
+      },
+    resourcesConnection(variables?: ResourcesConnectionQueryVariables, options?: C): Promise<{data: ResourcesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesConnectionQueryVariables, query: string}> {
+        return requester<{data: ResourcesConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: ResourcesConnectionQueryVariables, query: string}, ResourcesConnectionQueryVariables>(ResourcesConnectionDocument, variables, options);
+      },
+    quickLinks(variables: QuickLinksQueryVariables, options?: C): Promise<{data: QuickLinksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksQueryVariables, query: string}> {
+        return requester<{data: QuickLinksQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksQueryVariables, query: string}, QuickLinksQueryVariables>(QuickLinksDocument, variables, options);
+      },
+    quickLinksConnection(variables?: QuickLinksConnectionQueryVariables, options?: C): Promise<{data: QuickLinksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksConnectionQueryVariables, query: string}> {
+        return requester<{data: QuickLinksConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: QuickLinksConnectionQueryVariables, query: string}, QuickLinksConnectionQueryVariables>(QuickLinksConnectionDocument, variables, options);
+      },
+    page(variables: PageQueryVariables, options?: C): Promise<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}> {
+        return requester<{data: PageQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageQueryVariables, query: string}, PageQueryVariables>(PageDocument, variables, options);
+      },
+    pageConnection(variables?: PageConnectionQueryVariables, options?: C): Promise<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}> {
+        return requester<{data: PageConnectionQuery, errors?: { message: string, locations: { line: number, column: number }[], path: string[] }[], variables: PageConnectionQueryVariables, query: string}, PageConnectionQueryVariables>(PageConnectionDocument, variables, options);
       }
     };
   }

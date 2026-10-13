@@ -46,7 +46,7 @@ export default function Footer() {
             <h4 className="text-sm font-heading font-bold text-tertiary mb-4 uppercase tracking-wider">Connect</h4>
             <ul className="space-y-2 text-xs text-secondary-foreground/90">
               <li><a href="/contact" className="hover:text-tertiary transition-colors">Contact Office</a></li>
-              <li><a href="/zoom" className="hover:text-tertiary transition-colors">Zoom Meetings</a></li>
+              <li><a href="/zoom-info" className="hover:text-tertiary transition-colors">Zoom Meetings</a></li>
               <li><a href="/newsletter" className="hover:text-tertiary transition-colors">Daily Newsletter</a></li>
               <li><a href="/about" className="hover:text-tertiary transition-colors">About Us</a></li>
             </ul>
