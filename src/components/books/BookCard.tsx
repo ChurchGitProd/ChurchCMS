@@ -14,6 +14,7 @@ export interface BookCardData {
   description: string;
   coverImage?: string | null;
   abstract?: string | null;
+  pdfFile?: string | null;
 }
 
 interface BookCardProps {
@@ -121,11 +122,13 @@ export default function BookCard({ book }: BookCardProps) {
             </span>
           )}
           <DownloadButton
-            disabled={true}
+            file={book.pdfFile || undefined}
+            filename={book.pdfFile ? `${book.slug}.pdf` : undefined}
+            disabled={!book.pdfFile}
             disabledTooltip="Publication PDF not yet available"
             className="text-xs font-bold text-primary hover:text-tertiary transition-colors"
           >
-            Download PDF
+            {book.pdfFile ? 'Download PDF' : 'Download PDF (Unavailable)'}
           </DownloadButton>
         </div>
       </div>

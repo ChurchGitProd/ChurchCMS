@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground border-t border-border">
@@ -23,10 +25,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-heading font-bold text-tertiary mb-4 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2 text-xs text-secondary-foreground/90">
-              <li><a href="/library" className="hover:text-tertiary transition-colors">Digital Library</a></li>
-              <li><a href="/lessons" className="hover:text-tertiary transition-colors">Bible Lessons</a></li>
-              <li><a href="/books" className="hover:text-tertiary transition-colors">Books Collection</a></li>
-              <li><a href="/magazines" className="hover:text-tertiary transition-colors">Magazines</a></li>
+              <li><Link href="/library" className="hover:text-tertiary transition-colors">Digital Library</Link></li>
+              <li><Link href="/lessons" className="hover:text-tertiary transition-colors">Bible Lessons</Link></li>
+              <li><Link href="/books" className="hover:text-tertiary transition-colors">Books Collection</Link></li>
+              <li><Link href="/magazines" className="hover:text-tertiary transition-colors">Magazines</Link></li>
             </ul>
           </div>
 
@@ -34,10 +36,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-heading font-bold text-tertiary mb-4 uppercase tracking-wider">Resources</h4>
             <ul className="space-y-2 text-xs text-secondary-foreground/90">
-              <li><a href="/references" className="hover:text-tertiary transition-colors">Bible References</a></li>
-              <li><a href="/images" className="hover:text-tertiary transition-colors">Bible Images</a></li>
-              <li><a href="/videos" className="hover:text-tertiary transition-colors">Video Archives</a></li>
-              <li><a href="/resources" className="hover:text-tertiary transition-colors">Study Tools</a></li>
+              <li><Link href="/references" className="hover:text-tertiary transition-colors">Bible References</Link></li>
+              <li><Link href="/images" className="hover:text-tertiary transition-colors">Bible Images</Link></li>
+              <li><Link href="/videos" className="hover:text-tertiary transition-colors">Video Archives</Link></li>
+              <li><Link href="/resources" className="hover:text-tertiary transition-colors">Study Tools</Link></li>
             </ul>
           </div>
 
@@ -45,10 +47,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-heading font-bold text-tertiary mb-4 uppercase tracking-wider">Connect</h4>
             <ul className="space-y-2 text-xs text-secondary-foreground/90">
-              <li><a href="/contact" className="hover:text-tertiary transition-colors">Contact Office</a></li>
-              <li><a href="/zoom-info" className="hover:text-tertiary transition-colors">Zoom Meetings</a></li>
-              <li><a href="/newsletter" className="hover:text-tertiary transition-colors">Daily Newsletter</a></li>
-              <li><a href="/about" className="hover:text-tertiary transition-colors">About Us</a></li>
+              <li><Link href="/contact" className="hover:text-tertiary transition-colors">Contact Office</Link></li>
+              <li><Link href="/zoom-info" className="hover:text-tertiary transition-colors">Zoom Meetings</Link></li>
+              <li><Link href="/newsletter" className="hover:text-tertiary transition-colors">Daily Newsletter</Link></li>
+              <li><Link href="/about" className="hover:text-tertiary transition-colors">About Us</Link></li>
             </ul>
           </div>
         </div>

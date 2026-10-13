@@ -9,6 +9,8 @@ import BooksSidebar from '@/components/books/BooksSidebar';
 import { BookCardData } from '@/components/books/BookCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Books() {
   const [booksPageData, bookConnectionData] = await Promise.all([
     client.queries.books(
@@ -36,6 +38,7 @@ export default async function Books() {
       description: node.description,
       coverImage: node.coverImage,
       abstract: (node as any).abstract || null,
+      pdfFile: node.pdfFile || null,
     }));
 
   // Preserve canonical display order matching the original HTML reference

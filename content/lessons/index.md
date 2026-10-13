@@ -18,3 +18,4 @@ progressPercentage: "40%"
 progressDescription: "You have completed 2 out of 5 foundational lessons in this series. Resume to earn your certificate."
 progressButtonText: "Resume Course"
 seminarTitle: "Upcoming Q&A Seminars"
+---

@@ -2136,6 +2136,7 @@ export type MagazinesFeaturedIssue = {
   coverImage?: Maybe<Scalars['String']['output']>;
   readButtonText: Scalars['String']['output'];
   downloadButtonText: Scalars['String']['output'];
+  pdfFile?: Maybe<Scalars['String']['output']>;
 };
 
 export type Magazines = Node & Document & {
@@ -2167,6 +2168,7 @@ export type MagazinesFeaturedIssueFilter = {
   coverImage?: InputMaybe<ImageFilter>;
   readButtonText?: InputMaybe<StringFilter>;
   downloadButtonText?: InputMaybe<StringFilter>;
+  pdfFile?: InputMaybe<ImageFilter>;
 };
 
 export type MagazinesFilter = {
@@ -3912,6 +3914,7 @@ export type MagazinesFeaturedIssueMutation = {
   coverImage?: InputMaybe<Scalars['String']['input']>;
   readButtonText?: InputMaybe<Scalars['String']['input']>;
   downloadButtonText?: InputMaybe<Scalars['String']['input']>;
+  pdfFile?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MagazinesMutation = {
@@ -4204,7 +4207,7 @@ export type BooksPartsFragment = { __typename: 'Books', announcementText: string
 
 export type LessonsPartsFragment = { __typename: 'Lessons', announcementText: string, announcementSubtext?: string | null, searchPlaceholder: string, progressTitle: string, progressCourse: string, progressPercentage: string, progressDescription: string, progressButtonText: string, seminarTitle: string, hero?: { __typename: 'LessonsHero', badge: string, headline: string, subheadline: string } | null, featuredLesson?: { __typename: 'LessonsFeaturedLesson', badge: string, title: string, description: string, teacher: string, linkText: string, image?: string | null } | null };
 
-export type MagazinesPartsFragment = { __typename: 'Magazines', announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null };
+export type MagazinesPartsFragment = { __typename: 'Magazines', announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string, pdfFile?: string | null } | null };
 
 export type NewsletterPartsFragment = { __typename: 'Newsletter', announcementText: string, announcementSubtext?: string | null, hero?: { __typename: 'NewsletterHero', badge: string, headline: string, subheadline: string } | null, featuredDevotional?: { __typename: 'NewsletterFeaturedDevotional', badge: string, tag: string, title: string, scripture: string, content: string, date: string, coverImage?: string | null } | null, signupCTA?: { __typename: 'NewsletterSignupCTA', title: string, description: string, buttonText: string, privacyNote: string } | null, scriptureQuote?: { __typename: 'NewsletterScriptureQuote', quote: string, reference: string } | null };
 
@@ -4552,7 +4555,7 @@ export type MagazinesQueryVariables = Exact<{
 }>;
 
 
-export type MagazinesQuery = { __typename?: 'Query', magazines: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null } };
+export type MagazinesQuery = { __typename?: 'Query', magazines: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string, pdfFile?: string | null } | null } };
 
 export type MagazinesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -4564,7 +4567,7 @@ export type MagazinesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type MagazinesConnectionQuery = { __typename?: 'Query', magazinesConnection: { __typename?: 'MagazinesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazinesConnectionEdges', cursor: string, node?: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string } | null } | null } | null> | null } };
+export type MagazinesConnectionQuery = { __typename?: 'Query', magazinesConnection: { __typename?: 'MagazinesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'MagazinesConnectionEdges', cursor: string, node?: { __typename: 'Magazines', id: string, announcementText: string, announcementSubtext?: string | null, spotlightTitle: string, archiveTitle: string, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, hero?: { __typename: 'MagazinesHero', badge: string, headline: string, subheadline: string } | null, featuredIssue?: { __typename: 'MagazinesFeaturedIssue', badge: string, tag: string, title: string, description: string, date: string, details: string, coverImage?: string | null, readButtonText: string, downloadButtonText: string, pdfFile?: string | null } | null } | null } | null> | null } };
 
 export type NewsletterQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -5303,6 +5306,7 @@ export const MagazinesPartsFragmentDoc = gql`
     coverImage
     readButtonText
     downloadButtonText
+    pdfFile
   }
   spotlightTitle
   archiveTitle

@@ -17,3 +17,4 @@ searchPlaceholder: "Search resources..."
 popularResourcesTitle: "Popular Resources"
 recentAdditionsTitle: "Recent Additions"
 categoryTagsTitle: "Browse by Category"
+---

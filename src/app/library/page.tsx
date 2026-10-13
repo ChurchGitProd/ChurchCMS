@@ -7,10 +7,12 @@ import LibraryExplorer from '@/components/library/LibraryExplorer';
 import { LibraryResourceData } from '@/components/library/LibraryResourceCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Library() {
   const [libraryPageData, libraryResourceConnectionData] = await Promise.all([
-    client.queries.library({ relativePath: 'index.md' }),
-    client.queries.libraryResourceConnection(),
+    client.queries.library({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),
+    client.queries.libraryResourceConnection({}, { fetchOptions: { cache: 'no-store' } }),
   ]);
 
   const data = libraryPageData.data.library;

@@ -10,6 +10,7 @@ interface FeaturedMagazineHeroProps {
   coverImage?: string | null;
   readButtonText?: string | null;
   downloadButtonText?: string | null;
+  pdfFile?: string | null;
 }
 
 export default function FeaturedMagazineHero({
@@ -22,6 +23,7 @@ export default function FeaturedMagazineHero({
   coverImage = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=533&fit=crop',
   readButtonText = 'Read Issue',
   downloadButtonText = 'Download PDF',
+  pdfFile,
 }: FeaturedMagazineHeroProps) {
   return (
     <div
@@ -80,11 +82,14 @@ export default function FeaturedMagazineHero({
               {readButtonText || 'Read Issue'}
             </a>
             <DownloadButton
-              disabled={true}
+              file={pdfFile || undefined}
+              filename={pdfFile ? `${(title || 'featured-issue').toLowerCase().replace(/[^a-z0-9]+/g, '-')}.pdf` : undefined}
+              disabled={!pdfFile}
               disabledTooltip="Winter 2024 Magazine PDF edition is not yet available"
-              className="px-5 py-2.5 bg-primary-foreground text-primary font-bold text-xs rounded uppercase tracking-wider"
+              className="px-5 py-2.5 bg-primary-foreground text-primary font-bold text-xs rounded uppercase tracking-wider flex items-center gap-1.5"
             >
-              {downloadButtonText || 'Download PDF'} (Unavailable)
+              <span>{pdfFile ? '⬇️' : ''}</span>
+              <span>{pdfFile ? (downloadButtonText || 'Download PDF') : `${downloadButtonText || 'Download PDF'} (Unavailable)`}</span>
             </DownloadButton>
           </div>
         </div>

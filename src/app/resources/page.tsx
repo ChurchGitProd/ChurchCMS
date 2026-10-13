@@ -7,10 +7,18 @@ import ResourcesExplorer from '@/components/resources/ResourcesExplorer';
 import { ResourceItemData } from '@/components/resources/ResourceCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Resources() {
   const [resourcesPageData, usefulResourceConnectionData] = await Promise.all([
-    client.queries.resources({ relativePath: 'index.md' }),
-    client.queries.usefulResourceConnection(),
+    client.queries.resources(
+      { relativePath: 'index.md' },
+      { fetchOptions: { cache: 'no-store' } }
+    ),
+    client.queries.usefulResourceConnection(
+      {},
+      { fetchOptions: { cache: 'no-store' } }
+    ),
   ]);
 
   const data = resourcesPageData.data.resources;

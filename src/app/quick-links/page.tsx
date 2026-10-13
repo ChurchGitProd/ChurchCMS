@@ -7,10 +7,18 @@ import QuickLinksExplorer from '@/components/quick-links/QuickLinksExplorer';
 import { ShortcutCardData } from '@/components/quick-links/ShortcutCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function QuickLinks() {
   const [quickLinksPageData, quickLinkConnectionData] = await Promise.all([
-    client.queries.quickLinks({ relativePath: 'index.md' }),
-    client.queries.quickLinkConnection(),
+    client.queries.quickLinks(
+      { relativePath: 'index.md' },
+      { fetchOptions: { cache: 'no-store' } }
+    ),
+    client.queries.quickLinkConnection(
+      {},
+      { fetchOptions: { cache: 'no-store' } }
+    ),
   ]);
 
   const data = quickLinksPageData.data.quickLinks;

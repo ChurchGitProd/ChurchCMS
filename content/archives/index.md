@@ -17,3 +17,4 @@ classificationsTitle: "Archive Classifications"
 accessPolicy:
   title: "Access Policy"
   description: "All archived materials are public-domain or licensed for theological research. High-resolution downloads are free for academic citation."
+---

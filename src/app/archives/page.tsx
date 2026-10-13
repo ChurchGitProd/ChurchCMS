@@ -9,10 +9,12 @@ import ArchivesExplorer from '@/components/archives/ArchivesExplorer';
 import { ArchiveItemData } from '@/components/archives/ArchiveItemCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Archives() {
   const [archivesPageData, archiveDocumentConnectionData] = await Promise.all([
-    client.queries.archives({ relativePath: 'index.md' }),
-    client.queries.archiveDocumentConnection(),
+    client.queries.archives({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),
+    client.queries.archiveDocumentConnection({}, { fetchOptions: { cache: 'no-store' } }),
   ]);
 
   const data = archivesPageData.data.archives;
@@ -33,6 +35,7 @@ export default async function Archives() {
       description: node.description,
       actionLabel: node.actionLabel,
       actionType: (node.actionType as 'download' | 'link' | null) || null,
+      pdfFile: node.pdfFile || null,
     }));
 
   // Canonical display order matching original HTML source

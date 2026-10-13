@@ -38,12 +38,21 @@ export default function DownloadButton({
     );
   }
 
-  const queryParams = new URLSearchParams();
-  if (url) queryParams.set('url', url);
-  if (file) queryParams.set('file', file);
-  if (filename) queryParams.set('filename', filename);
+  // Determine effective target
+  const rawTarget = file || url || '';
+  const isLocalPath = rawTarget.startsWith('/') || rawTarget.startsWith('uploads/') || rawTarget.startsWith('documents/');
 
-  const downloadHref = `/api/download?${queryParams.toString()}`;
+  let downloadHref: string;
+  if (isLocalPath) {
+    // Direct static CDN link ensures large files (up to 100MB+) download reliably without Vercel 4.5MB Serverless function limit
+    downloadHref = rawTarget.startsWith('/') ? rawTarget : `/${rawTarget}`;
+  } else {
+    const queryParams = new URLSearchParams();
+    if (url) queryParams.set('url', url);
+    if (file) queryParams.set('file', file);
+    if (filename) queryParams.set('filename', filename);
+    downloadHref = `/api/download?${queryParams.toString()}`;
+  }
 
   return (
     <a

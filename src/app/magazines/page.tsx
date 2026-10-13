@@ -9,10 +9,12 @@ import MagazinesExplorer from '@/components/magazines/MagazinesExplorer';
 import { MagazineCardData } from '@/components/magazines/MagazineCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Magazines() {
   const [magazinesPageData, magazineConnectionData] = await Promise.all([
-    client.queries.magazines({ relativePath: 'index.md' }),
-    client.queries.magazineConnection(),
+    client.queries.magazines({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),
+    client.queries.magazineConnection({}, { fetchOptions: { cache: 'no-store' } }),
   ]);
 
   const data = magazinesPageData.data.magazines;
@@ -128,6 +130,7 @@ export default async function Magazines() {
             coverImage={data.featuredIssue?.coverImage}
             readButtonText={data.featuredIssue?.readButtonText}
             downloadButtonText={data.featuredIssue?.downloadButtonText}
+            pdfFile={(data.featuredIssue as any)?.pdfFile}
           />
         }
         spotlight={

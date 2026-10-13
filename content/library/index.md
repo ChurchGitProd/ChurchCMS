@@ -16,3 +16,4 @@ featuredResource:
 categoriesTitle: "Browse by Category"
 popularTitle: "Most Accessed"
 recentTitle: "Recently Added"
+---

@@ -10,8 +10,13 @@ import OfficeLocationMap from '@/components/contact/OfficeLocationMap';
 import OfficeHoursAndInfo from '@/components/contact/OfficeHoursAndInfo';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Contact() {
-  const contactData = await client.queries.contact({ relativePath: 'index.md' });
+  const contactData = await client.queries.contact(
+    { relativePath: 'index.md' },
+    { fetchOptions: { cache: 'no-store' } }
+  );
   const data = contactData.data.contact;
 
   return (

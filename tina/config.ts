@@ -3,10 +3,27 @@ import { scripturaCmsCallback } from "./adminCustomizer";
 import YouTubeUrlField from "./components/YouTubeUrlField";
 
 // Your hosting provider's Git API URL
-const branch = "main";
-const apiURL = process.env.GITHUB_API_URL || "https://api.github.com";
-const clientId = process.env.GITHUB_CLIENT_ID || "";
-const token = process.env.GITHUB_TOKEN || "";
+
+
+const branch =
+  process.env.NEXT_PUBLIC_TINA_BRANCH ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
+  process.env.HEAD ||
+  "main";
+
+const clientId =
+  process.env.NEXT_PUBLIC_TINA_CLIENT_ID ||
+  process.env.TINA_CLIENT_ID ||
+  process.env.GITHUB_CLIENT_ID ||
+  "";
+
+const token =
+  process.env.TINA_TOKEN ||
+  process.env.GITHUB_TOKEN ||
+  "";
+
+
+
 
 export default defineConfig({
   branch,
@@ -2599,6 +2616,12 @@ export default defineConfig({
                 name: "downloadButtonText",
                 label: "Download Button Text",
                 required: true,
+              },
+              {
+                type: "image",
+                name: "pdfFile",
+                label: "Magazine Issue PDF",
+                description: "Upload or select a PDF for digital magazine download",
               },
             ],
           },

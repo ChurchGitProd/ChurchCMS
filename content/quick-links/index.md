@@ -20,3 +20,4 @@ categorySectionTitle: "Browse by Category"
 searchSectionTitle: "Search Links"
 searchPlaceholder: "Search for links by keyword, topic, or scripture..."
 shortcutsSectionTitle: "Resource Shortcuts"
+---

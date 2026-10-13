@@ -10,6 +10,8 @@ import ScriptureQuoteBlock from '@/components/newsletter/ScriptureQuoteBlock';
 import { DailyLetterItemData } from '@/components/newsletter/DailyLetterCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Newsletter() {
   const [newsletterPageData, dailyLetterConnectionData] = await Promise.all([
     client.queries.newsletter({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),

@@ -13,6 +13,8 @@ featuredBook:
   description: "A seminal study exploring the structural layout, rhetorical devices, and theological highlights of the Pauline Epistles, focusing specifically on justification and union with Christ."
   downloadButtonText: "Download PDF"
   abstractButtonText: "Read Abstract"
+  pdfFile: "/uploads/Pauline_Paradigm.pdf"
 submissionsTitle: "Scholarly Submissions"
 submissionsDescription: "Interested in publishing your theological research, monograph, or commentary abstract with the Scriptura Research Press?"
 submissionsButtonText: "Review Guidelines"
+---

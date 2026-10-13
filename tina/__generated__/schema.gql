@@ -1568,6 +1568,7 @@ type MagazinesFeaturedIssue {
   coverImage: String
   readButtonText: String!
   downloadButtonText: String!
+  pdfFile: String
 }
 
 type Magazines implements Node & Document {
@@ -1598,6 +1599,7 @@ input MagazinesFeaturedIssueFilter {
   coverImage: ImageFilter
   readButtonText: StringFilter
   downloadButtonText: StringFilter
+  pdfFile: ImageFilter
 }
 
 input MagazinesFilter {
@@ -2936,6 +2938,7 @@ input MagazinesFeaturedIssueMutation {
   coverImage: String
   readButtonText: String
   downloadButtonText: String
+  pdfFile: String
 }
 
 input MagazinesMutation {

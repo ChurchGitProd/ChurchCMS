@@ -10,6 +10,8 @@ import LessonsExplorer from '@/components/lessons/LessonsExplorer';
 import { LessonCardData } from '@/components/lessons/LessonCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Lessons() {
   const [lessonsPageData, lessonConnectionData] = await Promise.all([
     client.queries.lessons({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),

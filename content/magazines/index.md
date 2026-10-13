@@ -15,5 +15,7 @@ featuredIssue:
   coverImage: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=533&fit=crop"
   readButtonText: "Read Issue"
   downloadButtonText: "Download PDF"
+  pdfFile: "/uploads/Winter 2024 — The Doctrine of Scripture.pdf"
 spotlightTitle: "Latest Issue Spotlight"
 archiveTitle: "Archive Issues"
+---

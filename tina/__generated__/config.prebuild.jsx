@@ -1578,10 +1578,9 @@ var YouTubeUrlField = wrapFieldsWithMeta((props) => {
 var YouTubeUrlField_default = YouTubeUrlField;
 
 // tina/config.ts
-var branch = "main";
-var apiURL = process.env.GITHUB_API_URL || "https://api.github.com";
-var clientId = process.env.GITHUB_CLIENT_ID || "";
-var token = process.env.GITHUB_TOKEN || "";
+var branch = process.env.NEXT_PUBLIC_TINA_BRANCH || process.env.VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main";
+var clientId = process.env.NEXT_PUBLIC_TINA_CLIENT_ID || process.env.TINA_CLIENT_ID || process.env.GITHUB_CLIENT_ID || "";
+var token = process.env.TINA_TOKEN || process.env.GITHUB_TOKEN || "";
 var config_default = defineConfig({
   branch,
   clientId,
@@ -4173,6 +4172,12 @@ var config_default = defineConfig({
                 name: "downloadButtonText",
                 label: "Download Button Text",
                 required: true
+              },
+              {
+                type: "image",
+                name: "pdfFile",
+                label: "Magazine Issue PDF",
+                description: "Upload or select a PDF for digital magazine download"
               }
             ]
           },

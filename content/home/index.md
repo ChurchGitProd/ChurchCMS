@@ -130,7 +130,7 @@ featuredPublications:
       covenant made in Genesis 15.
     coverImage: >-
       https://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&h=267&fit=crop
-    downloadLink: /books
+    downloadLink: /uploads/Abraham Promise.pdf
   magazine:
     badge: Quarterly Issue
     title: Biblical Archaeology Review

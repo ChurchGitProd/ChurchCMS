@@ -12,6 +12,7 @@ export interface ArchiveItemData {
   description: string;
   actionLabel?: string | null;
   actionType?: 'download' | 'link' | null;
+  pdfFile?: string | null;
 }
 
 interface ArchiveItemCardProps {
@@ -53,11 +54,13 @@ export default function ArchiveItemCard({ item }: ArchiveItemCardProps) {
         <div>
           {isDownload ? (
             <DownloadButton
-              disabled={true}
+              file={item.pdfFile || undefined}
+              filename={item.pdfFile ? `${item.slug}.pdf` : undefined}
+              disabled={!item.pdfFile}
               disabledTooltip={`${item.title} archival PDF is not yet digitized`}
               className="text-primary font-bold hover:underline"
             >
-              {item.actionLabel || 'View PDF'} (Unavailable)
+              {item.pdfFile ? (item.actionLabel || 'Download PDF') : `${item.actionLabel || 'View PDF'} (Unavailable)`}
             </DownloadButton>
           ) : (
             <Link

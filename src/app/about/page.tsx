@@ -11,8 +11,13 @@ import AcademicOfficeWidget from '@/components/about/AcademicOfficeWidget';
 import QuoteWidget from '@/components/about/QuoteWidget';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function About() {
-  const aboutData = await client.queries.about({ relativePath: 'index.md' });
+  const aboutData = await client.queries.about(
+    { relativePath: 'index.md' },
+    { fetchOptions: { cache: 'no-store' } }
+  );
   const data = aboutData.data.about;
 
   return (

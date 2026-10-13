@@ -102,11 +102,13 @@ export default function FeaturedPublicationsSection({ data }: FeaturedPublicatio
                 Author: {book.author}
               </span>
               <DownloadButton
-                disabled={true}
+                file={book.downloadLink || undefined}
+                filename="the-abrahamic-promise.pdf"
+                disabled={!book.downloadLink}
                 disabledTooltip="The Abrahamic Promise PDF is not yet available for download"
-                className="text-xs font-bold text-primary"
+                className="text-xs font-bold text-primary hover:text-tertiary transition-colors"
               >
-                Download PDF (Unavailable)
+                {book.downloadLink ? 'Download PDF' : 'Download PDF (Unavailable)'}
               </DownloadButton>
             </div>
           </div>

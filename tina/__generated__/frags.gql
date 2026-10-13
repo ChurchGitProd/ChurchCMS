@@ -546,6 +546,7 @@ fragment MagazinesParts on Magazines {
     coverImage
     readButtonText
     downloadButtonText
+    pdfFile
   }
   spotlightTitle
   archiveTitle

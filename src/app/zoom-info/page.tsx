@@ -16,6 +16,8 @@ export const metadata = {
     'Join our live theological seminars, Bible study sessions, and scholarly discussions via Zoom. Connect with our faculty and fellow believers from around the world.',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function ZoomInfoPage() {
   const zoomInfoData = await client.queries.zoomInfo(
     { relativePath: 'index.md' },

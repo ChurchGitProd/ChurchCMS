@@ -7,6 +7,7 @@ import FeaturedVideoHero from '@/components/videos/FeaturedVideoHero';
 import VideosExplorer from '@/components/videos/VideosExplorer';
 import { VideoCardData } from '@/components/videos/VideoCard';
 import { client } from '../../../tina/__generated__/client';
+export const dynamic = 'force-dynamic';
 
 export default async function Videos() {
   const [videosPageData, videoConnectionData] = await Promise.all([

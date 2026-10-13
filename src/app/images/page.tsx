@@ -8,10 +8,12 @@ import ImagesExplorer from '@/components/images/ImagesExplorer';
 import { ImageCardData } from '@/components/images/ImageCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Images() {
   const [imagesPageData, bibleImageConnectionData] = await Promise.all([
-    client.queries.images({ relativePath: 'index.md' }),
-    client.queries.bibleImageConnection(),
+    client.queries.images({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),
+    client.queries.bibleImageConnection({}, { fetchOptions: { cache: 'no-store' } }),
   ]);
 
   const data = imagesPageData.data.images;

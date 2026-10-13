@@ -5,6 +5,7 @@ import fs from 'fs';
 // Explicit allowlist of external hosts permitted for proxied download
 const ALLOWED_EXTERNAL_HOSTS = new Set([
   'uxmagic.blob.core.windows.net',
+  'images.unsplash.com',
 ]);
 
 // Allowed file extensions
@@ -50,8 +51,8 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'External host is not permitted' }, { status: 403 });
     }
 
-    // Restrict to known safe agent-images path
-    if (!parsedUrl.pathname.startsWith('/public/agent-images/')) {
+    // Restrict uxmagic host to known safe agent-images path
+    if (hostname === 'uxmagic.blob.core.windows.net' && !parsedUrl.pathname.startsWith('/public/agent-images/')) {
       return NextResponse.json({ error: 'Path not permitted' }, { status: 403 });
     }
 

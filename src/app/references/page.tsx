@@ -9,6 +9,8 @@ import ReferencesExplorer from '@/components/references/ReferencesExplorer';
 import { ReferenceCardData } from '@/components/references/ReferenceCard';
 import { client } from '../../../tina/__generated__/client';
 
+export const dynamic = 'force-dynamic';
+
 export default async function References() {
   const [referencesPageData, bibleReferenceConnectionData] = await Promise.all([
     client.queries.references({ relativePath: 'index.md' }, { fetchOptions: { cache: 'no-store' } }),
