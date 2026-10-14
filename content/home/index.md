@@ -75,8 +75,8 @@ featuredVideos:
       title: The Dead Sea Scrolls Discovery
       description: 'An introduction to the Qumran caves, the manuscripts found, and their impact on modern biblical scholarship.'
       duration: '32:40'
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
-      link: /videos
+      image: /uploads/The Dead Sea Scrolls Discovery.jpg
+      link: 'https://www.youtube.com/watch?v=p-lNvLdY5OI'
 galleryPreview:
   sectionTitle: Bible Image Gallery Preview
   items:
