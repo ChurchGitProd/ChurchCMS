@@ -82,7 +82,7 @@ galleryPreview:
   items:
     - title: Ancient Pentateuch Manuscript
       category: Historical Artifact
-      image: ''
+      image: /uploads/Ancient Pentateuch Manuscript.jpg
     - title: Classic Leather-Bound Archives
       category: Library Collection
       image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
