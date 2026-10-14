@@ -29,7 +29,7 @@ featuredLessons:
     title: 'Grace, Justification, and the New Life'
     description: Tracing Paul's masterpiece argument from legal justification to the intimate reality of life in the Holy Spirit.
     readTime: 50 mins read
-    image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
+    image: '/uploads/Grace, Justification, and Life in the Spirit.jpg'
 newsletter:
   title: The Daily Epistle of Paul and Thomas
   description: 'Receive a scholarly, editorial commentary, cross-references, and historical background directly to your inbox every morning. Free from fluff, focused entirely on the scripture text.'
