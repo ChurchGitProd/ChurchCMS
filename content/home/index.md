@@ -88,7 +88,7 @@ galleryPreview:
       image: /uploads/Classic Leather-Bound Archives.jpg
     - title: Greek Scripture Annotations
       category: Scholarly Study
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
+      image: /uploads/Greek%20Codex%20Transcription%20Annotations.jpg
 featuredPublications:
   sectionTitle: Featured Books & Magazines
   book:
