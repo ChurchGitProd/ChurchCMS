@@ -68,7 +68,7 @@ featuredVideos:
     - series: Hermeneutics Series
       title: How to Read Biblical Poetry
       description: 'Unpacking the parallelisms, figurative language, and structural beauty of Hebrew poetic literature.'
-      duration: '24:15'
+      duration: '10:55'
       image: /uploads/How to Read Biblical Poetry.jpg
       link: 'https://www.youtube.com/watch?v=osyDLEYXxXc'
     - series: Archaeology Series
