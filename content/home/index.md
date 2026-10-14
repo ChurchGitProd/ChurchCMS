@@ -103,7 +103,7 @@ featuredPublications:
     title: Biblical Archaeology Review
     issue: Issue
     description: Exploring the latest excavations in Jerusalem and their correlation with Old Testament chronicles.
-    coverImage: '/uploadshttps://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=267&fit=crop'
+    coverImage: /uploads/Biblical Archaeology Review.jpg
     readLink: /magazines
 announcementsWidget:
   title: Platform Announcements
