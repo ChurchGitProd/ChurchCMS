@@ -6,6 +6,7 @@ import AnnouncementBar from '@/components/home/AnnouncementBar';
 import QuarterlyNewsletterStrip from '@/components/home/QuarterlyNewsletterStrip';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { client } from '../../../../tina/__generated__/client';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface ResourceDetailPageProps {
   params: {
@@ -115,7 +116,7 @@ export default async function ResourceDetailPage({
             {resource.thumbnail && (
               <div className="w-16 h-16 rounded-xl bg-primary/10 overflow-hidden flex-shrink-0 border border-border">
                 <img
-                  src={resource.thumbnail}
+                  src={sanitizeImageUrl(resource.thumbnail)}
                   alt={resource.title}
                   className="w-full h-full object-cover"
                 />

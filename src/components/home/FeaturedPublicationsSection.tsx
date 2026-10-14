@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import DownloadButton from '@/components/common/DownloadButton';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface BookItem {
   badge?: string | null;
@@ -80,7 +81,7 @@ export default function FeaturedPublicationsSection({ data }: FeaturedPublicatio
         <div className="bg-card border border-border rounded-xl p-5 flex gap-4 hover:shadow-lg transition-all">
           <div className="w-24 h-32 flex-shrink-0 border border-border rounded shadow-md overflow-hidden bg-muted">
             <img
-              src={book.coverImage || ''}
+              src={sanitizeImageUrl(book.coverImage || '')}
               alt={`${book.title} cover`}
               className="w-full h-full object-cover"
             />
@@ -118,7 +119,7 @@ export default function FeaturedPublicationsSection({ data }: FeaturedPublicatio
         <div className="bg-card border border-border rounded-xl p-5 flex gap-4 hover:shadow-lg transition-all">
           <div className="w-24 h-32 flex-shrink-0 border border-border rounded shadow-md overflow-hidden bg-muted">
             <img
-              src={magazine.coverImage || ''}
+              src={sanitizeImageUrl(magazine.coverImage || '')}
               alt={`${magazine.title} cover`}
               className="w-full h-full object-cover"
             />

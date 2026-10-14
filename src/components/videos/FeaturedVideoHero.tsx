@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Play, VideoOff } from 'lucide-react';
 import { getYouTubeEmbedUrl } from '@/lib/youtube';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedVideoData {
   badge?: string | null;
@@ -66,7 +67,7 @@ export default function FeaturedVideoHero({ data }: FeaturedVideoHeroProps) {
           ) : (
             <div className="relative aspect-video w-full overflow-hidden bg-primary">
               <img
-                src={coverImage}
+                src={sanitizeImageUrl(coverImage)}
                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                 alt={title}
               />

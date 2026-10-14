@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface GalleryItem {
   title?: string | null;
@@ -73,7 +74,7 @@ export default function GalleryPreviewSection({ data }: GalleryPreviewSectionPro
             className="group relative rounded-lg overflow-hidden border border-border bg-card shadow-sm aspect-square block"
           >
             <img
-              src={item.image || defaultItems[idx]?.image || ''}
+              src={sanitizeImageUrl(item.image || defaultItems[idx]?.image || '')}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               alt={item.title || 'Gallery preview'}
             />

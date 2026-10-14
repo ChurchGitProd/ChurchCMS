@@ -8,6 +8,7 @@ import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { ArrowLeft, User, BookOpen, Clock, Calendar, VideoOff } from 'lucide-react';
 import { getYouTubeEmbedUrl } from '@/lib/youtube';
 import { client } from '../../../../tina/__generated__/client';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface VideoPageProps {
   params: {
@@ -128,7 +129,7 @@ export default async function VideoDetailPage({ params }: VideoPageProps) {
               /* Honest Archived Video Placeholder (no fake player or invented URL) */
               <div className="relative aspect-video w-full overflow-hidden bg-primary">
                 <img
-                  src={video.thumbnail || fallbackThumbnail}
+                  src={sanitizeImageUrl(video.thumbnail || fallbackThumbnail)}
                   alt={video.title}
                   className="w-full h-full object-cover opacity-60 filter blur-[1px]"
                 />

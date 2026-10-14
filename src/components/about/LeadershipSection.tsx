@@ -1,3 +1,5 @@
+import { sanitizeImageUrl } from '@/lib/media';
+
 export interface ScholarItem {
   name: string;
   role: string;
@@ -62,7 +64,7 @@ export default function LeadershipSection({
               className="bg-card border border-border rounded-xl p-4 text-center space-y-3 hover:shadow-md transition-shadow"
             >
               <img
-                src={avatarUrl}
+                src={sanitizeImageUrl(avatarUrl)}
                 alt={scholar.name}
                 className="w-20 h-20 rounded-full mx-auto object-cover border-2 border-tertiary"
               />

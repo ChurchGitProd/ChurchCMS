@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedLessonData {
   badge?: string | null;
@@ -33,7 +34,7 @@ export default function FeaturedLessonSpotlight({
     <div className="bg-card border border-border rounded-xl p-6 shadow-sm flex flex-col md:flex-row gap-6 items-start">
       <div className="w-full md:w-1/2 h-48 rounded-lg overflow-hidden border border-border flex-shrink-0">
         <img
-          src={coverImage}
+          src={sanitizeImageUrl(coverImage)}
           className="w-full h-full object-cover"
           alt={title}
         />

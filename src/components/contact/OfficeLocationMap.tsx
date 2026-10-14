@@ -1,3 +1,5 @@
+import { sanitizeImageUrl } from '@/lib/media';
+
 interface OfficeLocationMapProps {
   mapLocation?: {
     imageUrl?: string | null;
@@ -19,7 +21,7 @@ export default function OfficeLocationMap({
     <div className="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
       <div className="aspect-video bg-muted relative">
         <img
-          src={imageUrl}
+          src={sanitizeImageUrl(imageUrl)}
           alt="Map location"
           className="w-full h-full object-cover"
         />

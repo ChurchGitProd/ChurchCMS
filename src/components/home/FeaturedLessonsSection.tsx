@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Clock, ArrowRight } from 'lucide-react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface LessonItem {
   category?: string | null;
@@ -78,7 +79,7 @@ export default function FeaturedLessonsSection({ data }: FeaturedLessonsSectionP
           >
             <div className="h-48 overflow-hidden relative">
               <img
-                src={lesson.image || defaultLessons[idx]?.image || ''}
+                src={sanitizeImageUrl(lesson.image || defaultLessons[idx]?.image || '')}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 alt={lesson.title || 'Lesson thumbnail'}
               />

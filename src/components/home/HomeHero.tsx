@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen } from 'lucide-react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface HeroData {
   headline?: string | null;
@@ -90,7 +91,7 @@ export default function HomeHero({ data }: HomeHeroProps) {
             <div className="absolute inset-0 bg-gradient-to-tr from-tertiary/20 to-primary/10 rounded-2xl blur-2xl -z-10"></div>
             <div className="border-4 border-border rounded-2xl p-2 bg-card shadow-2xl overflow-hidden transform hover:rotate-1 transition-transform duration-300">
               <img
-                src={heroImage}
+                src={sanitizeImageUrl(heroImage)}
                 alt="Open Bible on altar"
                 className="w-full h-auto rounded-lg object-cover shadow-inner"
               />

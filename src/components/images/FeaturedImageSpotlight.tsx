@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Download, FileText, ChevronDown, ChevronUp } from 'lucide-react';
 import DownloadButton from '@/components/common/DownloadButton';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedImageData {
   badge?: string | null;
@@ -46,7 +47,7 @@ export default function FeaturedImageSpotlight({ data }: FeaturedImageSpotlightP
         {/* Left Column: Image preview (7 cols) */}
         <div className="lg:col-span-7 rounded-lg overflow-hidden border border-border shadow-inner bg-muted">
           <img
-            src={imageUrl}
+            src={sanitizeImageUrl(imageUrl)}
             className="w-full h-auto object-cover"
             alt={title}
           />

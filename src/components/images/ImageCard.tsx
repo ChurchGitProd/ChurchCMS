@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 export interface ImageCardData {
   slug: string;
@@ -20,7 +21,7 @@ export default function ImageCard({ image }: ImageCardProps) {
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all flex flex-col group">
       <Link href={`/images/${image.slug}`} className="h-56 overflow-hidden relative block bg-muted">
         <img
-          src={image.image}
+          src={sanitizeImageUrl(image.image)}
           alt={image.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />

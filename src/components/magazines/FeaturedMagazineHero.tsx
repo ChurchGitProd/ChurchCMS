@@ -1,4 +1,5 @@
 import DownloadButton from '@/components/common/DownloadButton';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedMagazineHeroProps {
   badge?: string | null;
@@ -35,7 +36,7 @@ export default function FeaturedMagazineHero({
           <div className="aspect-[3/4] bg-primary-foreground/10 rounded-lg overflow-hidden relative shadow-sm">
             {coverImage ? (
               <img
-                src={coverImage}
+                src={sanitizeImageUrl(coverImage)}
                 alt={`${title} Cover`}
                 className="w-full h-full object-cover"
               />

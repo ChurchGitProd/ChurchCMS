@@ -8,6 +8,7 @@ import DownloadButton from '@/components/common/DownloadButton';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { ArrowLeft, BookOpen, Download, Calendar, FileText } from 'lucide-react';
 import { client } from '../../../../tina/__generated__/client';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface ImagePageProps {
   params: {
@@ -108,7 +109,7 @@ export default async function ImageDetailPage({ params }: ImagePageProps) {
           {/* High-Resolution Image Display */}
           <div className="w-full bg-black/90 flex items-center justify-center p-4 sm:p-8">
             <img
-              src={displayImage}
+              src={sanitizeImageUrl(displayImage)}
               alt={image.title}
               className="max-h-[600px] w-auto object-contain rounded shadow-lg"
             />

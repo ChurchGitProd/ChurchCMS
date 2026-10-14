@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface MeetingDetailCardsProps {
   speakerCard?: {
@@ -67,7 +68,7 @@ export default function MeetingDetailCards({
       <div className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-all space-y-4">
         <div className="w-20 h-20 rounded-lg bg-primary/10 overflow-hidden">
           <img
-            src={speakerAvatar}
+            src={sanitizeImageUrl(speakerAvatar)}
             alt={speakerName}
             className="w-full h-full object-cover"
           />

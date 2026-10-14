@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedDevotionalData {
   badge?: string | null;
@@ -43,7 +44,7 @@ export default function FeaturedDevotionalCard({
     >
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <img
-          src={displayBg}
+          src={sanitizeImageUrl(displayBg)}
           alt="Bible background"
           className="w-full h-full object-cover"
         />

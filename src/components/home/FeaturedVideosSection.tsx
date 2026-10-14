@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Play } from 'lucide-react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface VideoItem {
   series?: string | null;
@@ -75,7 +76,7 @@ export default function FeaturedVideosSection({ data }: FeaturedVideosSectionPro
           >
             <div className="h-44 overflow-hidden relative bg-primary">
               <img
-                src={video.image || defaultVideos[idx]?.image || ''}
+                src={sanitizeImageUrl(video.image || defaultVideos[idx]?.image || '')}
                 className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                 alt={video.title || 'Video cover'}
               />

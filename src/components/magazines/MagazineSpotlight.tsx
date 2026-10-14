@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface SpotlightIssueData {
   slug: string;
@@ -30,7 +31,7 @@ export default function MagazineSpotlight({
           <div className="w-full md:w-48 h-64 bg-muted rounded-lg overflow-hidden flex-shrink-0 relative">
             {issue.coverImage ? (
               <img
-                src={issue.coverImage}
+                src={sanitizeImageUrl(issue.coverImage)}
                 alt={`${issue.title} Cover`}
                 className="w-full h-full object-cover"
               />

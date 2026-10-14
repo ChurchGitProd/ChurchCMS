@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Play } from 'lucide-react';
+import { sanitizeImageUrl } from '@/lib/media';
 
 export interface VideoCardData {
   slug: string;
@@ -26,7 +27,7 @@ export default function VideoCard({ video }: VideoCardProps) {
     <article className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-all flex flex-col group">
       <Link href={`/videos/${video.slug}`} className="block relative h-48 overflow-hidden bg-primary">
         <img
-          src={video.thumbnail || fallbackThumbnail}
+          src={sanitizeImageUrl(video.thumbnail || fallbackThumbnail)}
           alt={video.title}
           className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
         />

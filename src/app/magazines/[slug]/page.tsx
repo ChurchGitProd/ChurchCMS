@@ -7,6 +7,7 @@ import QuarterlyNewsletterStrip from '@/components/home/QuarterlyNewsletterStrip
 import DownloadButton from '@/components/common/DownloadButton';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { client } from '../../../../tina/__generated__/client';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface MagazineDetailPageProps {
   params: {
@@ -91,7 +92,7 @@ export default async function MagazineDetailPage({
               <div className="aspect-[3/4] bg-muted rounded-xl overflow-hidden shadow-md border border-border">
                 {magazine.coverImage ? (
                   <img
-                    src={magazine.coverImage}
+                    src={sanitizeImageUrl(magazine.coverImage)}
                     alt={`${magazine.title} Cover`}
                     className="w-full h-full object-cover"
                   />

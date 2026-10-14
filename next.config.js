@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'uxmagic.blob.core.windows.net',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.tina.io',
+      },
     ],
   },
 }

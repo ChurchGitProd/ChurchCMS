@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface RelatedLessonCardProps {
   title?: string | null;
@@ -34,7 +35,7 @@ export default function RelatedLessonCard({
       <div className="space-y-3">
         <div className="h-28 rounded-lg overflow-hidden bg-muted relative">
           <img
-            src={displayImage}
+            src={sanitizeImageUrl(displayImage)}
             className="w-full h-full object-cover"
             alt="Course thumbnail"
           />

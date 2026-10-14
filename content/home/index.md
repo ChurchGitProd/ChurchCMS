@@ -8,7 +8,7 @@ hero:
   ctaLink: /library
   secondaryCtaText: Browse Lessons
   secondaryCtaLink: /lessons
-  heroImage: /uploads/hero image.webp
+  heroImage: /uploads/hero-image.webp
 scriptureOfTheDay:
   verse: The Lord is my Shephard
   reference: 'Psalm 23 : 1'
@@ -21,7 +21,7 @@ featuredLessons:
     title: The Theology of Creation & Covenant
     description: 'An in-depth scholarly analysis of the primeval history, exploring the structural parallels of creation narratives and the foundational covenants.'
     readTime: 45 mins read
-    image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
+    image: 'https://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
   lesson2:
     category: Epistles
     reference: Romans 5-8
@@ -29,7 +29,7 @@ featuredLessons:
     title: 'Grace, Justification, and the New Life'
     description: Tracing Paul's masterpiece argument from legal justification to the intimate reality of life in the Holy Spirit.
     readTime: 50 mins read
-    image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
+    image: 'https://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
 newsletter:
   title: The Daily Epistle of Paul and Thomas
   description: 'Receive a scholarly, editorial commentary, cross-references, and historical background directly to your inbox every morning. Free from fluff, focused entirely on the scripture text.'
@@ -69,26 +69,26 @@ featuredVideos:
       title: How to Read Biblical Poetry
       description: 'Unpacking the parallelisms, figurative language, and structural beauty of Hebrew poetic literature.'
       duration: '24:15'
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
+      image: 'https://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
       link: /videos
     - series: Archaeology Series
       title: The Dead Sea Scrolls Discovery
       description: 'An introduction to the Qumran caves, the manuscripts found, and their impact on modern biblical scholarship.'
       duration: '32:40'
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
+      image: 'https://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
       link: /videos
 galleryPreview:
   sectionTitle: Bible Image Gallery Preview
   items:
     - title: Ancient Pentateuch Manuscript
       category: Historical Artifact
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/hero_bible-1782719363350-90sctq9ygv4.png'
+      image: 'https://uxmagic.blob.core.windows.net/public/agent-images/hero_bible-1782719363350-90sctq9ygv4.png'
     - title: Classic Leather-Bound Archives
       category: Library Collection
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
+      image: 'https://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
     - title: Greek Scripture Annotations
       category: Scholarly Study
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
+      image: 'https://uxmagic.blob.core.windows.net/public/agent-images/study_scene-1782719380163-v1e6si6wd9.png'
 featuredPublications:
   sectionTitle: Featured Books & Magazines
   book:
@@ -96,14 +96,14 @@ featuredPublications:
     title: The Abrahamic Promise
     author: Dr. Vance
     description: 'A deep dive into the legal, historical, and spiritual ramifications of the covenant made in Genesis 15.'
-    coverImage: '/uploadshttps://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&h=267&fit=crop'
+    coverImage: 'https://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&h=267&fit=crop'
     downloadLink: /uploads/Abraham Promise.pdf
   magazine:
     badge: Quarterly Issue
     title: Biblical Archaeology Review
     issue: Issue
     description: Exploring the latest excavations in Jerusalem and their correlation with Old Testament chronicles.
-    coverImage: '/uploadshttps://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=267&fit=crop'
+    coverImage: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&h=267&fit=crop'
     readLink: /magazines
 announcementsWidget:
   title: Platform Announcements

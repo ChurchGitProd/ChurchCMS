@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 export interface ResourceItemData {
   slug: string;
@@ -26,7 +27,7 @@ export default function ResourceCard({ item }: ResourceCardProps) {
           <div className="w-10 h-10 rounded-lg bg-primary/10 overflow-hidden flex-shrink-0">
             {item.thumbnail ? (
               <img
-                src={item.thumbnail}
+                src={sanitizeImageUrl(item.thumbnail)}
                 alt={item.title}
                 className="w-full h-full object-cover"
               />

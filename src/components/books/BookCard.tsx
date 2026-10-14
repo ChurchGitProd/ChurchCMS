@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import DownloadButton from '@/components/common/DownloadButton';
+import { sanitizeImageUrl } from '@/lib/media';
 
 export interface BookCardData {
   slug: string;
@@ -33,7 +34,7 @@ export default function BookCard({ book }: BookCardProps) {
         <div className="w-24 h-32 flex-shrink-0 border border-border rounded shadow-md overflow-hidden relative bg-muted">
           {book.coverImage ? (
             <Image
-              src={book.coverImage}
+              src={sanitizeImageUrl(book.coverImage)}
               alt={`${book.title} book cover`}
               fill
               sizes="96px"

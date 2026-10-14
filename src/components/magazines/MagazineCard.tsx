@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { sanitizeImageUrl } from '@/lib/media';
 
 export interface MagazineCardData {
   slug: string;
@@ -28,7 +29,7 @@ export default function MagazineCard({ magazine }: MagazineCardProps) {
       <div className="aspect-[3/4] bg-muted rounded-lg overflow-hidden group-hover:bg-tertiary/10 transition-colors relative">
         {magazine.coverImage ? (
           <img
-            src={magazine.coverImage}
+            src={sanitizeImageUrl(magazine.coverImage)}
             alt={`${magazine.title} Cover`}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import DownloadButton from '@/components/common/DownloadButton';
+import { sanitizeImageUrl } from '@/lib/media';
 
 interface FeaturedBookSpotlightProps {
   badge?: string | null;
@@ -32,7 +33,7 @@ export default function FeaturedBookSpotlight({
         <div className="md:col-span-4 flex-shrink-0 border border-border rounded-lg shadow-md overflow-hidden aspect-[3/4] relative bg-muted">
           {coverImage ? (
             <Image
-              src={coverImage}
+              src={sanitizeImageUrl(coverImage)}
               alt={`${title || 'Featured'} book cover`}
               fill
               sizes="(max-width: 768px) 100vw, 300px"
