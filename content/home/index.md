@@ -96,7 +96,7 @@ featuredPublications:
     title: The Abrahamic Promise
     author: Dr. Vance
     description: 'A deep dive into the legal, historical, and spiritual ramifications of the covenant made in Genesis 15.'
-    coverImage: '/uploadshttps://images.unsplash.com/photo-1532012197267-da84d127e765?w=200&h=267&fit=crop'
+    coverImage: /uploads/The Abrahamic Promise.jpg
     downloadLink: /uploads/Abraham Promise.pdf
   magazine:
     badge: Quarterly Issue
