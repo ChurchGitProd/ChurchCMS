@@ -69,8 +69,8 @@ featuredVideos:
       title: How to Read Biblical Poetry
       description: 'Unpacking the parallelisms, figurative language, and structural beauty of Hebrew poetic literature.'
       duration: '24:15'
-      image: '/uploadshttps://uxmagic.blob.core.windows.net/public/agent-images/library_shelf-1782719371570-ajnz70oz8sg.png'
-      link: /videos
+      image: /uploads/How to Read Biblical Poetry.jpg
+      link: 'https://www.youtube.com/watch?v=osyDLEYXxXc'
     - series: Archaeology Series
       title: The Dead Sea Scrolls Discovery
       description: 'An introduction to the Qumran caves, the manuscripts found, and their impact on modern biblical scholarship.'
