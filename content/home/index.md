@@ -74,7 +74,7 @@ featuredVideos:
     - series: Archaeology Series
       title: The Dead Sea Scrolls Discovery
       description: 'An introduction to the Qumran caves, the manuscripts found, and their impact on modern biblical scholarship.'
-      duration: '32:40'
+      duration: '22:00'
       image: /uploads/The Dead Sea Scrolls Discovery.jpg
       link: 'https://www.youtube.com/watch?v=p-lNvLdY5OI'
 galleryPreview:
